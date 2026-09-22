@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "source_version_id": "aura-2.5.8",
+      "software": "Aura",
+      "version": "2.5.8",
+      "branch": "stable",
+      "source_ids": ["AP-103"],
+      "input_format": "sqlite",
+      "input_path": "derived/extracted/AP-103/resources/Anisoprint.ausettings"
+    },
+    {
+      "source_version_id": "aura-2.6.2",
+      "software": "Aura",
+      "version": "2.6.2",
+      "branch": "seeker-main",
+      "source_ids": ["AP-104"],
+      "input_format": "sqlite",
+      "input_path": "derived/extracted/AP-104/resources/Anisoprint.ausettings"
+    },
+    {
+      "source_version_id": "aura-2.6.1-sk3",
+      "software": "Aura",
+      "version": "2.6.1",
+      "branch": "sk3-preview",
+      "source_ids": ["AP-105"],
+      "input_format": "sqlite",
+      "input_path": "derived/extracted/AP-105/resources/Anisoprint.ausettings"
+    },
+    {
+      "source_version_id": "rocket-v13",
+      "software": "Rocket",
+      "version": "preset-v13",
+      "branch": "bundled",
+      "source_ids": ["FS-121", "FS-122"],
+      "input_format": "json_directory",
+      "input_path": "derived/extracted/FS-121/rocket-1.3.2/windows/resources/Templates/Presets"
+    },
+    {
+      "source_version_id": "rocket-v15",
+      "software": "Rocket",
+      "version": "preset-v15",
+      "branch": "public",
+      "source_ids": ["FS-125"],
+      "input_format": "json_directory",
+      "input_path": "derived/extracted/FS-125/preset-v15/Templates/Presets"
+    }
+  ],
+  "sqlite_entities": {
+    "Printer": "printer",
+    "ExtruderP": "extruder_plastic",
+    "ExtruderC": "extruder_composite",
+    "Slots": "slot",
+    "Plastic": "plastic",
+    "Composite": "composite",
+    "Profile": "profile",
+    "ProfileMaterial": "profile_material_association",
+    "SlotExtruderMaterial": "slot_extruder_material_association"
+  },
+  "json_entities": {
+    "PrinterProperties.json": "printer",
+    "ExtruderPs.json": "extruder_plastic",
+    "ExtruderCs.json": "extruder_composite",
+    "Slots.json": "slot",
+    "Plastics.json": "plastic",
+    "Composites.json": "composite",
+    "ProfileGroups.json": "profile_group",
+    "Profiles.json": "profile",
+    "ProfileMaterials.json": "profile_material_association",
+    "SlotExtruderMaterials.json": "slot_extruder_material_association",
+    "SettingsSets.json": "settings_set"
+  },
+  "comparison_pairs": [
+    ["aura-2.5.8", "aura-2.6.2"],
+    ["aura-2.6.2", "aura-2.6.1-sk3"],
+    ["aura-2.6.2", "rocket-v13"],
+    ["aura-2.6.1-sk3", "rocket-v13"],
+    ["rocket-v13", "rocket-v15"]
+  ],
+  "branch_comparison": {
+    "comparison_id": "aura-seeker-branches__rocket-v13",
+    "source_versions": ["aura-2.6.2", "aura-2.6.1-sk3"],
+    "target_version": "rocket-v13"
+  }
+}

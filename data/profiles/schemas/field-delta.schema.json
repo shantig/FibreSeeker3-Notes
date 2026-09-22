@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fibreseeker-kb.local/schemas/field-delta.schema.json",
+  "title": "FibreSeeker-KB generated field delta",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "delta_id",
+    "comparison_id",
+    "from_source_version",
+    "to_source_version",
+    "entity_type",
+    "canonical_entity_id",
+    "classifications",
+    "evidence_classification",
+    "source_ids"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "delta_id": {"type": "string", "pattern": "^delta:[0-9a-f]{64}$"},
+    "comparison_id": {"type": "string"},
+    "from_source_version": {"type": "string"},
+    "to_source_version": {"type": "string"},
+    "entity_type": {"type": "string"},
+    "canonical_entity_id": {"type": "string"},
+    "field_name": {"type": ["string", "null"]},
+    "from": {},
+    "to": {},
+    "classifications": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "enum": [
+          "unchanged",
+          "value_changed",
+          "renamed",
+          "structurally_changed",
+          "added",
+          "removed",
+          "source_branch_changed",
+          "unknown_correspondence"
+        ]
+      }
+    },
+    "evidence_classification": {"enum": ["FACT", "INFERENCE", "OPEN_QUESTION"]},
+    "source_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "notes": {"type": "string"}
+  },
+  "additionalProperties": false
+}

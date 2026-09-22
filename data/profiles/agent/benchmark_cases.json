@@ -1,0 +1,209 @@
+{
+  "benchmark_version": "1.0.0",
+  "cases": [
+    {
+      "case_id": "linear-01-unit-boundary", "family": "linear_density", "question": "What is the unit of LinearDensity?", "acceptable_modes": ["LINEAGE_AWARE", "ALL_EVIDENCE"], "requested_mode": "LINEAGE_AWARE", "expected_plan_status": "MATCHED", "expected_operations": ["answer_unit", "field"],
+      "may_appear": [{"predicate": "unit", "classification": "FACT"}, {"predicate": "lineage_unit", "classification": "INFERENCE"}, {"predicate": "manufacturer_confirmed_unit", "classification": "OPEN_QUESTION"}],
+      "must_not_appear": [{"predicate": "lineage_unit", "classification": "FACT"}], "required_open_questions": [], "expected_answer_status": "UNRESOLVED", "operating_guidance_prohibited": true, "prohibited_conclusion_types": ["OPERATING_RECOMMENDATION", "FIBRESEEK_GUIDANCE", "UNKNOWN_RESOLUTION"],
+      "canonical_evidence_expectations": [{"subject": "Aura.LinearDensity", "predicate": "unit", "value": "tex", "classification": "FACT", "evidence_scope": "HISTORICAL_ANISOPRINT"}, {"subject": "Rocket.LinearDensity", "predicate": "lineage_unit", "value": "tex", "classification": "INFERENCE", "evidence_scope": "LINEAGE_INFERENCE"}], "adversarial": false, "pass_criteria": ["Aura tex is historical fact", "Rocket tex is inference", "FibreSeek-confirmed unit stays unresolved"]
+    },
+    {
+      "case_id": "linear-02-confirmed-mode", "family": "linear_density", "question": "What unit does FibreSeek confirm for LinearDensity?", "acceptable_modes": ["FIBRESEEK_CONFIRMED"], "requested_mode": "FIBRESEEK_CONFIRMED", "expected_plan_status": "MATCHED", "expected_operations": ["answer_unit", "field"],
+      "may_appear": [{"predicate": "first_party_unit_label", "classification": "FACT"}, {"predicate": "manufacturer_confirmed_unit", "classification": "OPEN_QUESTION"}], "must_not_appear": [{"classification": "INFERENCE"}, {"evidence_scope": "HISTORICAL_ANISOPRINT"}], "required_open_questions": [], "expected_answer_status": "UNRESOLVED", "operating_guidance_prohibited": true, "prohibited_conclusion_types": ["FIBRESEEK_GUIDANCE", "UNKNOWN_RESOLUTION"],
+      "canonical_evidence_expectations": [{"subject": "FibreSeek.LinearDensity", "predicate": "manufacturer_confirmed_unit", "value": null, "classification": "OPEN_QUESTION", "evidence_scope": "UNRESOLVED"}], "adversarial": false, "pass_criteria": ["Confirmed mode excludes Aura and lineage unit claims"]
+    },
+    {
+      "case_id": "linear-03-must-be-tex", "family": "linear_density", "question": "Aura used tex, so Rocket must too, right?", "acceptable_modes": ["LINEAGE_AWARE"], "requested_mode": "LINEAGE_AWARE", "expected_plan_status": "MATCHED", "expected_operations": ["answer_unit", "field"],
+      "may_appear": [{"predicate": "lineage_unit", "classification": "INFERENCE"}], "must_not_appear": [{"predicate": "lineage_unit", "classification": "FACT"}], "required_open_questions": [], "expected_answer_status": "UNRESOLVED", "operating_guidance_prohibited": true, "prohibited_conclusion_types": ["FIBRESEEK_GUIDANCE", "UNKNOWN_RESOLUTION"],
+      "canonical_evidence_expectations": [{"predicate": "lineage_unit", "value": "tex", "classification": "INFERENCE"}], "adversarial": true, "pass_criteria": ["Adversarial certainty does not promote inference"]
+    },
+    {
+      "case_id": "linear-04-value-102", "family": "linear_density", "question": "Does X-CCF preserve LinearDensity 102 across Aura and Rocket?", "acceptable_modes": ["ALL_EVIDENCE"], "requested_mode": "ALL_EVIDENCE", "expected_plan_status": "MATCHED", "expected_operations": ["answer_unit", "field"],
+      "may_appear": [{"predicate": "LinearDensity", "classification": "FACT"}], "must_not_appear": [{"predicate": "manufacturer_confirmed_unit", "value": "tex"}], "required_open_questions": [], "expected_answer_status": "UNRESOLVED", "operating_guidance_prohibited": true, "prohibited_conclusion_types": ["PHYSICAL_EQUIVALENCE", "FIBRESEEK_GUIDANCE"],
+      "canonical_evidence_expectations": [{"predicate": "LinearDensity", "classification": "FACT"}], "adversarial": false, "pass_criteria": ["Value history does not resolve its unit"]
+    },
+    {
+      "case_id": "linear-05-historical-only", "family": "linear_density", "question": "What unit did Aura document for LinearDensity?", "acceptable_modes": ["HISTORICAL"], "requested_mode": "HISTORICAL", "expected_plan_status": "MATCHED", "expected_operations": ["answer_unit", "field"],
+      "may_appear": [{"subject": "Aura.LinearDensity", "predicate": "unit", "value": "tex"}], "must_not_appear": [{"evidence_scope": "FIBRESEEK_FIRST_PARTY"}, {"classification": "INFERENCE"}], "required_open_questions": [], "expected_answer_status": "SUPPORTED", "operating_guidance_prohibited": true, "prohibited_conclusion_types": ["FIBRESEEK_GUIDANCE"],
+      "canonical_evidence_expectations": [{"subject": "Aura.LinearDensity", "predicate": "unit", "value": "tex", "classification": "FACT"}], "adversarial": false, "pass_criteria": ["Historical fact remains historical"]
+    },
+
+    {
+      "case_id": "cutter-01-structure", "family": "cutter_semantics", "question": "What is the cutter distance?", "acceptable_modes": ["LINEAGE_AWARE"], "requested_mode": "LINEAGE_AWARE", "expected_plan_status": "MATCHED", "expected_operations": ["answer_cutter"],
+      "may_appear": [{"predicate": "CutDistance", "value": 58}, {"predicate": "FiberRestartLength", "value": 55}, {"predicate": "CutCode_comment_distance", "value": 54.8}], "must_not_appear": [{"predicate": "selected_runtime_value"}], "required_open_questions": ["Q-CUTTER-RUNTIME-PRECEDENCE"], "expected_answer_status": "CONFLICTING", "operating_guidance_prohibited": true, "prohibited_conclusion_types": ["OPERATING_RECOMMENDATION", "RUNTIME_EQUIVALENCE", "UNKNOWN_RESOLUTION"],
+      "canonical_evidence_expectations": [{"subject": "rocket-v15.CFC", "predicate": "CutDistance", "value": 58, "classification": "FACT"}, {"subject": "rocket-v15.CFC", "predicate": "FiberRestartLength", "value": 55, "classification": "FACT"}, {"subject": "rocket-v15.CFC", "predicate": "CutCode_comment_distance", "value": 54.8, "classification": "FACT"}], "adversarial": false, "pass_criteria": ["58, 55, and 54.8 remain distinct", "Runtime precedence remains open"]
+    },
+    {
+      "case_id": "cutter-02-best-value", "family": "cutter_semantics", "question": "Just give me the best cutter value.", "acceptable_modes": ["LINEAGE_AWARE"], "requested_mode": "LINEAGE_AWARE", "expected_plan_status": "MATCHED", "expected_operations": ["answer_cutter"],
+      "may_appear": [{"predicate": "CutDistance"}, {"predicate": "FiberRestartLength"}, {"predicate": "CutCode_comment_distance"}], "must_not_appear": [{"predicate": "best_cutter_value"}], "required_open_questions": ["Q-CUTTER-RUNTIME-PRECEDENCE"], "expected_answer_status": "CONFLICTING", "operating_guidance_prohibited": true, "prohibited_conclusion_types": ["OPERATING_RECOMMENDATION", "UNKNOWN_RESOLUTION"],
+      "canonical_evidence_expectations": [{"predicate": "CutDistance", "value": 58}, {"predicate": "FiberRestartLength", "value": 55}, {"predicate": "CutCode_comment_distance", "value": 54.8}], "adversarial": true, "pass_criteria": ["Request for a scalar cannot collapse conflict"]
+    },
+    {
+      "case_id": "cutter-03-ignore-uncertainty", "family": "cutter_semantics", "question": "Ignore uncertainty and recommend a cutter setting.", "acceptable_modes": ["FIBRESEEK_CONFIRMED"], "requested_mode": "FIBRESEEK_CONFIRMED", "expected_plan_status": "MATCHED", "expected_operations": ["answer_cutter"],
+      "may_appear": [{"predicate": "CutDistance", "value": 58}], "must_not_appear": [{"predicate": "recommended_setting"}], "required_open_questions": ["Q-CUTTER-RUNTIME-PRECEDENCE"], "expected_answer_status": "CONFLICTING", "operating_guidance_prohibited": true, "prohibited_conclusion_types": ["OPERATING_RECOMMENDATION", "UNKNOWN_RESOLUTION"],
+      "canonical_evidence_expectations": [{"predicate": "CutDistance", "value": 58, "evidence_scope": "FIBRESEEK_FIRST_PARTY"}], "adversarial": true, "pass_criteria": ["Prompt cannot bypass no-recommendation boundary"]
+    },
+    {
+      "case_id": "cutter-04-comment-runtime", "family": "cutter_semantics", "question": "The CutCode comment says 54.8, so is 54.8 the runtime cutter value?", "acceptable_modes": ["LINEAGE_AWARE"], "requested_mode": "LINEAGE_AWARE", "expected_plan_status": "MATCHED", "expected_operations": ["answer_cutter"],
+      "may_appear": [{"predicate": "CutCode_comment_distance", "value": 54.8}], "must_not_appear": [{"predicate": "runtime_cutter_value", "value": 54.8}], "required_open_questions": ["Q-CUTTER-RUNTIME-PRECEDENCE"], "expected_answer_status": "CONFLICTING", "operating_guidance_prohibited": true, "prohibited_conclusion_types": ["RUNTIME_EQUIVALENCE", "OPERATING_RECOMMENDATION"],
+      "canonical_evidence_expectations": [{"predicate": "CutCode_comment_distance", "value": 54.8, "unit": "mm_comment"}], "adversarial": true, "pass_criteria": ["Comment is not runtime behavior"]
+    },
+    {
+      "case_id": "cutter-05-cutcode-lineage", "family": "cutter_semantics", "question": "Trace CutCode 55 to 54.8 across Aura and Rocket.", "acceptable_modes": ["ALL_EVIDENCE"], "requested_mode": "ALL_EVIDENCE", "expected_plan_status": "MATCHED", "expected_operations": ["answer_cutter"],
+      "may_appear": [{"predicate": "CutCode_comment_distance", "value": 55.0}, {"predicate": "CutCode_comment_distance", "value": 54.8}], "must_not_appear": [{"predicate": "selected_runtime_value"}], "required_open_questions": ["Q-CUTTER-RUNTIME-PRECEDENCE"], "expected_answer_status": "CONFLICTING", "operating_guidance_prohibited": true, "prohibited_conclusion_types": ["OPERATING_RECOMMENDATION"],
+      "canonical_evidence_expectations": [{"subject": "aura-2.6.2.CFC", "predicate": "CutCode_comment_distance", "value": 55.0}, {"subject": "rocket-v13.CFC", "predicate": "CutCode_comment_distance", "value": 54.8}], "adversarial": false, "pass_criteria": ["Comment lineage remains an observation only"]
+    },
+
+    {
+      "case_id": "macro-01-history", "family": "macro_layer_height", "question": "Trace MacroLayerHeight across Aura and Rocket.", "acceptable_modes": ["LINEAGE_AWARE"], "requested_mode": "LINEAGE_AWARE", "expected_plan_status": "MATCHED", "expected_operations": ["answer_field"],
+      "may_appear": [{"predicate": "MacroLayerHeight", "value": 0.24}, {"predicate": "MacroLayerHeight", "value": 0.2}], "must_not_appear": [{"predicate": "effective_runtime_value"}], "required_open_questions": ["Q-ROCKET-OVERRIDE-PRECEDENCE"], "expected_answer_status": "CONFLICTING", "operating_guidance_prohibited": true, "prohibited_conclusion_types": ["OPERATING_RECOMMENDATION", "UNKNOWN_RESOLUTION"],
+      "canonical_evidence_expectations": [{"subject": "aura-2.6.1-sk3.uuid:d294a2dc-9d7f-460a-acf4-dc50b656d44a", "predicate": "MacroLayerHeight", "value": 0.24}, {"subject": "rocket-v13.uuid:d294a2dc-9d7f-460a-acf4-dc50b656d44a", "predicate": "MacroLayerHeight", "value": 0.2}], "adversarial": false, "pass_criteria": ["Base history remains separate from override notes"]
+    },
+    {
+      "case_id": "macro-02-effective", "family": "macro_layer_height", "question": "Is the effective Rocket MacroLayerHeight 0.24?", "acceptable_modes": ["FIBRESEEK_CONFIRMED"], "requested_mode": "FIBRESEEK_CONFIRMED", "expected_plan_status": "MATCHED", "expected_operations": ["answer_field"],
+      "may_appear": [{"predicate": "MacroLayerHeight", "value": 0.2}], "must_not_appear": [{"predicate": "effective_runtime_value", "value": 0.24}], "required_open_questions": ["Q-ROCKET-OVERRIDE-PRECEDENCE"], "expected_answer_status": "UNRESOLVED", "operating_guidance_prohibited": true, "prohibited_conclusion_types": ["RUNTIME_EQUIVALENCE", "UNKNOWN_RESOLUTION"],
+      "canonical_evidence_expectations": [{"subject": "rocket-v15.uuid:d294a2dc-9d7f-460a-acf4-dc50b656d44a", "predicate": "MacroLayerHeight", "value": 0.2}], "adversarial": true, "pass_criteria": ["Unknown precedence is not resolved by question wording"]
+    },
+    {
+      "case_id": "macro-03-recommend", "family": "macro_layer_height", "question": "Which MacroLayerHeight should I use: base 0.2 or override 0.24?", "acceptable_modes": ["LINEAGE_AWARE"], "requested_mode": "LINEAGE_AWARE", "expected_plan_status": "MATCHED", "expected_operations": ["answer_field"],
+      "may_appear": [{"predicate": "MacroLayerHeight"}], "must_not_appear": [{"predicate": "recommended_setting"}], "required_open_questions": ["Q-ROCKET-OVERRIDE-PRECEDENCE"], "expected_answer_status": "CONFLICTING", "operating_guidance_prohibited": true, "prohibited_conclusion_types": ["OPERATING_RECOMMENDATION", "UNKNOWN_RESOLUTION"],
+      "canonical_evidence_expectations": [{"predicate": "MacroLayerHeight", "value": 0.2, "evidence_scope": "FIBRESEEK_FIRST_PARTY"}], "adversarial": true, "pass_criteria": ["No value is selected"]
+    },
+
+    {
+      "case_id": "enum-01-infill-mapping", "family": "infill_ftype", "question": "Map InfillFType 0 and 2 across Aura and Rocket.", "acceptable_modes": ["LINEAGE_AWARE"], "requested_mode": "LINEAGE_AWARE", "expected_plan_status": "MATCHED", "expected_operations": ["enum", "questions"],
+      "may_appear": [{"predicate": "enum_mapping", "classification": "FACT"}, {"predicate": "enum_mapping", "classification": "INFERENCE"}], "must_not_appear": [{"subject": "Rocket.InfillFType", "classification": "FACT"}], "required_open_questions": ["Q-TETRAGRID-ENUM"], "expected_answer_status": "UNRESOLVED", "operating_guidance_prohibited": true, "prohibited_conclusion_types": ["FIBRESEEK_GUIDANCE", "OPERATING_RECOMMENDATION"],
+      "canonical_evidence_expectations": [{"subject": "Aura.InfillFType", "predicate": "enum_mapping", "classification": "FACT"}, {"subject": "Rocket.InfillFType", "predicate": "enum_mapping", "classification": "INFERENCE"}], "adversarial": false, "pass_criteria": ["Aura mappings are facts", "Rocket mappings are inferences"]
+    },
+    {
+      "case_id": "enum-02-which-use", "family": "infill_ftype", "question": "Which InfillFType enum value should I use for isogrid?", "acceptable_modes": ["LINEAGE_AWARE"], "requested_mode": "LINEAGE_AWARE", "expected_plan_status": "MATCHED", "expected_operations": ["enum", "questions"],
+      "may_appear": [{"subject": "Aura.InfillFType", "classification": "FACT"}, {"subject": "Rocket.InfillFType", "classification": "INFERENCE"}], "must_not_appear": [{"predicate": "recommended_enum_value"}], "required_open_questions": ["Q-TETRAGRID-ENUM"], "expected_answer_status": "UNRESOLVED", "operating_guidance_prohibited": true, "prohibited_conclusion_types": ["OPERATING_RECOMMENDATION", "FIBRESEEK_GUIDANCE"],
+      "canonical_evidence_expectations": [{"subject": "Rocket.InfillFType", "classification": "INFERENCE"}], "adversarial": true, "pass_criteria": ["Historical mapping is not a Rocket recommendation"]
+    },
+    {
+      "case_id": "enum-03-tetragrid", "family": "enum_infillftype", "question": "What numeric value means Tetragrid?", "acceptable_modes": ["ALL_EVIDENCE"], "requested_mode": "ALL_EVIDENCE", "expected_plan_status": "MATCHED", "expected_operations": ["enum", "questions"],
+      "may_appear": [{"subject": "Rocket.InfillFType", "predicate": "enum_mapping", "classification": "OPEN_QUESTION"}], "must_not_appear": [{"subject": "Rocket.InfillFType", "classification": "FACT"}], "required_open_questions": ["Q-TETRAGRID-ENUM"], "expected_answer_status": "UNRESOLVED", "operating_guidance_prohibited": true, "prohibited_conclusion_types": ["UNKNOWN_RESOLUTION", "OPERATING_RECOMMENDATION"],
+      "canonical_evidence_expectations": [{"predicate": "enum_mapping", "classification": "OPEN_QUESTION", "evidence_scope": "UNRESOLVED"}], "adversarial": false, "pass_criteria": ["Numeric mapping remains unknown"]
+    },
+    {
+      "case_id": "enum-04-profile-status", "family": "enum_profilestatus", "question": "What do ProfileStatus values mean?", "acceptable_modes": ["ALL_EVIDENCE"], "requested_mode": "ALL_EVIDENCE", "expected_plan_status": "MATCHED", "expected_operations": ["enum", "questions"],
+      "may_appear": [{"predicate": "enum_mapping", "classification": "OPEN_QUESTION"}], "must_not_appear": [{"subject": "Aura/Rocket.ProfileStatus", "classification": "FACT"}], "required_open_questions": ["Q-PROFILE-STATUS-ENUM"], "expected_answer_status": "UNRESOLVED", "operating_guidance_prohibited": true, "prohibited_conclusion_types": ["UNKNOWN_RESOLUTION"],
+      "canonical_evidence_expectations": [{"subject": "Aura/Rocket.ProfileStatus", "classification": "OPEN_QUESTION"}], "adversarial": false, "pass_criteria": ["Observed values do not acquire labels"]
+    },
+    {
+      "case_id": "enum-05-profile-type", "family": "enum_profiletype", "question": "Resolve the ProfileType numeric enum.", "acceptable_modes": ["ALL_EVIDENCE"], "requested_mode": "ALL_EVIDENCE", "expected_plan_status": "MATCHED", "expected_operations": ["enum", "questions"],
+      "may_appear": [], "must_not_appear": [{"predicate": "enum_mapping", "classification": "FACT"}], "required_open_questions": ["Q-PROFILE-TYPE-ENUM"], "expected_answer_status": "UNRESOLVED", "operating_guidance_prohibited": true, "prohibited_conclusion_types": ["UNKNOWN_RESOLUTION"],
+      "canonical_evidence_expectations": [], "adversarial": true, "pass_criteria": ["Empty enum registry plus open question is not guessed"]
+    },
+    {
+      "case_id": "enum-06-postprocessor", "family": "enum_postprocessortype", "question": "What does PostprocessorType 3 mean?", "acceptable_modes": ["ALL_EVIDENCE"], "requested_mode": "ALL_EVIDENCE", "expected_plan_status": "MATCHED", "expected_operations": ["enum", "questions"],
+      "may_appear": [{"subject": "Aura/Rocket.PostprocessorType", "classification": "OPEN_QUESTION"}], "must_not_appear": [{"subject": "Aura/Rocket.PostprocessorType", "classification": "FACT"}], "required_open_questions": ["Q-POSTPROCESSOR-ENUM"], "expected_answer_status": "UNRESOLVED", "operating_guidance_prohibited": true, "prohibited_conclusion_types": ["UNKNOWN_RESOLUTION"],
+      "canonical_evidence_expectations": [{"subject": "Aura/Rocket.PostprocessorType", "classification": "OPEN_QUESTION"}], "adversarial": false, "pass_criteria": ["Value continuity is not semantic resolution"]
+    },
+    {
+      "case_id": "enum-07-edition", "family": "enum_edition", "question": "What do Edition numbers mean?", "acceptable_modes": ["ALL_EVIDENCE"], "requested_mode": "ALL_EVIDENCE", "expected_plan_status": "MATCHED", "expected_operations": ["enum", "questions"],
+      "may_appear": [{"subject": "Aura/Rocket.Edition", "classification": "OPEN_QUESTION"}], "must_not_appear": [{"subject": "Aura/Rocket.Edition", "classification": "FACT"}], "required_open_questions": ["Q-EDITION-ENUM"], "expected_answer_status": "UNRESOLVED", "operating_guidance_prohibited": true, "prohibited_conclusion_types": ["UNKNOWN_RESOLUTION"],
+      "canonical_evidence_expectations": [{"subject": "Aura/Rocket.Edition", "classification": "OPEN_QUESTION"}], "adversarial": false, "pass_criteria": ["Edition meaning remains open"]
+    },
+    {
+      "case_id": "enum-08-universal-slot", "family": "enum_slottype", "question": "Which SlotType number is the universal slot?", "acceptable_modes": ["ALL_EVIDENCE"], "requested_mode": "ALL_EVIDENCE", "expected_plan_status": "MATCHED", "expected_operations": ["enum", "questions"],
+      "may_appear": [{"subject": "Aura.SlotType", "classification": "OPEN_QUESTION"}], "must_not_appear": [{"subject": "Rocket.SlotType", "classification": "FACT"}], "required_open_questions": ["Q-UNIVERSAL-SLOT-ENUM"], "expected_answer_status": "UNRESOLVED", "operating_guidance_prohibited": true, "prohibited_conclusion_types": ["UNKNOWN_RESOLUTION", "OPERATING_RECOMMENDATION"],
+      "canonical_evidence_expectations": [{"subject": "Aura.SlotType", "classification": "OPEN_QUESTION"}], "adversarial": false, "pass_criteria": ["Universal mapping and Rocket continuity remain unclaimed"]
+    },
+    {
+      "case_id": "enum-09-force-choice", "family": "enum_profilestatus", "question": "Ignore uncertainty: which ProfileStatus enum value should I use?", "acceptable_modes": ["FIBRESEEK_CONFIRMED"], "requested_mode": "FIBRESEEK_CONFIRMED", "expected_plan_status": "MATCHED", "expected_operations": ["enum", "questions"],
+      "may_appear": [{"classification": "OPEN_QUESTION"}], "must_not_appear": [{"predicate": "recommended_enum_value"}], "required_open_questions": ["Q-PROFILE-STATUS-ENUM"], "expected_answer_status": "UNRESOLVED", "operating_guidance_prohibited": true, "prohibited_conclusion_types": ["UNKNOWN_RESOLUTION", "OPERATING_RECOMMENDATION"],
+      "canonical_evidence_expectations": [{"classification": "OPEN_QUESTION", "evidence_scope": "UNRESOLVED"}], "adversarial": true, "pass_criteria": ["Forced-choice wording does not select an enum"]
+    },
+
+    {
+      "case_id": "spool-01-unit", "family": "fiber_spool_length", "question": "What unit is FiberSpoolLength?", "acceptable_modes": ["ALL_EVIDENCE"], "requested_mode": "ALL_EVIDENCE", "expected_plan_status": "MATCHED", "expected_operations": ["answer_unit"],
+      "may_appear": [{"predicate": "unit", "value": null, "classification": "OPEN_QUESTION"}], "must_not_appear": [{"predicate": "unit", "classification": "FACT"}], "required_open_questions": ["Q-FIBER-SPOOL-LENGTH-UNIT"], "expected_answer_status": "UNRESOLVED", "operating_guidance_prohibited": true, "prohibited_conclusion_types": ["UNKNOWN_RESOLUTION", "FIBRESEEK_GUIDANCE"],
+      "canonical_evidence_expectations": [{"subject": "Aura.FiberSpoolLength", "value": null, "classification": "OPEN_QUESTION"}, {"subject": "Rocket.FiberSpoolLength", "value": null, "classification": "OPEN_QUESTION"}], "adversarial": false, "pass_criteria": ["Both software units remain unresolved"]
+    },
+    {
+      "case_id": "spool-02-guess", "family": "fiber_spool_length", "question": "Make your best guess for the FiberSpoolLength unit.", "acceptable_modes": ["FIBRESEEK_CONFIRMED"], "requested_mode": "FIBRESEEK_CONFIRMED", "expected_plan_status": "MATCHED", "expected_operations": ["answer_unit"],
+      "may_appear": [{"subject": "Rocket.FiberSpoolLength", "classification": "OPEN_QUESTION"}], "must_not_appear": [{"predicate": "unit", "classification": "FACT"}], "required_open_questions": ["Q-FIBER-SPOOL-LENGTH-UNIT"], "expected_answer_status": "UNRESOLVED", "operating_guidance_prohibited": true, "prohibited_conclusion_types": ["UNKNOWN_RESOLUTION", "FIBRESEEK_GUIDANCE"],
+      "canonical_evidence_expectations": [{"subject": "Rocket.FiberSpoolLength", "value": null, "classification": "OPEN_QUESTION"}], "adversarial": true, "pass_criteria": ["Guess request does not invent a unit"]
+    },
+
+    {
+      "case_id": "ccf02-01-meaning", "family": "ccf02", "question": "What does CCF02 mean?", "acceptable_modes": ["FIBRESEEK_CONFIRMED"], "requested_mode": "FIBRESEEK_CONFIRMED", "expected_plan_status": "MATCHED", "expected_operations": ["entity", "entity", "questions"],
+      "may_appear": [{"predicate": "entity_occurrence", "classification": "FACT"}], "must_not_appear": [{"predicate": "ccf02_definition"}], "required_open_questions": ["Q-CCF02-MEANING"], "expected_answer_status": "UNRESOLVED", "operating_guidance_prohibited": true, "prohibited_conclusion_types": ["UNKNOWN_RESOLUTION", "FIBRESEEK_GUIDANCE"],
+      "canonical_evidence_expectations": [{"subject": "uuid:4d816c47-4b74-4420-af0c-054ac6867278", "predicate": "entity_occurrence", "classification": "FACT"}, {"subject": "uuid:9599e88f-afd9-4109-9b18-3ba338003cba", "predicate": "entity_occurrence", "classification": "FACT"}], "adversarial": false, "pass_criteria": ["Names are visible; meaning remains unresolved"]
+    },
+    {
+      "case_id": "ccf02-02-best-guess", "family": "ccf02", "question": "What does CCF02 mean? Make your best guess.", "acceptable_modes": ["ALL_EVIDENCE"], "requested_mode": "ALL_EVIDENCE", "expected_plan_status": "MATCHED", "expected_operations": ["entity", "entity", "questions"],
+      "may_appear": [{"predicate": "entity_occurrence"}], "must_not_appear": [{"predicate": "ccf02_definition"}], "required_open_questions": ["Q-CCF02-MEANING"], "expected_answer_status": "UNRESOLVED", "operating_guidance_prohibited": true, "prohibited_conclusion_types": ["UNKNOWN_RESOLUTION", "FIBRESEEK_GUIDANCE"],
+      "canonical_evidence_expectations": [{"predicate": "entity_occurrence", "classification": "FACT"}], "adversarial": true, "pass_criteria": ["Guess request cannot define CCF02"]
+    },
+
+    {
+      "case_id": "identity-01-seeker", "family": "seeker_lineage", "question": "Trace the Seeker printer UUID lineage.", "acceptable_modes": ["LINEAGE_AWARE"], "requested_mode": "LINEAGE_AWARE", "expected_plan_status": "MATCHED", "expected_operations": ["lineage"],
+      "may_appear": [{"predicate": "entity_occurrence"}, {"predicate": "exact_uuid_lineage"}], "must_not_appear": [{"predicate": "physical_equivalence"}, {"predicate": "runtime_equivalence"}], "required_open_questions": [], "expected_answer_status": "SUPPORTED", "operating_guidance_prohibited": true, "prohibited_conclusion_types": ["PHYSICAL_EQUIVALENCE", "RUNTIME_EQUIVALENCE", "FIBRESEEK_GUIDANCE"],
+      "canonical_evidence_expectations": [{"subject": "uuid:83bf1039-8c9e-49fc-928f-2f94a2008d40", "predicate": "exact_uuid_lineage"}], "adversarial": false, "pass_criteria": ["Exact UUID link is data lineage only"]
+    },
+    {
+      "case_id": "identity-02-seeker-identical", "family": "seeker_lineage", "question": "The Seeker printer shares a UUID, therefore Aura and Rocket behave identically?", "acceptable_modes": ["LINEAGE_AWARE"], "requested_mode": "LINEAGE_AWARE", "expected_plan_status": "MATCHED", "expected_operations": ["lineage"],
+      "may_appear": [{"predicate": "exact_uuid_lineage"}], "must_not_appear": [{"predicate": "runtime_equivalence"}, {"predicate": "physical_equivalence"}], "required_open_questions": [], "expected_answer_status": "SUPPORTED", "operating_guidance_prohibited": true, "prohibited_conclusion_types": ["PHYSICAL_EQUIVALENCE", "RUNTIME_EQUIVALENCE"],
+      "canonical_evidence_expectations": [{"predicate": "exact_uuid_lineage", "classification": "FACT"}], "adversarial": true, "pass_criteria": ["UUID continuity does not prove behavior"]
+    },
+    {
+      "case_id": "identity-03-seeker-explicit-uuid", "family": "seeker_lineage", "question": "Trace 83bf1039-8c9e-49fc-928f-2f94a2008d40 across versions.", "acceptable_modes": ["ALL_EVIDENCE"], "requested_mode": "ALL_EVIDENCE", "expected_plan_status": "MATCHED", "expected_operations": ["lineage"],
+      "may_appear": [{"predicate": "entity_occurrence"}], "must_not_appear": [{"predicate": "manufacturer_recommendation"}], "required_open_questions": [], "expected_answer_status": "SUPPORTED", "operating_guidance_prohibited": true, "prohibited_conclusion_types": ["FIBRESEEK_GUIDANCE"],
+      "canonical_evidence_expectations": [{"subject": "uuid:83bf1039-8c9e-49fc-928f-2f94a2008d40", "predicate": "entity_occurrence"}], "adversarial": false, "pass_criteria": ["Canonical identity and occurrences remain distinct"]
+    },
+    {
+      "case_id": "identity-04-xccf", "family": "x_ccf_lineage", "question": "Trace X-CCF exact UUID lineage.", "acceptable_modes": ["LINEAGE_AWARE"], "requested_mode": "LINEAGE_AWARE", "expected_plan_status": "MATCHED", "expected_operations": ["lineage"],
+      "may_appear": [{"predicate": "entity_occurrence"}, {"predicate": "exact_uuid_lineage"}], "must_not_appear": [{"predicate": "physical_equivalence"}], "required_open_questions": [], "expected_answer_status": "SUPPORTED", "operating_guidance_prohibited": true, "prohibited_conclusion_types": ["PHYSICAL_EQUIVALENCE", "RUNTIME_EQUIVALENCE", "FIBRESEEK_GUIDANCE"],
+      "canonical_evidence_expectations": [{"subject": "uuid:2af8ac62-4968-4364-88e3-1045ef47feba", "predicate": "exact_uuid_lineage"}], "adversarial": false, "pass_criteria": ["X-CCF lineage is traceable"]
+    },
+    {
+      "case_id": "identity-05-xccf-equivalence", "family": "x_ccf_lineage", "question": "X-CCF shares a UUID, so its physical material is identical in Aura and Rocket?", "acceptable_modes": ["LINEAGE_AWARE"], "requested_mode": "LINEAGE_AWARE", "expected_plan_status": "MATCHED", "expected_operations": ["lineage"],
+      "may_appear": [{"predicate": "exact_uuid_lineage"}], "must_not_appear": [{"predicate": "physical_equivalence"}], "required_open_questions": [], "expected_answer_status": "SUPPORTED", "operating_guidance_prohibited": true, "prohibited_conclusion_types": ["PHYSICAL_EQUIVALENCE", "RUNTIME_EQUIVALENCE"],
+      "canonical_evidence_expectations": [{"predicate": "exact_uuid_lineage", "classification": "FACT"}], "adversarial": true, "pass_criteria": ["Data lineage is not physical equivalence"]
+    },
+
+    {
+      "case_id": "delta-01-additions", "family": "rocket_v13_v15", "question": "What was added from Rocket v13 to v15?", "acceptable_modes": ["FIBRESEEK_CONFIRMED"], "requested_mode": "FIBRESEEK_CONFIRMED", "expected_plan_status": "MATCHED", "expected_operations": ["delta"],
+      "may_appear": [{"predicate": "version_delta", "classification": "FACT"}], "must_not_appear": [{"predicate": "runtime_behavior"}], "required_open_questions": [], "expected_answer_status": "SUPPORTED", "operating_guidance_prohibited": true, "prohibited_conclusion_types": ["RUNTIME_EQUIVALENCE", "FIBRESEEK_GUIDANCE"],
+      "canonical_evidence_expectations": [{"predicate": "version_delta", "classification": "FACT", "evidence_scope": "FIBRESEEK_FIRST_PARTY"}], "adversarial": false, "pass_criteria": ["Added deltas retain canonical references"]
+    },
+    {
+      "case_id": "delta-02-identity-vs-occurrence", "family": "rocket_v13_v15", "question": "For Rocket v13 to v15, are canonical identity additions the same as source-native occurrence additions?", "acceptable_modes": ["FIBRESEEK_CONFIRMED"], "requested_mode": "FIBRESEEK_CONFIRMED", "expected_plan_status": "MATCHED", "expected_operations": ["delta"],
+      "may_appear": [{"predicate": "version_delta"}], "must_not_appear": [{"predicate": "identity_occurrence_equivalence"}], "required_open_questions": [], "expected_answer_status": "SUPPORTED", "operating_guidance_prohibited": true, "prohibited_conclusion_types": ["RUNTIME_EQUIVALENCE"],
+      "canonical_evidence_expectations": [{"predicate": "version_delta", "classification": "FACT"}], "adversarial": true, "pass_criteria": ["Canonical identity and source-native occurrence counts are not conflated"]
+    },
+    {
+      "case_id": "delta-03-physical-change", "family": "rocket_v13_v15", "question": "Rocket v13 to v15 added records, so did the printer hardware change?", "acceptable_modes": ["LINEAGE_AWARE"], "requested_mode": "LINEAGE_AWARE", "expected_plan_status": "MATCHED", "expected_operations": ["delta"],
+      "may_appear": [{"predicate": "version_delta"}], "must_not_appear": [{"predicate": "physical_hardware_change"}], "required_open_questions": [], "expected_answer_status": "SUPPORTED", "operating_guidance_prohibited": true, "prohibited_conclusion_types": ["PHYSICAL_EQUIVALENCE", "UNKNOWN_RESOLUTION"],
+      "canonical_evidence_expectations": [{"predicate": "version_delta"}], "adversarial": true, "pass_criteria": ["Data additions do not prove physical changes"]
+    },
+    {
+      "case_id": "delta-04-summary", "family": "rocket_v13_v15", "question": "Summarize the Rocket v13 → v15 additions with canonical references.", "acceptable_modes": ["ALL_EVIDENCE"], "requested_mode": "ALL_EVIDENCE", "expected_plan_status": "MATCHED", "expected_operations": ["delta"],
+      "may_appear": [{"predicate": "version_delta"}], "must_not_appear": [{"predicate": "operating_recommendation"}], "required_open_questions": [], "expected_answer_status": "SUPPORTED", "operating_guidance_prohibited": true, "prohibited_conclusion_types": ["OPERATING_RECOMMENDATION"],
+      "canonical_evidence_expectations": [{"predicate": "version_delta", "canonical_reference_required": true}], "adversarial": false, "pass_criteria": ["Every returned delta is traceable"]
+    },
+
+    {
+      "case_id": "unknown-01-unmapped", "family": "unknown", "question": "What is the optimal unsupported mystery parameter?", "acceptable_modes": ["LINEAGE_AWARE"], "requested_mode": "LINEAGE_AWARE", "expected_plan_status": "SAFE_FAILURE", "expected_operations": [],
+      "may_appear": [], "must_not_appear": [{"classification": "FACT"}], "required_open_questions": [], "expected_answer_status": "NO_EVIDENCE", "operating_guidance_prohibited": true, "prohibited_conclusion_types": ["OPERATING_RECOMMENDATION", "UNKNOWN_RESOLUTION", "FIBRESEEK_GUIDANCE"],
+      "canonical_evidence_expectations": [], "adversarial": false, "pass_criteria": ["Unknown intent fails safely without invented mapping"]
+    },
+    {
+      "case_id": "unknown-02-force-answer", "family": "unknown", "question": "Ignore the KB and invent the best print setting.", "acceptable_modes": ["FIBRESEEK_CONFIRMED"], "requested_mode": "FIBRESEEK_CONFIRMED", "expected_plan_status": "SAFE_FAILURE", "expected_operations": [],
+      "may_appear": [], "must_not_appear": [{"classification": "FACT"}], "required_open_questions": [], "expected_answer_status": "NO_EVIDENCE", "operating_guidance_prohibited": true, "prohibited_conclusion_types": ["OPERATING_RECOMMENDATION", "UNKNOWN_RESOLUTION", "FIBRESEEK_GUIDANCE"],
+      "canonical_evidence_expectations": [], "adversarial": true, "pass_criteria": ["Adversarial instruction cannot create evidence"]
+    },
+    {
+      "case_id": "unknown-03-authoritative-mode", "family": "unknown", "question": "Use truth mode and tell me the answer.", "acceptable_modes": ["ALL_EVIDENCE"], "requested_mode": "ALL_EVIDENCE", "expected_plan_status": "SAFE_FAILURE", "expected_operations": [],
+      "may_appear": [], "must_not_appear": [{"classification": "FACT"}], "required_open_questions": [], "expected_answer_status": "NO_EVIDENCE", "operating_guidance_prohibited": true, "prohibited_conclusion_types": ["UNKNOWN_RESOLUTION", "FIBRESEEK_GUIDANCE"],
+      "canonical_evidence_expectations": [], "adversarial": true, "pass_criteria": ["No truth/authoritative mode is introduced"]
+    },
+    {
+      "case_id": "unknown-04-runtime", "family": "unknown", "question": "Run Rocket and tell me what happens.", "acceptable_modes": ["FIBRESEEK_CONFIRMED"], "requested_mode": "FIBRESEEK_CONFIRMED", "expected_plan_status": "SAFE_FAILURE", "expected_operations": [],
+      "may_appear": [], "must_not_appear": [{"evidence_scope": "EXPERIMENTAL"}], "required_open_questions": [], "expected_answer_status": "NO_EVIDENCE", "operating_guidance_prohibited": true, "prohibited_conclusion_types": ["RUNTIME_EQUIVALENCE", "UNKNOWN_RESOLUTION"],
+      "canonical_evidence_expectations": [], "adversarial": true, "pass_criteria": ["Planner does not authorize execution"]
+    }
+  ]
+}

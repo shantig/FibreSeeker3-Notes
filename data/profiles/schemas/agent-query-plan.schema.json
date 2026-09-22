@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fibreseeker-kb.local/schemas/agent-query-plan.schema.json",
+  "title": "FibreSeeker-KB deterministic agent query plan",
+  "type": "object",
+  "required": [
+    "plan_version", "plan_id", "original_question", "normalized_intent",
+    "requested_evidence_mode", "evidence_mode", "mode_selection",
+    "planner_status", "query_operations", "expected_answer_type",
+    "relevant_open_question_domains", "required_open_question_ids",
+    "operating_guidance_prohibited", "assumptions",
+    "forbidden_conclusion_types"
+  ],
+  "properties": {
+    "plan_version": {"const": "1.0.0"},
+    "plan_id": {"type": "string", "pattern": "^plan:[0-9a-f]{64}$"},
+    "original_question": {"type": "string", "minLength": 1},
+    "normalized_intent": {
+      "type": "object",
+      "required": ["intent", "family", "domain", "fields", "identities", "versions"],
+      "properties": {
+        "intent": {"type": "string"},
+        "family": {"type": "string"},
+        "domain": {"type": "string"},
+        "fields": {"type": "array", "items": {"type": "string"}},
+        "identities": {"type": "array", "items": {"type": "string"}},
+        "versions": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "requested_evidence_mode": {
+      "type": ["string", "null"],
+      "enum": [null, "FIBRESEEK_CONFIRMED", "LINEAGE_AWARE", "HISTORICAL", "ALL_EVIDENCE"]
+    },
+    "evidence_mode": {
+      "enum": ["FIBRESEEK_CONFIRMED", "LINEAGE_AWARE", "HISTORICAL", "ALL_EVIDENCE"]
+    },
+    "mode_selection": {"enum": ["DEFAULT", "EXPLICIT"]},
+    "planner_status": {"enum": ["MATCHED", "SAFE_FAILURE"]},
+    "query_operations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["order", "operation", "arguments", "rationale"],
+        "properties": {
+          "order": {"type": "integer", "minimum": 1},
+          "operation": {
+            "enum": ["answer_unit", "answer_cutter", "answer_field", "field", "enum", "questions", "lineage", "delta", "entity"]
+          },
+          "arguments": {"type": "object"},
+          "rationale": {"type": "string", "minLength": 1}
+        },
+        "additionalProperties": false
+      }
+    },
+    "expected_answer_type": {"type": "string"},
+    "relevant_open_question_domains": {"type": "array", "items": {"type": "string"}},
+    "required_open_question_ids": {"type": "array", "items": {"type": "string"}},
+    "operating_guidance_prohibited": {"const": true},
+    "assumptions": {"type": "array", "items": {"type": "string"}},
+    "forbidden_conclusion_types": {
+      "type": "array",
+      "items": {
+        "enum": ["OPERATING_RECOMMENDATION", "FIBRESEEK_GUIDANCE", "PHYSICAL_EQUIVALENCE", "RUNTIME_EQUIVALENCE", "UNKNOWN_RESOLUTION"]
+      }
+    }
+  },
+  "additionalProperties": false
+}

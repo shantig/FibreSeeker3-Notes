@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fibreseeker-kb.local/schemas/llm-candidate-proposal.schema.json",
+  "title": "Phase 2D bounded model evidence-selection proposal",
+  "type": "object",
+  "required": [
+    "proposal_version", "plan_id", "packet_id", "evidence_mode", "answer_status",
+    "assertions", "conflict_ids", "open_question_ids", "conclusions",
+    "operating_recommendation_requested"
+  ],
+  "properties": {
+    "proposal_version": {"type": "string", "const": "1.0.0"},
+    "plan_id": {"type": "string"},
+    "packet_id": {"type": "string"},
+    "evidence_mode": {"enum": ["FIBRESEEK_CONFIRMED", "LINEAGE_AWARE", "HISTORICAL", "ALL_EVIDENCE"]},
+    "answer_status": {"enum": ["SUPPORTED", "CONFLICTING", "UNRESOLVED", "NO_EVIDENCE"]},
+    "assertions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["evidence_id", "classification", "evidence_scope", "claim_role"],
+        "properties": {
+          "evidence_id": {"type": "string"},
+          "classification": {"enum": ["FACT", "INFERENCE", "OPEN_QUESTION", "EXPERIMENTAL"]},
+          "evidence_scope": {"enum": ["FIBRESEEK_FIRST_PARTY", "HISTORICAL_ANISOPRINT", "LINEAGE_INFERENCE", "UNRESOLVED", "EXPERIMENTAL"]},
+          "claim_role": {"enum": ["EVIDENCE_REPORT", "FIBRESEEK_GUIDANCE", "OPERATING_RECOMMENDATION", "PHYSICAL_EQUIVALENCE", "RUNTIME_EQUIVALENCE", "UNKNOWN_RESOLUTION"]}
+        },
+        "additionalProperties": false
+      }
+    },
+    "conflict_ids": {"type": "array", "items": {"type": "string"}},
+    "open_question_ids": {"type": "array", "items": {"type": "string"}},
+    "conclusions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["conclusion_type", "evidence_ids"],
+        "properties": {
+          "conclusion_type": {"enum": ["EVIDENCE_SUMMARY", "OPERATING_RECOMMENDATION", "FIBRESEEK_GUIDANCE", "PHYSICAL_EQUIVALENCE", "RUNTIME_EQUIVALENCE", "UNKNOWN_RESOLUTION"]},
+          "evidence_ids": {"type": "array", "items": {"type": "string"}}
+        },
+        "additionalProperties": false
+      }
+    },
+    "operating_recommendation_requested": {"type": "boolean"}
+  },
+  "additionalProperties": false
+}

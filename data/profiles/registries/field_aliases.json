@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "aliases": [
+    {"software": "Aura", "entity_type": "*", "original": "GUID", "canonical": "EntityUUID", "classification": "FACT", "source_ids": ["AP-103", "AP-104", "AP-105"], "notes": "Source-native primary UUID."},
+    {"software": "Rocket", "entity_type": "*", "original": "Id", "canonical": "EntityUUID", "classification": "FACT", "source_ids": ["FS-121", "FS-122", "FS-125"], "notes": "Source-native primary UUID."},
+    {"software": "Rocket", "entity_type": "*", "original": "Key", "canonical": "ApplicationKey", "classification": "FACT", "source_ids": ["FS-121", "FS-122", "FS-125"], "notes": "Rocket numeric application key."},
+    {"software": "Aura", "entity_type": "*", "original": "EditionPackage", "canonical": "Edition", "classification": "INFERENCE", "source_ids": ["AP-103", "AP-104", "AP-105", "FS-121"], "notes": "Field continuity only; numeric edition semantics remain unresolved."},
+    {"software": "Aura", "entity_type": "slot", "original": "SlotIndex", "canonical": "SlotIndex", "classification": "FACT", "source_ids": ["AP-103", "AP-104", "AP-105"]},
+    {"software": "Rocket", "entity_type": "slot", "original": "Index", "canonical": "SlotIndex", "classification": "INFERENCE", "source_ids": ["AP-104", "AP-105", "FS-121"]},
+    {"software": "Aura", "entity_type": "slot", "original": "SlotType", "canonical": "SlotType", "classification": "FACT", "source_ids": ["AP-106"]},
+    {"software": "Rocket", "entity_type": "slot", "original": "Type", "canonical": "SlotType", "classification": "INFERENCE", "source_ids": ["AP-104", "AP-105", "FS-121"]},
+    {"software": "Aura", "entity_type": "profile", "original": "FiberMinRadiusF", "canonical": "FiberMinRadius", "classification": "INFERENCE", "source_ids": ["AP-105", "FS-121"]},
+    {"software": "Aura", "entity_type": "profile", "original": "FiberMaxArcSegmentLengthF", "canonical": "FiberMaxArcSegmentLength", "classification": "INFERENCE", "source_ids": ["AP-105", "FS-121"]},
+    {"software": "Aura", "entity_type": "profile", "original": "FiberStartLengthF", "canonical": "FiberStartLength", "classification": "INFERENCE", "source_ids": ["AP-105", "FS-121"]},
+    {"software": "Aura", "entity_type": "profile", "original": "FiberSlowLengthF", "canonical": "FiberSlowLength", "classification": "INFERENCE", "source_ids": ["AP-105", "FS-121"]},
+    {"software": "Aura", "entity_type": "profile", "original": "FiberTensionLengthF", "canonical": "FiberTensionLength", "classification": "INFERENCE", "source_ids": ["AP-105", "FS-121"]},
+    {"software": "Aura", "entity_type": "profile", "original": "FiberTensionFFeedrate", "canonical": "FiberTensionFeedrate", "classification": "INFERENCE", "source_ids": ["AP-105", "FS-121"]},
+    {"software": "Aura", "entity_type": "profile", "original": "FiberStartMaxSpeedF", "canonical": "FiberStartMaxSpeed", "classification": "INFERENCE", "source_ids": ["AP-105", "FS-121"]},
+    {"software": "Aura", "entity_type": "profile", "original": "FiberStartMinSpeedF", "canonical": "FiberStartMinSpeed", "classification": "INFERENCE", "source_ids": ["AP-105", "FS-121"]},
+    {"software": "Aura", "entity_type": "profile", "original": "FiberStartMinLimitSpeedF", "canonical": "FiberStartMinLimitSpeed", "classification": "INFERENCE", "source_ids": ["AP-105", "FS-121"]},
+    {"software": "Aura", "entity_type": "profile", "original": "FiberNormalMaxSpeedF", "canonical": "FiberNormalMaxSpeed", "classification": "INFERENCE", "source_ids": ["AP-105", "FS-121"]},
+    {"software": "Aura", "entity_type": "profile", "original": "FiberNormalMinSpeedF", "canonical": "FiberNormalMinSpeed", "classification": "INFERENCE", "source_ids": ["AP-105", "FS-121"]},
+    {"software": "Aura", "entity_type": "profile", "original": "FiberNormalMinLimitSpeedF", "canonical": "FiberNormalMinLimitSpeed", "classification": "INFERENCE", "source_ids": ["AP-105", "FS-121"]},
+    {"software": "Aura", "entity_type": "profile", "original": "FiberFinishMaxSpeedF", "canonical": "FiberFinishMaxSpeed", "classification": "INFERENCE", "source_ids": ["AP-105", "FS-121"]},
+    {"software": "Aura", "entity_type": "profile", "original": "FiberFinishMinSpeedF", "canonical": "FiberFinishMinSpeed", "classification": "INFERENCE", "source_ids": ["AP-105", "FS-121"]},
+    {"software": "Aura", "entity_type": "profile", "original": "FiberFinishMinLimitSpeedF", "canonical": "FiberFinishMinLimitSpeed", "classification": "INFERENCE", "source_ids": ["AP-105", "FS-121"]}
+  ]
+}

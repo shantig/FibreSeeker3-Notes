@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fibreseeker-kb.local/schemas/agent-safety-evaluation.schema.json",
+  "title": "FibreSeeker-KB deterministic candidate safety evaluation",
+  "type": "object",
+  "required": ["evaluation_version", "packet_id", "candidate_digest", "passed", "violation_count", "violations", "checks"],
+  "properties": {
+    "evaluation_version": {"const": "1.0.0"},
+    "packet_id": {"type": "string"},
+    "candidate_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "passed": {"type": "boolean"},
+    "violation_count": {"type": "integer", "minimum": 0},
+    "violations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "location", "message"],
+        "properties": {
+          "code": {"type": "string"},
+          "location": {"type": "string"},
+          "message": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "checks": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

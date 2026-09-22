@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "domains": {
+    "calibration": ["build_plate", "plastic_nozzle_z", "composite_nozzle_z_offset", "composite_plastic_xy_offset", "verification_print"],
+    "manufacturability": ["minimum_segment", "minimum_perimeter", "minimum_radius", "hole_clearance", "boundary_clearance", "cut_restart_zone", "continuity"],
+    "composite_layer_architecture": ["microlayer", "macrolayer", "layer_package", "entity_layer_height", "reinforcement_cadence", "z_scheduling", "layup_region", "layup_priority"],
+    "fiber_path_generation": ["reinforced_perimeter", "solid_reinforcement", "cellular_reinforcement", "mask", "trajectory", "path_order", "start_end", "hole_boundary"],
+    "design_rules": ["load_orientation", "fiber_direction", "bending", "interlaminar_loading", "stress_concentration", "hole_reinforcement", "part_orientation", "anisotropy"],
+    "materials_process": ["reinforcement_material", "matrix_material", "compatibility", "temperature", "speed", "storage", "drying", "adhesion"],
+    "cutter_feed_mechanics": ["cut_command", "cutter_position", "cut_distance", "restart_length", "feed_length", "load_unload", "fiber_state"],
+    "diagnostics": ["adhesion", "z_offset", "buckling", "clog", "breakage", "restart", "registration", "compression", "moisture"],
+    "maintenance": ["nozzle_replacement", "cutter_adjustment", "cleaning", "inspection", "wear_item", "recalibration", "storage"]
+  },
+  "procedure_chain": ["trigger", "preparation", "procedure", "measurement", "adjustment", "verification"],
+  "diagnostic_chain": ["symptom", "probable_cause", "implicated_subsystem", "test", "corrective_action", "verification"],
+  "layer_hierarchy": ["microlayer", "macrolayer_or_layer_package", "layup_region", "part_laminate"],
+  "boundary_note": "Taxonomy terms organize analog evidence; they do not assert FibreSeek equivalence."
+}

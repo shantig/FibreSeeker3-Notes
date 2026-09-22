@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fibreseeker-kb.local/schemas/llm-request.schema.json",
+  "title": "Phase 2D provider-neutral structured model request",
+  "type": "object",
+  "required": [
+    "request_version", "request_id", "provider_id", "adapter_id", "model_id",
+    "context_packet_id", "plan_id", "prompt_version", "response_format_version",
+    "attempt", "purpose", "instructions", "input", "response_schema"
+  ],
+  "properties": {
+    "request_version": {"const": "1.0.0"},
+    "request_id": {"type": "string", "pattern": "^request:[0-9a-f]{64}$"},
+    "provider_id": {"type": "string"},
+    "adapter_id": {"type": "string"},
+    "model_id": {"type": "string"},
+    "context_packet_id": {"type": "string"},
+    "plan_id": {"type": "string"},
+    "prompt_version": {"const": "1.0.0"},
+    "response_format_version": {"const": "evidence-selection-1.0.0"},
+    "attempt": {"type": "integer", "minimum": 1},
+    "purpose": {"enum": ["INITIAL", "REPAIR"]},
+    "instructions": {"type": "string"},
+    "input": {
+      "type": "object",
+      "required": ["question", "evidence_mode", "context_packet", "response_contract", "repair"],
+      "properties": {
+        "question": {"type": "string"},
+        "evidence_mode": {"enum": ["FIBRESEEK_CONFIRMED", "LINEAGE_AWARE", "HISTORICAL", "ALL_EVIDENCE"]},
+        "context_packet": {"type": "object"},
+        "response_contract": {"type": "object"},
+        "repair": {"type": ["object", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "response_schema": {"type": "object"}
+  },
+  "additionalProperties": false
+}

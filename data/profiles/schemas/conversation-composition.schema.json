@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fibreseeker-kb.local/schemas/conversation-composition.schema.json",
+  "title": "Phase 2E isolated multi-intent composition result",
+  "type": "object",
+  "required": ["composition_version", "composition_id", "question", "question_digest", "prior_state_id", "evidence_mode", "mode_transition", "reference_resolution", "branches", "coverage", "rendered_answer", "post_render_validation", "updated_state", "metrics"],
+  "properties": {
+    "composition_version": {"const": "1.0.0"},
+    "composition_id": {"type": "string", "pattern": "^composition:[0-9a-f]{64}$"},
+    "question": {"type": "string"},
+    "question_digest": {"type": "string"},
+    "prior_state_id": {"type": "string"},
+    "evidence_mode": {"enum": ["FIBRESEEK_CONFIRMED", "LINEAGE_AWARE", "HISTORICAL", "ALL_EVIDENCE"]},
+    "mode_transition": {"type": ["string", "null"]},
+    "reference_resolution": {"type": "object"},
+    "branches": {"type": "array", "items": {"type": "object"}},
+    "coverage": {"type": "object"},
+    "rendered_answer": {"type": "object"},
+    "post_render_validation": {"type": "object"},
+    "updated_state": {"$ref": "conversation-state.schema.json"},
+    "metrics": {"type": "object"}
+  },
+  "additionalProperties": false
+}

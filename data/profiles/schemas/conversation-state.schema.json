@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fibreseeker-kb.local/schemas/conversation-state.schema.json",
+  "title": "Phase 2E deterministic conversational planning state",
+  "type": "object",
+  "required": ["state_version", "state_id", "evidence_mode", "validated_turn_count", "validated_turns", "active_referents", "trust_boundary"],
+  "properties": {
+    "state_version": {"const": "1.0.0"},
+    "state_id": {"type": "string", "pattern": "^conversation-state:[0-9a-f]{64}$"},
+    "evidence_mode": {"enum": ["FIBRESEEK_CONFIRMED", "LINEAGE_AWARE", "HISTORICAL", "ALL_EVIDENCE"]},
+    "validated_turn_count": {"type": "integer", "minimum": 0},
+    "validated_turns": {"type": "array", "items": {"$ref": "#/$defs/validatedTurn"}},
+    "active_referents": {
+      "type": "object",
+      "required": ["families", "fields", "identities", "versions"],
+      "properties": {
+        "families": {"type": "array", "items": {"type": "string"}},
+        "fields": {"type": "array", "items": {"type": "string"}},
+        "identities": {"type": "array", "items": {"type": "string"}},
+        "versions": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "trust_boundary": {"const": "PLANNING_METADATA_ONLY_NOT_EVIDENCE"}
+  },
+  "$defs": {
+    "intent": {
+      "type": "object",
+      "required": ["intent", "family", "domain", "fields", "identities", "versions"],
+      "properties": {
+        "intent": {"type": "string"},
+        "family": {"type": "string"},
+        "domain": {"type": "string"},
+        "fields": {"type": "array", "items": {"type": "string"}},
+        "identities": {"type": "array", "items": {"type": "string"}},
+        "versions": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "validatedTurn": {
+      "type": "object",
+      "required": ["turn_id", "turn_digest", "outcome", "evidence_mode", "normalized_intents", "plan_ids", "packet_ids", "candidate_digests"],
+      "properties": {
+        "turn_id": {"type": "string"},
+        "turn_digest": {"type": "string"},
+        "outcome": {"enum": ["VALIDATED", "MODE_TRANSITION"]},
+        "evidence_mode": {"enum": ["FIBRESEEK_CONFIRMED", "LINEAGE_AWARE", "HISTORICAL", "ALL_EVIDENCE"]},
+        "normalized_intents": {"type": "array", "items": {"$ref": "#/$defs/intent"}},
+        "plan_ids": {"type": "array", "items": {"type": "string"}},
+        "packet_ids": {"type": "array", "items": {"type": "string"}},
+        "candidate_digests": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

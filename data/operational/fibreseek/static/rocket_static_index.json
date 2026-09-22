@@ -1,0 +1,51 @@
+{
+  "artifacts": [
+    {
+      "method": "read-only DMG mount; ASAR integrity-aware static extraction",
+      "path": "Contents/Resources/app.asar",
+      "sha256": "9c0948aaf2e74e3ca8270a6f37e8f2409ccade92af56d87988fe170289b2b739"
+    },
+    {
+      "path": "app.asar/dist/assets/Consts-B3pY6a9u.js",
+      "role": "English UI semantics and labels",
+      "sha256": "89bd54528479f6ab262e0db653fe949e47b6aac457aaa6db59a9f1c05265397b"
+    },
+    {
+      "path": "app.asar/dist/assets/Scene-B9JN9MXz.js",
+      "role": "profile enums, mask editor, machine-control code observed statically",
+      "sha256": "337e2618ef11605209cf5ce18727cbe177218d984c569cfc448b0f2f3a17515d"
+    },
+    {
+      "path": "app.asar/dist/assets/generationResultMapperWorker-BiU3AB3X.js",
+      "role": "generated G-code parsing contract",
+      "sha256": "e64b8a71bf8afb70837f908766d9a7afe053d82756bc68b2d5b61c0f33932b97"
+    },
+    {
+      "path": "backend/monolith/publish/Aura2SlicingEngine.dll",
+      "role": "static .NET metadata/string index",
+      "sha256": "e47603e52218552c6da42c6e863e2360756158ebbef41f0296e4e50c0bcddaba"
+    }
+  ],
+  "backend_version": "1.3.1.480",
+  "baseline_commit": "d49899368227979c9ea743ed09fff9b4bba06c88",
+  "container_sha256": "ee76209d5f54e2c5d5f6be06ee2408e0bfae46ba56a4dfd17242e7b9e0de352c",
+  "execution_performed": false,
+  "frontend_build": 1868,
+  "not_executed": [
+    "Rocket Electron application",
+    "Aura.Monolith.API backend",
+    "Aura2SlicingEngine",
+    "firmware",
+    "G-code",
+    "printer or machine-control commands"
+  ],
+  "profile_source": {
+    "extruder_cs_sha256": "70279de5079246cb93ad8a624ff889ba40a966b6ee22cf22b9e927743e876428",
+    "profiles_sha256": "dd9979672da1100f5e03c165d0cad78eb63c1ab276d20f56308474485b5638c8",
+    "source_id": "FS-125",
+    "version": 15
+  },
+  "rocket_version": "1.3.2",
+  "schema_version": "1.0.0",
+  "source_id": "FS-122"
+}

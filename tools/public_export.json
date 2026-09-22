@@ -1,0 +1,63 @@
+{
+  "description": "Allowlist and redaction contract for the public export of FibreSeeker-KB. export_public.py copies git-tracked files that match an include glob and no deny glob, applies the redactions, and strips JPEG metadata. check_public_tree.py re-derives the deny set and scans for anything that must not be published. Fail closed.",
+  "include": [
+    "README.md",
+    "LICENSE",
+    "LICENSE-CODE",
+    "docs/**",
+    "notebook/**",
+    "experiments/**",
+    "data/**",
+    "tools/**",
+    "sources/manifest.jsonl",
+    "sources/manifests/**",
+    "sources/SOURCE_POLICY.md",
+    "sources/SOURCE_MAP.md",
+    "sources/PATH_MIGRATION_2026-09-22.json",
+    "sources/loom/**/SESSION.md",
+    "sources/loom/README.md"
+  ],
+  "deny": [
+    "CLAUDE.md",
+    ".claude/**",
+    "project/**",
+    "docs/vendor/**",
+    "docs/firmware/package-access.md",
+    "sources/vendor-docs/**",
+    "sources/firmware-packages/**",
+    "sources/firmware/**",
+    "sources/web/**",
+    "sources/loom/**",
+    "tools/tests/test_loom_evidence.py",
+    "tools/tests/test_firmware_evidence.py",
+    "tools/validate_loom_evidence.py",
+    "**/.DS_Store",
+    "**/__pycache__/**"
+  ],
+  "deny_exceptions": [
+    "sources/loom/**/SESSION.md",
+    "sources/loom/README.md"
+  ],
+  "private_only_tests": [
+    "tools/tests/test_loom_evidence.py",
+    "tools/tests/test_firmware_evidence.py",
+    "tools/tests/test_phase2fb.py",
+    "tools/tests/test_samples.py",
+    "tools/tests/test_experiments.py"
+  ],
+  "redactions": [
+    {"name": "lan_ipv4", "pattern": "192\\.168\\.\\d{1,3}\\.\\d{1,3}", "replacement": "<printer-ip>"},
+    {"name": "private_ipv4_10", "pattern": "\\b10\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\b", "replacement": "<lan-ip>"},
+    {"name": "ipv6_public", "pattern": "\\b2[0-9a-fA-F]{3}:[0-9a-fA-F:]{6,}\\b", "replacement": "<ipv6-redacted>"},
+    {"name": "mac", "pattern": "\\b([0-9a-fA-F]{2}:){5}[0-9a-fA-F]{2}\\b", "replacement": "<mac-redacted>"},
+    {"name": "home_path", "pattern": "/Users/[A-Za-z0-9._-]+", "replacement": "<repo>"},
+    {"name": "nas_path", "pattern": "/Volumes/[A-Za-z0-9 ._-]+", "replacement": "<archive>"},
+    {"name": "facebook_frank", "pattern": "Frank P\\.", "replacement": "another owner"}
+  ],
+  "max_file_bytes": 20971520,
+  "strip_jpeg_metadata": true,
+  "license": {
+    "docs_data": "CC-BY-4.0",
+    "code": "MIT"
+  }
+}

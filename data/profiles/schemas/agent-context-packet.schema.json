@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fibreseeker-kb.local/schemas/agent-context-packet.schema.json",
+  "title": "FibreSeeker-KB model-neutral agent context packet",
+  "type": "object",
+  "required": [
+    "packet_version", "packet_id", "plan_id", "question", "normalized_intent",
+    "evidence_mode", "planner_status", "expected_answer_type", "answer_status",
+    "evidence_items", "conflicts", "open_questions", "retrievals",
+    "canonical_refs", "manufacturer_guidance_boundary",
+    "operating_guidance_prohibited", "forbidden_conclusion_types",
+    "assumptions", "warnings", "metrics"
+  ],
+  "properties": {
+    "packet_version": {"const": "1.0.0"},
+    "packet_id": {"type": "string", "pattern": "^packet:[0-9a-f]{64}$"},
+    "plan_id": {"type": "string", "pattern": "^plan:[0-9a-f]{64}$"},
+    "question": {"type": "string"},
+    "normalized_intent": {"type": "object"},
+    "evidence_mode": {"enum": ["FIBRESEEK_CONFIRMED", "LINEAGE_AWARE", "HISTORICAL", "ALL_EVIDENCE"]},
+    "planner_status": {"enum": ["MATCHED", "SAFE_FAILURE"]},
+    "expected_answer_type": {"type": "string"},
+    "answer_status": {"enum": ["SUPPORTED", "CONFLICTING", "UNRESOLVED", "NO_EVIDENCE"]},
+    "evidence_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "evidence_id", "kind", "subject", "predicate", "value", "unit",
+          "classification", "evidence_scope", "provenance_class", "source_ids",
+          "manufacturer_guidance", "canonical_refs", "canonical_reference_required",
+          "details"
+        ],
+        "properties": {
+          "evidence_id": {"type": "string"},
+          "kind": {"type": "string"},
+          "subject": {"type": "string"},
+          "predicate": {"type": "string"},
+          "value": {},
+          "unit": {"type": ["string", "null"]},
+          "classification": {"enum": ["FACT", "INFERENCE", "OPEN_QUESTION", "EXPERIMENTAL"]},
+          "evidence_scope": {"enum": ["FIBRESEEK_FIRST_PARTY", "HISTORICAL_ANISOPRINT", "LINEAGE_INFERENCE", "UNRESOLVED", "EXPERIMENTAL"]},
+          "provenance_class": {"type": ["string", "null"]},
+          "source_ids": {"type": "array", "items": {"type": "string"}},
+          "manufacturer_guidance": {"type": ["string", "null"]},
+          "canonical_refs": {"type": "array", "items": {"$ref": "#/$defs/canonicalRef"}},
+          "canonical_reference_required": {"type": "boolean"},
+          "details": {"type": "object"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "conflicts": {"type": "array", "items": {"type": "object"}},
+    "open_questions": {"type": "array", "items": {"type": "object", "required": ["question_id", "classification"]}},
+    "retrievals": {"type": "array", "items": {"type": "object"}},
+    "canonical_refs": {"type": "array", "items": {"$ref": "#/$defs/canonicalRef"}},
+    "manufacturer_guidance_boundary": {"type": "object"},
+    "operating_guidance_prohibited": {"const": true},
+    "forbidden_conclusion_types": {"type": "array", "items": {"type": "string"}},
+    "assumptions": {"type": "array", "items": {"type": "string"}},
+    "warnings": {"type": "array", "items": {"type": "string"}},
+    "metrics": {
+      "type": "object",
+      "required": ["payload_bytes_excluding_metrics", "token_proxy_excluding_metrics"],
+      "properties": {
+        "payload_bytes_excluding_metrics": {"type": "integer", "minimum": 0},
+        "token_proxy_excluding_metrics": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "canonicalRef": {
+      "type": "object",
+      "required": ["path", "record_id", "record_sha256"],
+      "properties": {
+        "path": {"type": "string"},
+        "record_id": {"type": "string"},
+        "record_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": false
+    }
+  }
+}

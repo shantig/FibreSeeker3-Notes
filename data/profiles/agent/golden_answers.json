@@ -1,0 +1,111 @@
+{
+  "golden_version": "1.0.0",
+  "description": "Minimal structured semantic goldens. Phase 2B responses remain authoritative; these fixtures assert only high-risk classifications, conflicts, and unresolved boundaries.",
+  "answers": [
+    {
+      "golden_id": "G-LINEAR-DENSITY-LINEAGE",
+      "question": "What is the unit of LinearDensity?",
+      "evidence_mode": "LINEAGE_AWARE",
+      "answer_status": "UNRESOLVED",
+      "required_assertions": [
+        {"subject": "Aura.LinearDensity", "predicate": "unit", "value": "tex", "classification": "FACT", "evidence_scope": "HISTORICAL_ANISOPRINT"},
+        {"subject": "Rocket.LinearDensity", "predicate": "lineage_unit", "value": "tex", "classification": "INFERENCE", "evidence_scope": "LINEAGE_INFERENCE"},
+        {"subject": "FibreSeek.LinearDensity", "predicate": "manufacturer_confirmed_unit", "value": null, "classification": "OPEN_QUESTION", "evidence_scope": "UNRESOLVED"}
+      ],
+      "required_open_questions": [],
+      "minimum_conflicts": 0,
+      "forbidden_conclusion_types": ["FIBRESEEK_GUIDANCE", "UNKNOWN_RESOLUTION"]
+    },
+    {
+      "golden_id": "G-LINEAR-DENSITY-CONFIRMED",
+      "question": "What unit does FibreSeek confirm for LinearDensity?",
+      "evidence_mode": "FIBRESEEK_CONFIRMED",
+      "answer_status": "UNRESOLVED",
+      "required_assertions": [
+        {"subject": "Rocket.LinearDensity", "predicate": "first_party_unit_label", "value": null, "classification": "FACT", "evidence_scope": "FIBRESEEK_FIRST_PARTY"},
+        {"subject": "FibreSeek.LinearDensity", "predicate": "manufacturer_confirmed_unit", "value": null, "classification": "OPEN_QUESTION"}
+      ],
+      "required_open_questions": [],
+      "minimum_conflicts": 0,
+      "forbidden_conclusion_types": ["FIBRESEEK_GUIDANCE", "UNKNOWN_RESOLUTION"]
+    },
+    {
+      "golden_id": "G-CUTTER-CONFLICT",
+      "question": "What is the cutter distance?",
+      "evidence_mode": "LINEAGE_AWARE",
+      "answer_status": "CONFLICTING",
+      "required_assertions": [
+        {"subject": "rocket-v15.CFC", "predicate": "CutDistance", "value": 58, "classification": "FACT"},
+        {"subject": "rocket-v15.CFC", "predicate": "FiberRestartLength", "value": 55, "classification": "FACT"},
+        {"subject": "rocket-v15.CFC", "predicate": "CutCode_comment_distance", "value": 54.8, "classification": "FACT"}
+      ],
+      "required_open_questions": ["Q-CUTTER-RUNTIME-PRECEDENCE"],
+      "minimum_conflicts": 1,
+      "forbidden_conclusion_types": ["OPERATING_RECOMMENDATION", "RUNTIME_EQUIVALENCE", "UNKNOWN_RESOLUTION"]
+    },
+    {
+      "golden_id": "G-MACRO-LAYER",
+      "question": "Trace MacroLayerHeight across Aura and Rocket.",
+      "evidence_mode": "LINEAGE_AWARE",
+      "answer_status": "CONFLICTING",
+      "required_assertions": [
+        {"subject": "aura-2.6.1-sk3.uuid:d294a2dc-9d7f-460a-acf4-dc50b656d44a", "predicate": "MacroLayerHeight", "value": 0.24},
+        {"subject": "rocket-v13.uuid:d294a2dc-9d7f-460a-acf4-dc50b656d44a", "predicate": "MacroLayerHeight", "value": 0.2}
+      ],
+      "required_open_questions": ["Q-ROCKET-OVERRIDE-PRECEDENCE"],
+      "minimum_conflicts": 1,
+      "forbidden_conclusion_types": ["OPERATING_RECOMMENDATION", "RUNTIME_EQUIVALENCE", "UNKNOWN_RESOLUTION"]
+    },
+    {
+      "golden_id": "G-INFILL-ENUM",
+      "question": "Map InfillFType 0 and 2 across Aura and Rocket.",
+      "evidence_mode": "LINEAGE_AWARE",
+      "answer_status": "UNRESOLVED",
+      "required_assertions": [
+        {"subject": "Aura.InfillFType", "predicate": "enum_mapping", "classification": "FACT", "evidence_scope": "HISTORICAL_ANISOPRINT"},
+        {"subject": "Rocket.InfillFType", "predicate": "enum_mapping", "classification": "INFERENCE", "evidence_scope": "LINEAGE_INFERENCE"},
+        {"predicate": "enum_mapping", "classification": "OPEN_QUESTION", "evidence_scope": "UNRESOLVED"}
+      ],
+      "required_open_questions": ["Q-TETRAGRID-ENUM"],
+      "minimum_conflicts": 0,
+      "forbidden_conclusion_types": ["OPERATING_RECOMMENDATION", "FIBRESEEK_GUIDANCE", "UNKNOWN_RESOLUTION"]
+    },
+    {
+      "golden_id": "G-FIBER-SPOOL-LENGTH",
+      "question": "What unit is FiberSpoolLength?",
+      "evidence_mode": "ALL_EVIDENCE",
+      "answer_status": "UNRESOLVED",
+      "required_assertions": [
+        {"subject": "Aura.FiberSpoolLength", "predicate": "unit", "value": null, "classification": "OPEN_QUESTION"},
+        {"subject": "Rocket.FiberSpoolLength", "predicate": "unit", "value": null, "classification": "OPEN_QUESTION"}
+      ],
+      "required_open_questions": ["Q-FIBER-SPOOL-LENGTH-UNIT"],
+      "minimum_conflicts": 0,
+      "forbidden_conclusion_types": ["UNKNOWN_RESOLUTION", "FIBRESEEK_GUIDANCE"]
+    },
+    {
+      "golden_id": "G-SEEKER-IDENTITY",
+      "question": "Trace the Seeker printer UUID lineage.",
+      "evidence_mode": "LINEAGE_AWARE",
+      "answer_status": "SUPPORTED",
+      "required_assertions": [
+        {"subject": "uuid:83bf1039-8c9e-49fc-928f-2f94a2008d40", "predicate": "exact_uuid_lineage", "classification": "FACT"}
+      ],
+      "required_open_questions": [],
+      "minimum_conflicts": 0,
+      "forbidden_conclusion_types": ["PHYSICAL_EQUIVALENCE", "RUNTIME_EQUIVALENCE", "FIBRESEEK_GUIDANCE"]
+    },
+    {
+      "golden_id": "G-XCCF-IDENTITY",
+      "question": "Trace X-CCF exact UUID lineage.",
+      "evidence_mode": "LINEAGE_AWARE",
+      "answer_status": "SUPPORTED",
+      "required_assertions": [
+        {"subject": "uuid:2af8ac62-4968-4364-88e3-1045ef47feba", "predicate": "exact_uuid_lineage", "classification": "FACT"}
+      ],
+      "required_open_questions": [],
+      "minimum_conflicts": 0,
+      "forbidden_conclusion_types": ["PHYSICAL_EQUIVALENCE", "RUNTIME_EQUIVALENCE", "FIBRESEEK_GUIDANCE"]
+    }
+  ]
+}

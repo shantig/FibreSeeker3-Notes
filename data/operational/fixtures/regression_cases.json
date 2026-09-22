@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.0.0",
+  "cases": [
+    {
+      "fixture_id": "2FA-01",
+      "topic": "macrolayer semantics",
+      "record_ids": [
+        "OPK-0014",
+        "OPK-0015"
+      ],
+      "must_hold": "macrolayer is an abstraction/layer package; not an extra physical layer"
+    },
+    {
+      "fixture_id": "2FA-02",
+      "topic": "nozzle XY calibration",
+      "record_ids": [
+        "OPK-0007"
+      ],
+      "must_hold": "Composer analog only; service print and repeat verification"
+    },
+    {
+      "fixture_id": "2FA-03",
+      "topic": "composite Z-offset calibration",
+      "record_ids": [
+        "OPK-0005",
+        "OPK-0006"
+      ],
+      "must_hold": "relative nozzle Z; not FibreSeek guidance"
+    },
+    {
+      "fixture_id": "2FA-04",
+      "topic": "minimum fiber length",
+      "record_ids": [
+        "OPK-0009",
+        "OPK-0011",
+        "OPK-0012"
+      ],
+      "must_hold": "45 is perimeter field; segment fields are distinct; units unresolved"
+    },
+    {
+      "fixture_id": "2FA-05",
+      "topic": "hole-adjacent fiber constraint",
+      "record_ids": [
+        "OPK-0010",
+        "OPK-0013"
+      ],
+      "must_hold": "no 12 mm hole-clearance rule recovered"
+    },
+    {
+      "fixture_id": "2FA-06",
+      "topic": "cutter/restart behavior",
+      "record_ids": [
+        "OPK-0037",
+        "OPK-0038",
+        "OPK-0041"
+      ],
+      "must_hold": "same-name analog relationships do not establish Rocket precedence"
+    },
+    {
+      "fixture_id": "2FA-07",
+      "topic": "diagnostic/failure-mode chain",
+      "record_ids": [
+        "OPK-0046"
+      ],
+      "must_hold": "symptom, subsystem, corrective action, and verification remain linked"
+    },
+    {
+      "fixture_id": "2FA-08",
+      "topic": "training-video-derived claim",
+      "synthetic_record": {
+        "assertion_kind": "HUMAN_TIMESTAMP_NOTE",
+        "guidance_status": "UNVERIFIED_NOTE",
+        "fibreseek_applicability": "UNRESOLVED",
+        "source_reference": "VID-AP-124 @ 12:43"
+      },
+      "must_hold": "timestamp note cannot become FibreSeek evidence without validation"
+    },
+    {
+      "fixture_id": "2FA-09",
+      "topic": "firmware code constant",
+      "record_ids": [
+        "OPK-0043"
+      ],
+      "must_hold": "code constant remains NOT_GUIDANCE"
+    },
+    {
+      "fixture_id": "2FA-10",
+      "topic": "analog value promotion",
+      "record_ids": [
+        "OPK-0009"
+      ],
+      "must_hold": "Anisoprint value cannot become FibreSeek operating value"
+    }
+  ]
+}

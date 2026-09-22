@@ -1,0 +1,62 @@
+{
+  "delta_classification_counts": {
+    "added": 716,
+    "removed": 678,
+    "renamed": 71,
+    "source_branch_changed": 6,
+    "structurally_changed": 134,
+    "unchanged": 12815,
+    "value_changed": 8767
+  },
+  "delta_counts": {
+    "aura-2.5.8__aura-2.6.2": 8858,
+    "aura-2.6.1-sk3__rocket-v13": 575,
+    "aura-2.6.2__aura-2.6.1-sk3": 285,
+    "aura-2.6.2__rocket-v13": 427,
+    "aura-seeker-branches__rocket-v13": 94,
+    "rocket-v13__rocket-v15": 12783
+  },
+  "direct_aura_to_rocket_identity_link_count": 16,
+  "duplicate_occurrence_counts": {
+    "aura-2.5.8": 0,
+    "aura-2.6.1-sk3": 0,
+    "aura-2.6.2": 0,
+    "rocket-v13": 4,
+    "rocket-v15": 6
+  },
+  "entity_counts": {
+    "aura-2.5.8": 188,
+    "aura-2.6.1-sk3": 15,
+    "aura-2.6.2": 200,
+    "rocket-v13": 101,
+    "rocket-v15": 116
+  },
+  "field_counts": {
+    "aura-2.5.8": 8795,
+    "aura-2.6.1-sk3": 534,
+    "aura-2.6.2": 9191,
+    "rocket-v13": 12681,
+    "rocket-v15": 14520
+  },
+  "file_sha256": {
+    "deltas/aura-2.5.8__aura-2.6.2.jsonl": "1617b461ebf4770d1df7a1631ac0b38527b60bada18d1bcd21852180ed988391",
+    "deltas/aura-2.6.1-sk3__rocket-v13.jsonl": "c24450e2f2ec2bf3d505aa97dede5db00a6acbd6147daad6b49af8404f35a8e4",
+    "deltas/aura-2.6.2__aura-2.6.1-sk3.jsonl": "50af78d0b3c39dcf48c41e1dd75465f633138c35658fe7b705c4af961946a48e",
+    "deltas/aura-2.6.2__rocket-v13.jsonl": "8f57eb36514d296c48563857f341b8a5dfcec7ca911dc0153484f053d6893a7b",
+    "deltas/aura-seeker-branches__rocket-v13.jsonl": "a7d11f64d75d8a0ea39941afe03348fa15b35ed1a9c2e90288d6be38cac9b255",
+    "deltas/rocket-v13__rocket-v15.jsonl": "8025f5198d2305d277124a2bdf1c7f7b5f6f422fdc1bf808c9c323676feee679",
+    "identity/foreign_key_relationships.jsonl": "a78fa05fd8ce34b654bf4249a3050906c1f2f6e71dc92ae10371048575f52344",
+    "identity/identity_links.jsonl": "9c97a8ea6c59f81063118aa27f384f012ca6d92cfcd051a267850f7bd0c6ab6e",
+    "sources.json": "636fa7ff2e4e716e789952539b9b0fcf426a0b11d75f239d1797117b2b3f87a7",
+    "versions/aura-2.5.8/entities.jsonl": "1cf6d737f3818e6f5efce25673ab66dbdf2f3ce4352af86a7a3373e37db5256d",
+    "versions/aura-2.6.1-sk3/entities.jsonl": "b679ceed6d275c47623554db1fac363dd7d99d67c2eb25b3ac9c594e9e419463",
+    "versions/aura-2.6.2/entities.jsonl": "cb641d98bb51606667fdf0c479b900e203a695577e46c55ccc90fff5da5cb16b",
+    "versions/rocket-v13/entities.jsonl": "40af9e258cc5e416b80abf97d2ff6cff87db8abbc3a659cd268ac51cd79c9282",
+    "versions/rocket-v15/entities.jsonl": "78ffebfa19544aadd6de0a599632e56406ee3c1aa97b26576c9b127e505d9c00"
+  },
+  "foreign_key_relationship_count": 750,
+  "identity_link_count": 298,
+  "schema_version": "1.0.0",
+  "total_entities": 620,
+  "total_fields": 45721
+}

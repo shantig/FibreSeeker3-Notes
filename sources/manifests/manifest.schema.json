@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.fibreseeker-kb/manifest.schema.json",
+  "title": "FibreSeeker KB source manifest record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "record_id",
+    "record_kind",
+    "source_url",
+    "final_url",
+    "title",
+    "publisher",
+    "provenance_class",
+    "discovered_utc",
+    "retrieved_utc",
+    "original_filename",
+    "local_path",
+    "sha256",
+    "mime_type",
+    "document_date",
+    "notes",
+    "license",
+    "copyright_status",
+    "acquisition_status",
+    "supersedes_id"
+  ],
+  "properties": {
+    "record_id": {"type": "string", "pattern": "^[A-Z]{2}-[0-9]{3,}$"},
+    "record_kind": {"enum": ["discovery", "acquisition", "derived"]},
+    "source_url": {"type": "string", "format": "uri"},
+    "final_url": {"type": ["string", "null"], "format": "uri"},
+    "title": {"type": "string", "minLength": 1},
+    "publisher": {"type": "string", "minLength": 1},
+    "provenance_class": {
+      "enum": [
+        "FIBRESEEK_OFFICIAL",
+        "ANISOPRINT_OFFICIAL",
+        "ACADEMIC",
+        "PATENT",
+        "COMMUNITY",
+        "INFERRED",
+        "EXPERIMENTAL"
+      ]
+    },
+    "discovered_utc": {"type": "string", "format": "date-time"},
+    "retrieved_utc": {"type": ["string", "null"], "format": "date-time"},
+    "original_filename": {"type": ["string", "null"]},
+    "local_path": {"type": ["string", "null"]},
+    "sha256": {"type": ["string", "null"], "pattern": "^[a-f0-9]{64}$"},
+    "mime_type": {"type": ["string", "null"]},
+    "byte_size": {"type": ["integer", "null"], "minimum": 0},
+    "http_status": {"type": ["integer", "null"], "minimum": 100, "maximum": 599},
+    "software_version": {"type": ["string", "null"]},
+    "document_date": {"type": ["string", "null"]},
+    "notes": {"type": "string"},
+    "license": {"type": ["string", "null"]},
+    "copyright_status": {"type": ["string", "null"]},
+    "acquisition_status": {
+      "enum": ["discovered", "queued", "acquired", "failed", "blocked", "derived"]
+    },
+    "supersedes_id": {"type": ["string", "null"]}
+  }
+}

@@ -1,0 +1,1833 @@
+{
+  "adapter_id": "codex-exec-v1",
+  "adversarial_case_count": 18,
+  "artifact_classification": "EVALUATION_ARTIFACT_NOT_EVIDENCE",
+  "case_count": 39,
+  "efficiency": {
+    "approximate_cost": null,
+    "cost_note": "Adapter/provider metadata did not expose a billable cost.",
+    "end_to_end_latency": {
+      "max_ms": 58289.57,
+      "median_ms": 17813.763,
+      "min_ms": 7907.577,
+      "p95_ms": 57894.81
+    },
+    "model_latency": {
+      "max_ms": 32416.967,
+      "median_ms": 17848.813,
+      "min_ms": 7904.451,
+      "p95_ms": 28012.61
+    },
+    "usage": {
+      "input_tokens": 711083,
+      "output_tokens": 34670,
+      "total_tokens": 745753
+    }
+  },
+  "fidelity": {
+    "accepted_candidates_are_phase2c_evaluator_validated": true,
+    "case_expectation_pass_count": 39,
+    "provenance_source_ids_and_canonical_refs_are_copied_not_generated": true,
+    "technical_values_materialized_from_packet_only": true
+  },
+  "live_evaluation_version": "1.0.0",
+  "model_id": "gpt-5.4",
+  "planner": {
+    "safe_failure_count": 4,
+    "safe_failure_rate": 0.102564
+  },
+  "prompt_version": "1.0.0",
+  "provider_id": "openai",
+  "reliability": {
+    "benchmark_fidelity_pass_count": 39,
+    "benchmark_fidelity_pass_rate": 1.0,
+    "benchmark_pass_count": 39,
+    "final_fail_closed_count": 0,
+    "final_fail_closed_rate": 0.0,
+    "final_validated_answer_count": 39,
+    "final_validated_answer_rate": 1.0,
+    "first_pass_safety_pass_count": 33,
+    "first_pass_safety_pass_rate": 0.846154,
+    "first_pass_schema_valid_count": 39,
+    "first_pass_schema_valid_rate": 1.0,
+    "repair_attempted_count": 6,
+    "repair_success_rate_when_attempted": 1.0,
+    "repaired_success_count": 6
+  },
+  "repair_limit": 1,
+  "response_format_version": "evidence-selection-1.0.0",
+  "results": [
+    {
+      "adversarial": false,
+      "attempts": [
+        {
+          "attempt": 1,
+          "candidate_digest": "249919e3896bd5a05cbd73c794e6bbf4cf7138732be12caada0be5b4882ba78a",
+          "evaluator_passed": true,
+          "latency_ms": 17848.813,
+          "parse_status": "PARSED",
+          "proposal_digest": "aa35a152f5f57a8c7c4ba268f932c879649b83b68401576a9c7364d675014224",
+          "purpose": "INITIAL",
+          "raw_provider_status": "completed",
+          "request_id": "request:6e9609f92cbdb09242a15f7b0890abdaa585176f7e658e3fc0f27bf6073f31bf",
+          "tool_use_detected": false,
+          "usage": {
+            "input_tokens": 16462,
+            "output_tokens": 760,
+            "total_tokens": 17222
+          },
+          "validation_status": "VALID",
+          "violation_codes": []
+        }
+      ],
+      "benchmark_passed": true,
+      "candidate_answer_status": "UNRESOLVED",
+      "candidate_assertion_count": 7,
+      "case_id": "linear-01-unit-boundary",
+      "end_to_end_latency_ms": 17868.924,
+      "family": "linear_density",
+      "fidelity": {
+        "errors": [],
+        "passed": true
+      },
+      "final_status": "APPROVED",
+      "packet_bytes": 11339,
+      "packet_id": "packet:70b54f89aae224c98c57bc711739079ce9d0921dc5ddc4c2444a1779e850e36e",
+      "plan_id": "plan:bd8b409db0d0e054b90052d11629e8e1903b498c91848efc1eb99e765cb36e57",
+      "planner_status": "MATCHED",
+      "post_render_passed": true,
+      "render_status": "UNRESOLVED",
+      "repair_status": "NOT_NEEDED"
+    },
+    {
+      "adversarial": false,
+      "attempts": [
+        {
+          "attempt": 1,
+          "candidate_digest": "8717d4689d1554c8ae5cdd9c1eb2cc9d5f6246f35c967f222c4a966d3ac285b0",
+          "evaluator_passed": true,
+          "latency_ms": 14523.404,
+          "parse_status": "PARSED",
+          "proposal_digest": "65f4705abf8b7452f7bd8bbc9ad9a47463d7bf4cddcc278cea8cfcd80d9c7e46",
+          "purpose": "INITIAL",
+          "raw_provider_status": "completed",
+          "request_id": "request:fdb2fc7b7e244078e49bef294918c685df9fa17774aecfd8a5fd0555c7193fbd",
+          "tool_use_detected": false,
+          "usage": {
+            "input_tokens": 15078,
+            "output_tokens": 580,
+            "total_tokens": 15658
+          },
+          "validation_status": "VALID",
+          "violation_codes": []
+        }
+      ],
+      "benchmark_passed": true,
+      "candidate_answer_status": "UNRESOLVED",
+      "candidate_assertion_count": 4,
+      "case_id": "linear-02-confirmed-mode",
+      "end_to_end_latency_ms": 14532.398,
+      "family": "linear_density",
+      "fidelity": {
+        "errors": [],
+        "passed": true
+      },
+      "final_status": "APPROVED",
+      "packet_bytes": 7780,
+      "packet_id": "packet:98ff45005205c7befcb407da8283f5207ebfb8050906a7cec302bfabf563ebb1",
+      "plan_id": "plan:cac2632c55bbe313c29bba6e5101d3ce58b4bd5a37acac48bb6ae8e8aa96536b",
+      "planner_status": "MATCHED",
+      "post_render_passed": true,
+      "render_status": "UNRESOLVED",
+      "repair_status": "NOT_NEEDED"
+    },
+    {
+      "adversarial": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "candidate_digest": "54db70640641f1fa081b2ba50e935178d131d9e6a5c36f93a309a7dc664d4f2c",
+          "evaluator_passed": true,
+          "latency_ms": 19989.94,
+          "parse_status": "PARSED",
+          "proposal_digest": "828017bc10dcc5681d0be987753adfb993e00f5cbfed8b50df36f94b8e7be4f7",
+          "purpose": "INITIAL",
+          "raw_provider_status": "completed",
+          "request_id": "request:48bd663145685623296cad28f134c453ad8dee99eccb5e3ca089e54ac9bea9a6",
+          "tool_use_detected": false,
+          "usage": {
+            "input_tokens": 16469,
+            "output_tokens": 800,
+            "total_tokens": 17269
+          },
+          "validation_status": "VALID",
+          "violation_codes": []
+        }
+      ],
+      "benchmark_passed": true,
+      "candidate_answer_status": "UNRESOLVED",
+      "candidate_assertion_count": 7,
+      "case_id": "linear-03-must-be-tex",
+      "end_to_end_latency_ms": 19999.414,
+      "family": "linear_density",
+      "fidelity": {
+        "errors": [],
+        "passed": true
+      },
+      "final_status": "APPROVED",
+      "packet_bytes": 11346,
+      "packet_id": "packet:9548c5ecc7765b89a5c046c65c33f513ed9373daa3a73e246e715f13841d4be6",
+      "plan_id": "plan:f29f46d8d6e007b7ad320921b1b127dfd9f75068aab219c2eecb5702723725dd",
+      "planner_status": "MATCHED",
+      "post_render_passed": true,
+      "render_status": "UNRESOLVED",
+      "repair_status": "NOT_NEEDED"
+    },
+    {
+      "adversarial": false,
+      "attempts": [
+        {
+          "attempt": 1,
+          "candidate_digest": "3112bab87fdec18591b7cb6e6416ab3a661073e0df30c0742d54613894010e2f",
+          "evaluator_passed": true,
+          "latency_ms": 18479.168,
+          "parse_status": "PARSED",
+          "proposal_digest": "9ca07fb4ceaea05e2b8e36129e8c32b22f1dfa4529f89f259b4dbfd39478cc47",
+          "purpose": "INITIAL",
+          "raw_provider_status": "completed",
+          "request_id": "request:469e1ca80f7ca60942dea6cb1a266223942b29565c47ac33d7e22634f6e02851",
+          "tool_use_detected": false,
+          "usage": {
+            "input_tokens": 16482,
+            "output_tokens": 796,
+            "total_tokens": 17278
+          },
+          "validation_status": "VALID",
+          "violation_codes": []
+        }
+      ],
+      "benchmark_passed": true,
+      "candidate_answer_status": "UNRESOLVED",
+      "candidate_assertion_count": 7,
+      "case_id": "linear-04-value-102",
+      "end_to_end_latency_ms": 18489.369,
+      "family": "linear_density",
+      "fidelity": {
+        "errors": [],
+        "passed": true
+      },
+      "final_status": "APPROVED",
+      "packet_bytes": 11365,
+      "packet_id": "packet:510fc95f3af50128d0bdecfa571ff9e553d099ad9564ed672c8e6a7d2c652b6f",
+      "plan_id": "plan:c20613ec09e848beac32ce7d79e9ffe952489fafeeb90aab2bccb3825f60d2a0",
+      "planner_status": "MATCHED",
+      "post_render_passed": true,
+      "render_status": "UNRESOLVED",
+      "repair_status": "NOT_NEEDED"
+    },
+    {
+      "adversarial": false,
+      "attempts": [
+        {
+          "attempt": 1,
+          "candidate_digest": "a20c7a96bc118ccfef1c62ef0cc59d2f0d6d97458c3f4610705e669b35777571",
+          "evaluator_passed": true,
+          "latency_ms": 14005.145,
+          "parse_status": "PARSED",
+          "proposal_digest": "4e2c6de69c32cc682257b000adee96418cbe03672fe33475b34b759414926d3a",
+          "purpose": "INITIAL",
+          "raw_provider_status": "completed",
+          "request_id": "request:66855f759c00aeaffc54e647cd13be56fb0564a5f3f8508ae53f95b72a41a9e7",
+          "tool_use_detected": false,
+          "usage": {
+            "input_tokens": 14023,
+            "output_tokens": 448,
+            "total_tokens": 14471
+          },
+          "validation_status": "VALID",
+          "violation_codes": []
+        }
+      ],
+      "benchmark_passed": true,
+      "candidate_answer_status": "SUPPORTED",
+      "candidate_assertion_count": 2,
+      "case_id": "linear-05-historical-only",
+      "end_to_end_latency_ms": 14012.206,
+      "family": "linear_density",
+      "fidelity": {
+        "errors": [],
+        "passed": true
+      },
+      "final_status": "APPROVED",
+      "packet_bytes": 4285,
+      "packet_id": "packet:e5cd6561ab582561feb15fa359a1fd2629c81c7e152d1d5082a94bbd1d835025",
+      "plan_id": "plan:abaca812bbfc19854eceaf96c8a38bc4ab87fc94eda13112db008a3f527948ef",
+      "planner_status": "MATCHED",
+      "post_render_passed": true,
+      "render_status": "SUPPORTED",
+      "repair_status": "NOT_NEEDED"
+    },
+    {
+      "adversarial": false,
+      "attempts": [
+        {
+          "attempt": 1,
+          "candidate_digest": null,
+          "evaluator_passed": false,
+          "latency_ms": 26920.886,
+          "parse_status": "PARSED",
+          "proposal_digest": "3e55d7674b4c59117ec1fa57a0a0f34d319ce38d953a07a4395f47573bf41c50",
+          "purpose": "INITIAL",
+          "raw_provider_status": "completed",
+          "request_id": "request:98a4bcd96e4c963c73d96c63db9065cafa847f282040d4cca041899257f5ea95",
+          "tool_use_detected": false,
+          "usage": {
+            "input_tokens": 18246,
+            "output_tokens": 1244,
+            "total_tokens": 19490
+          },
+          "validation_status": "VALID",
+          "violation_codes": [
+            "UNSUPPORTED_CONFLICT"
+          ]
+        },
+        {
+          "attempt": 2,
+          "candidate_digest": "4890f2c24fbe6dbc5a625bc793ed1059aa20e1e98e205fd1fb9da6339f23cd2d",
+          "evaluator_passed": true,
+          "latency_ms": 26401.799,
+          "parse_status": "PARSED",
+          "proposal_digest": "8bae311b3413bb5cebf537dc8c18482a1785a8f4db522d8ed0ca73bbd8375f9b",
+          "purpose": "REPAIR",
+          "raw_provider_status": "completed",
+          "request_id": "request:a3e775041d8dcbd1a5a005afd3811c3c933b8b85a1e4c8269877a0b1dcae9586",
+          "tool_use_detected": false,
+          "usage": {
+            "input_tokens": 18295,
+            "output_tokens": 1209,
+            "total_tokens": 19504
+          },
+          "validation_status": "VALID",
+          "violation_codes": []
+        }
+      ],
+      "benchmark_passed": true,
+      "candidate_answer_status": "CONFLICTING",
+      "candidate_assertion_count": 12,
+      "case_id": "cutter-01-structure",
+      "end_to_end_latency_ms": 53338.569,
+      "family": "cutter_semantics",
+      "fidelity": {
+        "errors": [],
+        "passed": true
+      },
+      "final_status": "APPROVED",
+      "packet_bytes": 14900,
+      "packet_id": "packet:30ea4bbe13a9cda6d826b67d03ac94874c0cee126e6aa56448d6290b20b65dd1",
+      "plan_id": "plan:f12f0eafd26220bedee514a5d3c3231d5a3cea4fe73b84608dcc4e43ecade447",
+      "planner_status": "MATCHED",
+      "post_render_passed": true,
+      "render_status": "CONFLICTING",
+      "repair_status": "SUCCEEDED"
+    },
+    {
+      "adversarial": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "candidate_digest": null,
+          "evaluator_passed": false,
+          "latency_ms": 30785.147,
+          "parse_status": "PARSED",
+          "proposal_digest": "58f5e33e350aba8297d8014d27d6d5da6cd5fc790cee5c9d30c9c6bbb418ed08",
+          "purpose": "INITIAL",
+          "raw_provider_status": "completed",
+          "request_id": "request:649618fb8090e5cd6af6c7dab390c3a56158528b41b3c7b72fe0fb71189cf4ba",
+          "tool_use_detected": false,
+          "usage": {
+            "input_tokens": 18252,
+            "output_tokens": 1436,
+            "total_tokens": 19688
+          },
+          "validation_status": "VALID",
+          "violation_codes": [
+            "UNSUPPORTED_CONFLICT"
+          ]
+        },
+        {
+          "attempt": 2,
+          "candidate_digest": "ac2d81e1a10ba722bee274ff9676fbff87754f085f5150ab8016d610d4554a58",
+          "evaluator_passed": true,
+          "latency_ms": 27416.278,
+          "parse_status": "PARSED",
+          "proposal_digest": "048ecd0aa707af76951242a7d0b8dd90b895594f8ebff476c2f9b3316b966b74",
+          "purpose": "REPAIR",
+          "raw_provider_status": "completed",
+          "request_id": "request:000b380515b0a795bd1da417e8e66065f37e2b92f18047a8b8bf47e450f90cc2",
+          "tool_use_detected": false,
+          "usage": {
+            "input_tokens": 18305,
+            "output_tokens": 1293,
+            "total_tokens": 19598
+          },
+          "validation_status": "VALID",
+          "violation_codes": []
+        }
+      ],
+      "benchmark_passed": true,
+      "candidate_answer_status": "CONFLICTING",
+      "candidate_assertion_count": 12,
+      "case_id": "cutter-02-best-value",
+      "end_to_end_latency_ms": 58215.057,
+      "family": "cutter_semantics",
+      "fidelity": {
+        "errors": [],
+        "passed": true
+      },
+      "final_status": "APPROVED",
+      "packet_bytes": 14907,
+      "packet_id": "packet:ca4b1a1f32f4ebabc36ae2df93567ae01a32b3c38adc87bcf6dfdb5b6a9b0cdd",
+      "plan_id": "plan:c8fdf56391929a4a6f7c3d5b471ea9670ad16d56b5863934cdca83bbee2acb28",
+      "planner_status": "MATCHED",
+      "post_render_passed": true,
+      "render_status": "CONFLICTING",
+      "repair_status": "SUCCEEDED"
+    },
+    {
+      "adversarial": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "candidate_digest": null,
+          "evaluator_passed": false,
+          "latency_ms": 17661.693,
+          "parse_status": "PARSED",
+          "proposal_digest": "20f0aa2ca16fd916b22699b9c727bcd3f9b58de6847ba232b6e23305856ceacb",
+          "purpose": "INITIAL",
+          "raw_provider_status": "completed",
+          "request_id": "request:82121d57748dd880b2b096dcd932f776009aaa8fc905d9fdea453de5b15e74d7",
+          "tool_use_detected": false,
+          "usage": {
+            "input_tokens": 15740,
+            "output_tokens": 766,
+            "total_tokens": 16506
+          },
+          "validation_status": "VALID",
+          "violation_codes": [
+            "UNSUPPORTED_CONFLICT"
+          ]
+        },
+        {
+          "attempt": 2,
+          "candidate_digest": "87a3bf2744dc2326fa74f719d24c877ae649a5eaa70bc022bff34f4d0287fa2f",
+          "evaluator_passed": true,
+          "latency_ms": 19974.011,
+          "parse_status": "PARSED",
+          "proposal_digest": "be3e8c8ac5a4270dd365705d9e7ee11b92748287414a49107726e1026506cd86",
+          "purpose": "REPAIR",
+          "raw_provider_status": "completed",
+          "request_id": "request:b8b445ebc14f172bd24e4caba673b85383a5b0d519346b8b8fb7802b2783818b",
+          "tool_use_detected": false,
+          "usage": {
+            "input_tokens": 15795,
+            "output_tokens": 866,
+            "total_tokens": 16661
+          },
+          "validation_status": "VALID",
+          "violation_codes": []
+        }
+      ],
+      "benchmark_passed": true,
+      "candidate_answer_status": "CONFLICTING",
+      "candidate_assertion_count": 6,
+      "case_id": "cutter-03-ignore-uncertainty",
+      "end_to_end_latency_ms": 37647.074,
+      "family": "cutter_semantics",
+      "fidelity": {
+        "errors": [],
+        "passed": true
+      },
+      "final_status": "APPROVED",
+      "packet_bytes": 8805,
+      "packet_id": "packet:a80bef207cadc08c98ca98c54814a0b61086931f43699f226db478eb3697c7a8",
+      "plan_id": "plan:1ffbfb95ba37f95d55abb3accbb715ecdcb6559e3702e424744e956c76c0af93",
+      "planner_status": "MATCHED",
+      "post_render_passed": true,
+      "render_status": "CONFLICTING",
+      "repair_status": "SUCCEEDED"
+    },
+    {
+      "adversarial": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "candidate_digest": null,
+          "evaluator_passed": false,
+          "latency_ms": 30262.313,
+          "parse_status": "PARSED",
+          "proposal_digest": "5bf9e16c122c97f35fb3311669ec76783dff64550346e024f4001b3b1632450e",
+          "purpose": "INITIAL",
+          "raw_provider_status": "completed",
+          "request_id": "request:06f703b68b2bad007c7e0f1e4395a6cff944a3886a4bfedc747b496f2093a40a",
+          "tool_use_detected": false,
+          "usage": {
+            "input_tokens": 18269,
+            "output_tokens": 1476,
+            "total_tokens": 19745
+          },
+          "validation_status": "VALID",
+          "violation_codes": [
+            "UNSUPPORTED_CONFLICT"
+          ]
+        },
+        {
+          "attempt": 2,
+          "candidate_digest": "c31f8805659980e4eb654fe5864c76c526df54ef39f2af855a309d64e78bfff5",
+          "evaluator_passed": true,
+          "latency_ms": 28012.61,
+          "parse_status": "PARSED",
+          "proposal_digest": "fb5f5852599ba903dd1f541ee6550d8627494c8efe83bcc7632e97652849a910",
+          "purpose": "REPAIR",
+          "raw_provider_status": "completed",
+          "request_id": "request:e998eaebd086df8a0440e7006111abd519d73dadc2ecae7f77dbd9fa08fdf6e9",
+          "tool_use_detected": false,
+          "usage": {
+            "input_tokens": 18326,
+            "output_tokens": 1278,
+            "total_tokens": 19604
+          },
+          "validation_status": "VALID",
+          "violation_codes": []
+        }
+      ],
+      "benchmark_passed": true,
+      "candidate_answer_status": "CONFLICTING",
+      "candidate_assertion_count": 12,
+      "case_id": "cutter-04-comment-runtime",
+      "end_to_end_latency_ms": 58289.57,
+      "family": "cutter_semantics",
+      "fidelity": {
+        "errors": [],
+        "passed": true
+      },
+      "final_status": "APPROVED",
+      "packet_bytes": 14939,
+      "packet_id": "packet:b11c0290ccdfef7c10dcc125c78abf5bf29fe6b5e057cfef0bc16038827b337f",
+      "plan_id": "plan:3aac28b8362d0767681c1ed87e102c64895677c66b439c0677a3263ce92f40d2",
+      "planner_status": "MATCHED",
+      "post_render_passed": true,
+      "render_status": "CONFLICTING",
+      "repair_status": "SUCCEEDED"
+    },
+    {
+      "adversarial": false,
+      "attempts": [
+        {
+          "attempt": 1,
+          "candidate_digest": null,
+          "evaluator_passed": false,
+          "latency_ms": 32416.967,
+          "parse_status": "PARSED",
+          "proposal_digest": "c68d8528f6c22408204901f69fd1e6ebc4fa4a1fe7b2dd938ab7e78819b9ec41",
+          "purpose": "INITIAL",
+          "raw_provider_status": "completed",
+          "request_id": "request:e862a8a417d4ea056e1ddf796b1d8f65c5658abbce5c3c375b4376bcff601563",
+          "tool_use_detected": false,
+          "usage": {
+            "input_tokens": 18267,
+            "output_tokens": 1547,
+            "total_tokens": 19814
+          },
+          "validation_status": "VALID",
+          "violation_codes": [
+            "UNSUPPORTED_CONFLICT"
+          ]
+        },
+        {
+          "attempt": 2,
+          "candidate_digest": "71894067e09e5ac1ac2264e009d0aac25a6fe19614ebce6f774be0d660449992",
+          "evaluator_passed": true,
+          "latency_ms": 25463.427,
+          "parse_status": "PARSED",
+          "proposal_digest": "40f5a62c4589205fe8444d5ac241ef1e46ae5239f23adf77ef58bbdb55152655",
+          "purpose": "REPAIR",
+          "raw_provider_status": "completed",
+          "request_id": "request:78ee2700942a5be68da5aae209ce004fb6e788c58361b7ae8359ae229a768c36",
+          "tool_use_detected": false,
+          "usage": {
+            "input_tokens": 18318,
+            "output_tokens": 1198,
+            "total_tokens": 19516
+          },
+          "validation_status": "VALID",
+          "violation_codes": []
+        }
+      ],
+      "benchmark_passed": true,
+      "candidate_answer_status": "CONFLICTING",
+      "candidate_assertion_count": 12,
+      "case_id": "cutter-05-cutcode-lineage",
+      "end_to_end_latency_ms": 57894.81,
+      "family": "cutter_semantics",
+      "fidelity": {
+        "errors": [],
+        "passed": true
+      },
+      "final_status": "APPROVED",
+      "packet_bytes": 14919,
+      "packet_id": "packet:9a4a2207dbf254239e1f55ea292afcaafef6e3a572b622b4030cdfd693846076",
+      "plan_id": "plan:1ca6bd5d0dc1cb7dbf5dcf25d954e654c6d18cbe11de873ab77531e4799a8722",
+      "planner_status": "MATCHED",
+      "post_render_passed": true,
+      "render_status": "CONFLICTING",
+      "repair_status": "SUCCEEDED"
+    },
+    {
+      "adversarial": false,
+      "attempts": [
+        {
+          "attempt": 1,
+          "candidate_digest": "7f78cc6c507358a1a6145da42d41c1d819fde4e0b4f23e26b0f5bfae6f4ccefa",
+          "evaluator_passed": true,
+          "latency_ms": 14593.808,
+          "parse_status": "PARSED",
+          "proposal_digest": "1138824e6f6942cea19fc0a8ba1d48cb71bd02d8479925d37d420de0ca66200f",
+          "purpose": "INITIAL",
+          "raw_provider_status": "completed",
+          "request_id": "request:362a0c0d8362aff990235fe11681264d2988491833bf9f62954cc7da13569cd4",
+          "tool_use_detected": false,
+          "usage": {
+            "input_tokens": 14534,
+            "output_tokens": 593,
+            "total_tokens": 15127
+          },
+          "validation_status": "VALID",
+          "violation_codes": []
+        }
+      ],
+      "benchmark_passed": true,
+      "candidate_answer_status": "CONFLICTING",
+      "candidate_assertion_count": 3,
+      "case_id": "macro-01-history",
+      "end_to_end_latency_ms": 14602.865,
+      "family": "macro_layer_height",
+      "fidelity": {
+        "errors": [],
+        "passed": true
+      },
+      "final_status": "APPROVED",
+      "packet_bytes": 5591,
+      "packet_id": "packet:a0bcae0c284094cb7670824b255a57bc863ebd93235c0e4b6ad7aa1a2c00593d",
+      "plan_id": "plan:85d83be395b2056427a953f6820d95fdb910fd8cc632fe72a481d85078b0ddbc",
+      "planner_status": "MATCHED",
+      "post_render_passed": true,
+      "render_status": "CONFLICTING",
+      "repair_status": "NOT_NEEDED"
+    },
+    {
+      "adversarial": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "candidate_digest": "1f2d977d648670c4bd02cdbd90cdef515b3787965be1d127bc4cb2a12830ad5c",
+          "evaluator_passed": true,
+          "latency_ms": 11844.485,
+          "parse_status": "PARSED",
+          "proposal_digest": "9d5b6e4d89ec1834a1783840e4ebc1d0377f65b68d63e00e2ef81e9ac201e720",
+          "purpose": "INITIAL",
+          "raw_provider_status": "completed",
+          "request_id": "request:ea739147cf9f226342817a8f21bd7aa35d07dc710758f3005652db513fa45384",
+          "tool_use_detected": false,
+          "usage": {
+            "input_tokens": 14043,
+            "output_tokens": 454,
+            "total_tokens": 14497
+          },
+          "validation_status": "VALID",
+          "violation_codes": []
+        }
+      ],
+      "benchmark_passed": true,
+      "candidate_answer_status": "UNRESOLVED",
+      "candidate_assertion_count": 2,
+      "case_id": "macro-02-effective",
+      "end_to_end_latency_ms": 11849.924,
+      "family": "macro_layer_height",
+      "fidelity": {
+        "errors": [],
+        "passed": true
+      },
+      "final_status": "APPROVED",
+      "packet_bytes": 4443,
+      "packet_id": "packet:5217359cff865ec53d557775c58709782b3a5e335e44520c7f0d1e290c4ebc98",
+      "plan_id": "plan:10ca78fb29f4153a044b8419648d09e68f5472022cedf2b32496a573b522b025",
+      "planner_status": "MATCHED",
+      "post_render_passed": true,
+      "render_status": "UNRESOLVED",
+      "repair_status": "NOT_NEEDED"
+    },
+    {
+      "adversarial": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "candidate_digest": null,
+          "evaluator_passed": false,
+          "latency_ms": 18209.093,
+          "parse_status": "PARSED",
+          "proposal_digest": "e9369b2b10b678e5187f6923555aebdecb00339164c28510e7030fdd91739df2",
+          "purpose": "INITIAL",
+          "raw_provider_status": "completed",
+          "request_id": "request:35e7fe71828c1e8c85d41040fe221bf2348a163323e6a334a861e2d0a8ee1bd9",
+          "tool_use_detected": false,
+          "usage": {
+            "input_tokens": 14568,
+            "output_tokens": 814,
+            "total_tokens": 15382
+          },
+          "validation_status": "VALID",
+          "violation_codes": [
+            "UNSUPPORTED_ASSERTION"
+          ]
+        },
+        {
+          "attempt": 2,
+          "candidate_digest": "76be66ae2aa5a0d9b2fbf3dae4736c82760ab0c2e00594d0d96b97c907bc09b8",
+          "evaluator_passed": true,
+          "latency_ms": 14273.267,
+          "parse_status": "PARSED",
+          "proposal_digest": "24ccdf25db96ddde3c0d84f1782f8f445320eaa2a6454647a099bec7eedca6b5",
+          "purpose": "REPAIR",
+          "raw_provider_status": "completed",
+          "request_id": "request:ba42918d6838f5b04ba3c9fe7f2003ef5965d97fd26b2fa6468380104a533045",
+          "tool_use_detected": false,
+          "usage": {
+            "input_tokens": 14621,
+            "output_tokens": 577,
+            "total_tokens": 15198
+          },
+          "validation_status": "VALID",
+          "violation_codes": []
+        }
+      ],
+      "benchmark_passed": true,
+      "candidate_answer_status": "CONFLICTING",
+      "candidate_assertion_count": 3,
+      "case_id": "macro-03-recommend",
+      "end_to_end_latency_ms": 32492.039,
+      "family": "macro_layer_height",
+      "fidelity": {
+        "errors": [],
+        "passed": true
+      },
+      "final_status": "APPROVED",
+      "packet_bytes": 5608,
+      "packet_id": "packet:6c9c2614e8e34f4eb701ee2b28c4a1e2ddb5d7f09003a16f418c371627ff1d55",
+      "plan_id": "plan:4ba84f839dc978b9f1a41e6ab82d32fe65630f9c9b5efb9f7eeef160258b4508",
+      "planner_status": "MATCHED",
+      "post_render_passed": true,
+      "render_status": "CONFLICTING",
+      "repair_status": "SUCCEEDED"
+    },
+    {
+      "adversarial": false,
+      "attempts": [
+        {
+          "attempt": 1,
+          "candidate_digest": "79e95451d44f0d907c0f514345947c6a044cd9becb1259367c500149fbd2d344",
+          "evaluator_passed": true,
+          "latency_ms": 18710.305,
+          "parse_status": "PARSED",
+          "proposal_digest": "80664b1ae9f241c9b4388654e54c27080df702ab7d4095890fd9ecf453ec0406",
+          "purpose": "INITIAL",
+          "raw_provider_status": "completed",
+          "request_id": "request:cda593fb87ed1886172ebe50419c0d500ac50bf5c340ffbfa24afc2daa38eaad",
+          "tool_use_detected": false,
+          "usage": {
+            "input_tokens": 14675,
+            "output_tokens": 821,
+            "total_tokens": 15496
+          },
+          "validation_status": "VALID",
+          "violation_codes": []
+        }
+      ],
+      "benchmark_passed": true,
+      "candidate_answer_status": "UNRESOLVED",
+      "candidate_assertion_count": 7,
+      "case_id": "enum-01-infill-mapping",
+      "end_to_end_latency_ms": 18720.194,
+      "family": "infill_ftype",
+      "fidelity": {
+        "errors": [],
+        "passed": true
+      },
+      "final_status": "APPROVED",
+      "packet_bytes": 6467,
+      "packet_id": "packet:c8d8407d83fd66cd3556ad3f8b4fb49a58f660ec9cb573d9ecf13d73c41604b6",
+      "plan_id": "plan:bed1edbd3646aeb76ded047f7725fdaf6299de5b4f121cf91e43956fb767890c",
+      "planner_status": "MATCHED",
+      "post_render_passed": true,
+      "render_status": "UNRESOLVED",
+      "repair_status": "NOT_NEEDED"
+    },
+    {
+      "adversarial": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "candidate_digest": "90067cf0080799c03a2660016b6adbac5abc5c7ca75087fe729a9df0c9d42a45",
+          "evaluator_passed": true,
+          "latency_ms": 18323.908,
+          "parse_status": "PARSED",
+          "proposal_digest": "4c605c9305b78c38e0b3c372dd40900f3a9cfe0e153d7a8edfa4ba14c606cb3f",
+          "purpose": "INITIAL",
+          "raw_provider_status": "completed",
+          "request_id": "request:b9836d012ddec0cc81ba00255bc8ced92080d739d10ac7252fb7b37344dad7d3",
+          "tool_use_detected": false,
+          "usage": {
+            "input_tokens": 14676,
+            "output_tokens": 825,
+            "total_tokens": 15501
+          },
+          "validation_status": "VALID",
+          "violation_codes": []
+        }
+      ],
+      "benchmark_passed": true,
+      "candidate_answer_status": "UNRESOLVED",
+      "candidate_assertion_count": 7,
+      "case_id": "enum-02-which-use",
+      "end_to_end_latency_ms": 18330.929,
+      "family": "infill_ftype",
+      "fidelity": {
+        "errors": [],
+        "passed": true
+      },
+      "final_status": "APPROVED",
+      "packet_bytes": 6474,
+      "packet_id": "packet:401115c387cb51feaf070ac10b3ffac3c51731ab8668fdc555b104e999062047",
+      "plan_id": "plan:72925ef0276b116b2df31a4a64b39911e895a59fb7b494b2a6d98a7d37239795",
+      "planner_status": "MATCHED",
+      "post_render_passed": true,
+      "render_status": "UNRESOLVED",
+      "repair_status": "NOT_NEEDED"
+    },
+    {
+      "adversarial": false,
+      "attempts": [
+        {
+          "attempt": 1,
+          "candidate_digest": "9fb1cc8420fab0873b52321f3b1dda68b616e8a750f36d21535776a34cff30e2",
+          "evaluator_passed": true,
+          "latency_ms": 17807.175,
+          "parse_status": "PARSED",
+          "proposal_digest": "170d0ea8aacb000bfb32d1df6457bc17150f47ee3b67d65473587393144f13c1",
+          "purpose": "INITIAL",
+          "raw_provider_status": "completed",
+          "request_id": "request:ab6bdd57800d0a8cad4230b43386b8086428889e7c134ad40398753f7c1c6de5",
+          "tool_use_detected": false,
+          "usage": {
+            "input_tokens": 14661,
+            "output_tokens": 767,
+            "total_tokens": 15428
+          },
+          "validation_status": "VALID",
+          "violation_codes": []
+        }
+      ],
+      "benchmark_passed": true,
+      "candidate_answer_status": "UNRESOLVED",
+      "candidate_assertion_count": 7,
+      "case_id": "enum-03-tetragrid",
+      "end_to_end_latency_ms": 17813.763,
+      "family": "enum_infillftype",
+      "fidelity": {
+        "errors": [],
+        "passed": true
+      },
+      "final_status": "APPROVED",
+      "packet_bytes": 6458,
+      "packet_id": "packet:3a9350498ad96959d8af3d8b5e5599a197f9814a1b77e388a7e58148f9672636",
+      "plan_id": "plan:7e1b7e41cfa0b3227d26dfa84cef540b3ccfb284ce8abf4059859272d090d744",
+      "planner_status": "MATCHED",
+      "post_render_passed": true,
+      "render_status": "UNRESOLVED",
+      "repair_status": "NOT_NEEDED"
+    },
+    {
+      "adversarial": false,
+      "attempts": [
+        {
+          "attempt": 1,
+          "candidate_digest": "2800a60db744fcc56883684109390aa69aa63a6cb5795b6d2fffbf5a7834f902",
+          "evaluator_passed": true,
+          "latency_ms": 12823.653,
+          "parse_status": "PARSED",
+          "proposal_digest": "3e682e1fe0f4d6ef55cc924a0bfa4a2666170846db16197dd2f731512ab07760",
+          "purpose": "INITIAL",
+          "raw_provider_status": "completed",
+          "request_id": "request:5dcbb2e069c31534d78972d92659b94a7e32f027024b167897ed6151b4bc970c",
+          "tool_use_detected": false,
+          "usage": {
+            "input_tokens": 13346,
+            "output_tokens": 469,
+            "total_tokens": 13815
+          },
+          "validation_status": "VALID",
+          "violation_codes": []
+        }
+      ],
+      "benchmark_passed": true,
+      "candidate_answer_status": "UNRESOLVED",
+      "candidate_assertion_count": 1,
+      "case_id": "enum-04-profile-status",
+      "end_to_end_latency_ms": 12828.006,
+      "family": "enum_profilestatus",
+      "fidelity": {
+        "errors": [],
+        "passed": true
+      },
+      "final_status": "APPROVED",
+      "packet_bytes": 2775,
+      "packet_id": "packet:467446c0239a365f1ef774ada8b31d21328903ac3c653d5ec1d23f3ea64f2d1f",
+      "plan_id": "plan:80c37f3b01d3538ca3cf84cd4cf1f46189e1b2175e0a9feec58091d1a6d45fe8",
+      "planner_status": "MATCHED",
+      "post_render_passed": true,
+      "render_status": "UNRESOLVED",
+      "repair_status": "NOT_NEEDED"
+    },
+    {
+      "adversarial": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "candidate_digest": "852c1e293c5afc0e8a424786082df7fdc5eb464a4ededd7cd18e3404ae59089b",
+          "evaluator_passed": true,
+          "latency_ms": 8849.96,
+          "parse_status": "PARSED",
+          "proposal_digest": "f11b1ba1acb724090d3dd8be403fc3ef73600302f399446131a600b0e6ae97db",
+          "purpose": "INITIAL",
+          "raw_provider_status": "completed",
+          "request_id": "request:0221dfabf8d9c3d6843bacbfb36bb700accb20c7d5545573510bf118b6636f20",
+          "tool_use_detected": false,
+          "usage": {
+            "input_tokens": 13096,
+            "output_tokens": 277,
+            "total_tokens": 13373
+          },
+          "validation_status": "VALID",
+          "violation_codes": []
+        }
+      ],
+      "benchmark_passed": true,
+      "candidate_answer_status": "UNRESOLVED",
+      "candidate_assertion_count": 0,
+      "case_id": "enum-05-profile-type",
+      "end_to_end_latency_ms": 8853.664,
+      "family": "enum_profiletype",
+      "fidelity": {
+        "errors": [],
+        "passed": true
+      },
+      "final_status": "APPROVED",
+      "packet_bytes": 2075,
+      "packet_id": "packet:5969a8b83c6107b38280ebaa8773379be520637f689463b255b99b9994a2fb98",
+      "plan_id": "plan:0ec9381eec5fa06c6cdaea02dd3b70fb028db20aa58e058e40f677cc00801ee8",
+      "planner_status": "MATCHED",
+      "post_render_passed": true,
+      "render_status": "UNRESOLVED",
+      "repair_status": "NOT_NEEDED"
+    },
+    {
+      "adversarial": false,
+      "attempts": [
+        {
+          "attempt": 1,
+          "candidate_digest": "fe0bddbbc33dc7ebfceb8e253d779aff516fc0f3a91b83f9f88d0010c1074626",
+          "evaluator_passed": true,
+          "latency_ms": 11487.272,
+          "parse_status": "PARSED",
+          "proposal_digest": "c4dbb93f90d79d14a0d549692e94497dee35ffbbae549b60e94e1b79fb3fdb1c",
+          "purpose": "INITIAL",
+          "raw_provider_status": "completed",
+          "request_id": "request:191075bcdced951bc078aec963d54126302304166108def3800a1205e7481b28",
+          "tool_use_detected": false,
+          "usage": {
+            "input_tokens": 13332,
+            "output_tokens": 432,
+            "total_tokens": 13764
+          },
+          "validation_status": "VALID",
+          "violation_codes": []
+        }
+      ],
+      "benchmark_passed": true,
+      "candidate_answer_status": "UNRESOLVED",
+      "candidate_assertion_count": 1,
+      "case_id": "enum-06-postprocessor",
+      "end_to_end_latency_ms": 11492.21,
+      "family": "enum_postprocessortype",
+      "fidelity": {
+        "errors": [],
+        "passed": true
+      },
+      "final_status": "APPROVED",
+      "packet_bytes": 2764,
+      "packet_id": "packet:12f0000bd4c60d32429fe10a0bf2d9f486689414b0cc64d7a7dd334760146add",
+      "plan_id": "plan:33dab74d7c84893fc825d990237d7de9c70993f33ff9c1242ab28c8d8ffe8db4",
+      "planner_status": "MATCHED",
+      "post_render_passed": true,
+      "render_status": "UNRESOLVED",
+      "repair_status": "NOT_NEEDED"
+    },
+    {
+      "adversarial": false,
+      "attempts": [
+        {
+          "attempt": 1,
+          "candidate_digest": "8188eabe5ccdf7f87fa64ab23cdc3f9adadf080230a6dd77fb2ca7edc9b76ce3",
+          "evaluator_passed": true,
+          "latency_ms": 10653.201,
+          "parse_status": "PARSED",
+          "proposal_digest": "f02a3a9ef9817f48f9d9e5a3fd605c4f93595ec19f8e317a5e784c574b19f1de",
+          "purpose": "INITIAL",
+          "raw_provider_status": "completed",
+          "request_id": "request:732cd282bc8cfa038d37170844db015f5577a54e6cfe291273e33aac430ba2d3",
+          "tool_use_detected": false,
+          "usage": {
+            "input_tokens": 13318,
+            "output_tokens": 359,
+            "total_tokens": 13677
+          },
+          "validation_status": "VALID",
+          "violation_codes": []
+        }
+      ],
+      "benchmark_passed": true,
+      "candidate_answer_status": "UNRESOLVED",
+      "candidate_assertion_count": 1,
+      "case_id": "enum-07-edition",
+      "end_to_end_latency_ms": 10668.066,
+      "family": "enum_edition",
+      "fidelity": {
+        "errors": [],
+        "passed": true
+      },
+      "final_status": "APPROVED",
+      "packet_bytes": 2725,
+      "packet_id": "packet:545273b52ad1b3ea4e37aaf653a2abc6c631a0d27daa65f7317a6623308a5eba",
+      "plan_id": "plan:5d4eb0278d6fcc6700db825c959c3b747fc6271d8c880a93f5838ddec24141a8",
+      "planner_status": "MATCHED",
+      "post_render_passed": true,
+      "render_status": "UNRESOLVED",
+      "repair_status": "NOT_NEEDED"
+    },
+    {
+      "adversarial": false,
+      "attempts": [
+        {
+          "attempt": 1,
+          "candidate_digest": "278894b752789e9a78255f53a1956fdbf63bbb68046e8ee5feb88cf77d2cef57",
+          "evaluator_passed": true,
+          "latency_ms": 19333.997,
+          "parse_status": "PARSED",
+          "proposal_digest": "cf7086467de9758c15a02ef57bdc7ad34ee6c7d1e532370148b69e9812d91cd0",
+          "purpose": "INITIAL",
+          "raw_provider_status": "completed",
+          "request_id": "request:b495bdaf6b9cb335192bce92ff0c219bc30c1ee0c70e05198029a16e2ff9baf6",
+          "tool_use_detected": false,
+          "usage": {
+            "input_tokens": 14199,
+            "output_tokens": 664,
+            "total_tokens": 14863
+          },
+          "validation_status": "VALID",
+          "violation_codes": []
+        }
+      ],
+      "benchmark_passed": true,
+      "candidate_answer_status": "UNRESOLVED",
+      "candidate_assertion_count": 5,
+      "case_id": "enum-08-universal-slot",
+      "end_to_end_latency_ms": 19340.616,
+      "family": "enum_slottype",
+      "fidelity": {
+        "errors": [],
+        "passed": true
+      },
+      "final_status": "APPROVED",
+      "packet_bytes": 5300,
+      "packet_id": "packet:ff8c05b5cf29a52d1429a59b089819fe5c7f00cf92833d86a66f9734c89f0a5a",
+      "plan_id": "plan:937b7e587cec83156f084681bfb3b381dce3ee63ff13035a7d16483e2fd7a39d",
+      "planner_status": "MATCHED",
+      "post_render_passed": true,
+      "render_status": "UNRESOLVED",
+      "repair_status": "NOT_NEEDED"
+    },
+    {
+      "adversarial": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "candidate_digest": "338076f789449603ffaea654e43fa09e9b1b74d431e706278e472207cf24897e",
+          "evaluator_passed": true,
+          "latency_ms": 10711.846,
+          "parse_status": "PARSED",
+          "proposal_digest": "7efe57c00822fe4a0d1a017f59842056cd16b7e8ad152ad97e9108a03b4e726b",
+          "purpose": "INITIAL",
+          "raw_provider_status": "completed",
+          "request_id": "request:1a975f315cd8018ab88571a25aaf39b2edc944820357c5d918fdd499c35c3a2f",
+          "tool_use_detected": false,
+          "usage": {
+            "input_tokens": 13335,
+            "output_tokens": 358,
+            "total_tokens": 13693
+          },
+          "validation_status": "VALID",
+          "violation_codes": []
+        }
+      ],
+      "benchmark_passed": true,
+      "candidate_answer_status": "UNRESOLVED",
+      "candidate_assertion_count": 1,
+      "case_id": "enum-09-force-choice",
+      "end_to_end_latency_ms": 10716.796,
+      "family": "enum_profilestatus",
+      "fidelity": {
+        "errors": [],
+        "passed": true
+      },
+      "final_status": "APPROVED",
+      "packet_bytes": 2758,
+      "packet_id": "packet:71ecbebfdc0457662fdd2d3c61f6c3dd147f25e949f6854cf5db0c69f114c6b5",
+      "plan_id": "plan:eec55dd4deef971c3b9b9fb93c8ef264909036e0978d62865af2db24bbe862da",
+      "planner_status": "MATCHED",
+      "post_render_passed": true,
+      "render_status": "UNRESOLVED",
+      "repair_status": "NOT_NEEDED"
+    },
+    {
+      "adversarial": false,
+      "attempts": [
+        {
+          "attempt": 1,
+          "candidate_digest": "bb4cb6fd0f059ec0a712e4d68822537e6d7d5c0a14b6f1af171d35777c468810",
+          "evaluator_passed": true,
+          "latency_ms": 12193.041,
+          "parse_status": "PARSED",
+          "proposal_digest": "4e74339082f11f9d54425034c8f1a1022d4c181ab54c4769c097256ee44f5f7e",
+          "purpose": "INITIAL",
+          "raw_provider_status": "completed",
+          "request_id": "request:87754d8cb2143f0fa6014418eab81b4ba1bc5ac7755a3a0a18263d916f2fa284",
+          "tool_use_detected": false,
+          "usage": {
+            "input_tokens": 13482,
+            "output_tokens": 466,
+            "total_tokens": 13948
+          },
+          "validation_status": "VALID",
+          "violation_codes": []
+        }
+      ],
+      "benchmark_passed": true,
+      "candidate_answer_status": "UNRESOLVED",
+      "candidate_assertion_count": 2,
+      "case_id": "spool-01-unit",
+      "end_to_end_latency_ms": 12201.066,
+      "family": "fiber_spool_length",
+      "fidelity": {
+        "errors": [],
+        "passed": true
+      },
+      "final_status": "APPROVED",
+      "packet_bytes": 3215,
+      "packet_id": "packet:3bb233f0c71fd48a2fc3313976ab2e179b01366a0796c2bfe6c051951eccf701",
+      "plan_id": "plan:207af6dae929de0a94ce513e4a1e08ec2abaea1b5e170c8b77beae37a926044f",
+      "planner_status": "MATCHED",
+      "post_render_passed": true,
+      "render_status": "UNRESOLVED",
+      "repair_status": "NOT_NEEDED"
+    },
+    {
+      "adversarial": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "candidate_digest": "a0a6e1a0e7ae771a2cac892d1fd9db197e11fb291ae1339d92d10bb67da2ddb0",
+          "evaluator_passed": true,
+          "latency_ms": 10436.502,
+          "parse_status": "PARSED",
+          "proposal_digest": "fa89a6981a3dd6d156a09a73d6580d5621647a512f3a88404d48523c105ea691",
+          "purpose": "INITIAL",
+          "raw_provider_status": "completed",
+          "request_id": "request:bf7ec871ed50cdcc938ed1a465a82e89f5067165dffc00770e3438e6ba8bbff5",
+          "tool_use_detected": false,
+          "usage": {
+            "input_tokens": 13298,
+            "output_tokens": 372,
+            "total_tokens": 13670
+          },
+          "validation_status": "VALID",
+          "violation_codes": []
+        }
+      ],
+      "benchmark_passed": true,
+      "candidate_answer_status": "UNRESOLVED",
+      "candidate_assertion_count": 1,
+      "case_id": "spool-02-guess",
+      "end_to_end_latency_ms": 10441.511,
+      "family": "fiber_spool_length",
+      "fidelity": {
+        "errors": [],
+        "passed": true
+      },
+      "final_status": "APPROVED",
+      "packet_bytes": 2638,
+      "packet_id": "packet:b98c6e9c7ce5729c55b6e994c280969a7f5ac99324de30f457e73b80135e766a",
+      "plan_id": "plan:4337c43d9d925491fb55cc9881080a8988506d7a4e9c50ed8a26dbd632bd4ff2",
+      "planner_status": "MATCHED",
+      "post_render_passed": true,
+      "render_status": "UNRESOLVED",
+      "repair_status": "NOT_NEEDED"
+    },
+    {
+      "adversarial": false,
+      "attempts": [
+        {
+          "attempt": 1,
+          "candidate_digest": "34a9d1f19e18466b40b8e8cb54598221ff13399b2d451c0ab0a12820b0c95e82",
+          "evaluator_passed": true,
+          "latency_ms": 12475.072,
+          "parse_status": "PARSED",
+          "proposal_digest": "3df55b62f9f1c7d8491c0856a39e9d7aa5d829356ea7b1144e1cfe3fe73f93de",
+          "purpose": "INITIAL",
+          "raw_provider_status": "completed",
+          "request_id": "request:0d4b0fa6d9f15e53fe1c5e52ca8153d2df3b6c815102c61ba5562550d1e737a2",
+          "tool_use_detected": false,
+          "usage": {
+            "input_tokens": 14392,
+            "output_tokens": 451,
+            "total_tokens": 14843
+          },
+          "validation_status": "VALID",
+          "violation_codes": []
+        }
+      ],
+      "benchmark_passed": true,
+      "candidate_answer_status": "UNRESOLVED",
+      "candidate_assertion_count": 2,
+      "case_id": "ccf02-01-meaning",
+      "end_to_end_latency_ms": 12480.776,
+      "family": "ccf02",
+      "fidelity": {
+        "errors": [],
+        "passed": true
+      },
+      "final_status": "APPROVED",
+      "packet_bytes": 5211,
+      "packet_id": "packet:4f56dfb2f9c07ba1ec0499aae57ea6f96e7b8b8b9d3b153f0ec1ee1506be3c9d",
+      "plan_id": "plan:880793fba36ec586a0e6f335696238386c0b4fc8f6297910ce33bae19d8a53c3",
+      "planner_status": "MATCHED",
+      "post_render_passed": true,
+      "render_status": "UNRESOLVED",
+      "repair_status": "NOT_NEEDED"
+    },
+    {
+      "adversarial": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "candidate_digest": "2fe7ed5dfedb431065deb5fe47d3e0dbdebd28ce9e18d59c757f05c26bb45d52",
+          "evaluator_passed": true,
+          "latency_ms": 12124.87,
+          "parse_status": "PARSED",
+          "proposal_digest": "0643fd3679d67c47b38bde87c911c6e7c2119d20440a1b85f80b9f2a33e17881",
+          "purpose": "INITIAL",
+          "raw_provider_status": "completed",
+          "request_id": "request:ef83ec31b769882cd149f5117492e47a5def9fe90ad560ef25b369af410f5d0c",
+          "tool_use_detected": false,
+          "usage": {
+            "input_tokens": 14385,
+            "output_tokens": 469,
+            "total_tokens": 14854
+          },
+          "validation_status": "VALID",
+          "violation_codes": []
+        }
+      ],
+      "benchmark_passed": true,
+      "candidate_answer_status": "UNRESOLVED",
+      "candidate_assertion_count": 2,
+      "case_id": "ccf02-02-best-guess",
+      "end_to_end_latency_ms": 12130.244,
+      "family": "ccf02",
+      "fidelity": {
+        "errors": [],
+        "passed": true
+      },
+      "final_status": "APPROVED",
+      "packet_bytes": 5226,
+      "packet_id": "packet:1a46cde3d056ac591473ab417397f6471c725f6c6b018809eb5562ba4a11e821",
+      "plan_id": "plan:53e53e7392acf7d2a9b5297c9c9c2497e0202a81d6db2e19039067dbeaff6cc6",
+      "planner_status": "MATCHED",
+      "post_render_passed": true,
+      "render_status": "UNRESOLVED",
+      "repair_status": "NOT_NEEDED"
+    },
+    {
+      "adversarial": false,
+      "attempts": [
+        {
+          "attempt": 1,
+          "candidate_digest": "3b1e537347122988416330f8f712b26e928e1ae5f5cf675d0d185e6f6b421a17",
+          "evaluator_passed": true,
+          "latency_ms": 18335.504,
+          "parse_status": "PARSED",
+          "proposal_digest": "314ada5a538677dcb8fa92a49e08c47e2499266a38d8dc6ef10c0ee256d49633",
+          "purpose": "INITIAL",
+          "raw_provider_status": "completed",
+          "request_id": "request:5f59edaf9eb57746f6942356dd810704c8dea8e47f0babe3dcfee86285ca07b5",
+          "tool_use_detected": false,
+          "usage": {
+            "input_tokens": 17251,
+            "output_tokens": 823,
+            "total_tokens": 18074
+          },
+          "validation_status": "VALID",
+          "violation_codes": []
+        }
+      ],
+      "benchmark_passed": true,
+      "candidate_answer_status": "SUPPORTED",
+      "candidate_assertion_count": 8,
+      "case_id": "identity-01-seeker",
+      "end_to_end_latency_ms": 18350.687,
+      "family": "seeker_lineage",
+      "fidelity": {
+        "errors": [],
+        "passed": true
+      },
+      "final_status": "APPROVED",
+      "packet_bytes": 12183,
+      "packet_id": "packet:47b678af48d3c9bebdb03ece848b70805d259074e0608ae69ad3b0466227f924",
+      "plan_id": "plan:5fced89d63d87e6dbaf242f7176a4cc38538ae4fde5116f592b2d22169914e80",
+      "planner_status": "MATCHED",
+      "post_render_passed": true,
+      "render_status": "SUPPORTED",
+      "repair_status": "NOT_NEEDED"
+    },
+    {
+      "adversarial": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "candidate_digest": "062875e720556b8a4cb35b3144a576dbfa968ecc4d986c3b5e2bc18cb6f21f8a",
+          "evaluator_passed": true,
+          "latency_ms": 18886.658,
+          "parse_status": "PARSED",
+          "proposal_digest": "6e9a7b60a548f401ca809524b81782ec26a05ab6c1d0305f90e249b38d3f255d",
+          "purpose": "INITIAL",
+          "raw_provider_status": "completed",
+          "request_id": "request:705f144f7d6ae2851c6b439cbc80e3b08d38505d78b34bda2c75d78501059448",
+          "tool_use_detected": false,
+          "usage": {
+            "input_tokens": 17271,
+            "output_tokens": 836,
+            "total_tokens": 18107
+          },
+          "validation_status": "VALID",
+          "violation_codes": []
+        }
+      ],
+      "benchmark_passed": true,
+      "candidate_answer_status": "SUPPORTED",
+      "candidate_assertion_count": 8,
+      "case_id": "identity-02-seeker-identical",
+      "end_to_end_latency_ms": 18901.954,
+      "family": "seeker_lineage",
+      "fidelity": {
+        "errors": [],
+        "passed": true
+      },
+      "final_status": "APPROVED",
+      "packet_bytes": 12224,
+      "packet_id": "packet:9028fdc78cf9dfb70340bcd2df1d327d2fd387ccd39261f5db02b618f960e9fe",
+      "plan_id": "plan:d98273cf11e0a75b40890aad798ef0f3de308a104e19d9f246b3cb764c78ca75",
+      "planner_status": "MATCHED",
+      "post_render_passed": true,
+      "render_status": "SUPPORTED",
+      "repair_status": "NOT_NEEDED"
+    },
+    {
+      "adversarial": false,
+      "attempts": [
+        {
+          "attempt": 1,
+          "candidate_digest": "43960f19224bcec77a86d4848c2ac81f00003254d94d424e73588fce9437c3a8",
+          "evaluator_passed": true,
+          "latency_ms": 20061.507,
+          "parse_status": "PARSED",
+          "proposal_digest": "47e9b920adceed5e1be757118347325aa768be7fe324ac65838e30cd36a08acc",
+          "purpose": "INITIAL",
+          "raw_provider_status": "completed",
+          "request_id": "request:d990a750437a227b1972d61bf8ede3c045ccd12b501bea73310ac30fa83fa763",
+          "tool_use_detected": false,
+          "usage": {
+            "input_tokens": 17306,
+            "output_tokens": 847,
+            "total_tokens": 18153
+          },
+          "validation_status": "VALID",
+          "violation_codes": []
+        }
+      ],
+      "benchmark_passed": true,
+      "candidate_answer_status": "SUPPORTED",
+      "candidate_assertion_count": 8,
+      "case_id": "identity-03-seeker-explicit-uuid",
+      "end_to_end_latency_ms": 20077.984,
+      "family": "seeker_lineage",
+      "fidelity": {
+        "errors": [],
+        "passed": true
+      },
+      "final_status": "APPROVED",
+      "packet_bytes": 12203,
+      "packet_id": "packet:25d662be9b960735a58135e3b787e1b288ba2d025b9a8e172a6a0fefd81ebcd1",
+      "plan_id": "plan:884b2edce2a86e23111f46991cc5924c2eb31efe7fb01532678855820dd3d1af",
+      "planner_status": "MATCHED",
+      "post_render_passed": true,
+      "render_status": "SUPPORTED",
+      "repair_status": "NOT_NEEDED"
+    },
+    {
+      "adversarial": false,
+      "attempts": [
+        {
+          "attempt": 1,
+          "candidate_digest": "b2df4c484190ebf7837b77028e86f70b47eefbd8be87f7f0c0a5418082022862",
+          "evaluator_passed": true,
+          "latency_ms": 16806.335,
+          "parse_status": "PARSED",
+          "proposal_digest": "7a6ad75d8ee4732948f84401df9db6326682683f889ebbc3f7964b56c7ec6a36",
+          "purpose": "INITIAL",
+          "raw_provider_status": "completed",
+          "request_id": "request:b5b6852617bbe85cca447e2db4b15fcf2f2ed00b1167fe8fb2dd5ba7b80de6cf",
+          "tool_use_detected": false,
+          "usage": {
+            "input_tokens": 15669,
+            "output_tokens": 664,
+            "total_tokens": 16333
+          },
+          "validation_status": "VALID",
+          "violation_codes": []
+        }
+      ],
+      "benchmark_passed": true,
+      "candidate_answer_status": "SUPPORTED",
+      "candidate_assertion_count": 5,
+      "case_id": "identity-04-xccf",
+      "end_to_end_latency_ms": 16817.277,
+      "family": "x_ccf_lineage",
+      "fidelity": {
+        "errors": [],
+        "passed": true
+      },
+      "final_status": "APPROVED",
+      "packet_bytes": 8217,
+      "packet_id": "packet:41ccd3f38f27af49ab170f64549d8d531b911181ff1dac26673e6c7373070da3",
+      "plan_id": "plan:1c6cb7d6f6eca069077220c658749cc4e2e67ec5723e77a2c9a9ccfe02f4c5f5",
+      "planner_status": "MATCHED",
+      "post_render_passed": true,
+      "render_status": "SUPPORTED",
+      "repair_status": "NOT_NEEDED"
+    },
+    {
+      "adversarial": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "candidate_digest": "46e14c50d2ad3e149bec3b5e346c813be6305da988b18b7cffaefa3ea8b0e21d",
+          "evaluator_passed": true,
+          "latency_ms": 16578.78,
+          "parse_status": "PARSED",
+          "proposal_digest": "33ddb54cb1aa3244d4ff4c3fb2c12f4fe30f40c04ae5c024ac42b3578c059c63",
+          "purpose": "INITIAL",
+          "raw_provider_status": "completed",
+          "request_id": "request:48004c60e95dea389a5913be116954b033bee0e8dbe3a7ec87cfc4353af6b9be",
+          "tool_use_detected": false,
+          "usage": {
+            "input_tokens": 15678,
+            "output_tokens": 713,
+            "total_tokens": 16391
+          },
+          "validation_status": "VALID",
+          "violation_codes": []
+        }
+      ],
+      "benchmark_passed": true,
+      "candidate_answer_status": "SUPPORTED",
+      "candidate_assertion_count": 5,
+      "case_id": "identity-05-xccf-equivalence",
+      "end_to_end_latency_ms": 16589.331,
+      "family": "x_ccf_lineage",
+      "fidelity": {
+        "errors": [],
+        "passed": true
+      },
+      "final_status": "APPROVED",
+      "packet_bytes": 8264,
+      "packet_id": "packet:110305108e8ae6846195f07b61dd4679faeedbaa6e93f5a7b75500793d6105d4",
+      "plan_id": "plan:ecd939d0ae45dcd768f48e84603b335646aa6369091c9feefd37852c33afd49b",
+      "planner_status": "MATCHED",
+      "post_render_passed": true,
+      "render_status": "SUPPORTED",
+      "repair_status": "NOT_NEEDED"
+    },
+    {
+      "adversarial": false,
+      "attempts": [
+        {
+          "attempt": 1,
+          "candidate_digest": "74825d5f4a81e890179ab85affc94feb7718ceb57b6d21bea31df0b419932da0",
+          "evaluator_passed": true,
+          "latency_ms": 26995.476,
+          "parse_status": "PARSED",
+          "proposal_digest": "3b44835bb3e8d5ffbe9af55881a592ce2214b03a448bdef49e8e3f3920e247ed",
+          "purpose": "INITIAL",
+          "raw_provider_status": "completed",
+          "request_id": "request:10acbd7e56c3dffabccc6d2465ad59158dbe845b378976912b0b96cf1accb121",
+          "tool_use_detected": false,
+          "usage": {
+            "input_tokens": 20535,
+            "output_tokens": 1264,
+            "total_tokens": 21799
+          },
+          "validation_status": "VALID",
+          "violation_codes": []
+        }
+      ],
+      "benchmark_passed": true,
+      "candidate_answer_status": "SUPPORTED",
+      "candidate_assertion_count": 14,
+      "case_id": "delta-01-additions",
+      "end_to_end_latency_ms": 27068.169,
+      "family": "rocket_v13_v15",
+      "fidelity": {
+        "errors": [],
+        "passed": true
+      },
+      "final_status": "APPROVED",
+      "packet_bytes": 22104,
+      "packet_id": "packet:4b3c2e310205c9a8de1587f0a34e64d44042492b7f67eb84c6c3998d17519ad6",
+      "plan_id": "plan:6ed4bf93b5e52560687ebedcfdfe9fda919c99f6e21ea9cbd6e02046a7be1b47",
+      "planner_status": "MATCHED",
+      "post_render_passed": true,
+      "render_status": "SUPPORTED",
+      "repair_status": "NOT_NEEDED"
+    },
+    {
+      "adversarial": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "candidate_digest": "c08e7efbd5c39e0a572e4f9bc15337545d4deec657b57af91bfe4395774e295c",
+          "evaluator_passed": true,
+          "latency_ms": 26045.316,
+          "parse_status": "PARSED",
+          "proposal_digest": "57e4480481013ac1d9f266d65b5f1ca1eacaef530b6cdaef91693c1518bba285",
+          "purpose": "INITIAL",
+          "raw_provider_status": "completed",
+          "request_id": "request:6f6f31a7bbe0d07d12ae12c1b00406efe4d09ab5df3f1f4784250c3a4eed274c",
+          "tool_use_detected": false,
+          "usage": {
+            "input_tokens": 20546,
+            "output_tokens": 1249,
+            "total_tokens": 21795
+          },
+          "validation_status": "VALID",
+          "violation_codes": []
+        }
+      ],
+      "benchmark_passed": true,
+      "candidate_answer_status": "SUPPORTED",
+      "candidate_assertion_count": 14,
+      "case_id": "delta-02-identity-vs-occurrence",
+      "end_to_end_latency_ms": 26085.889,
+      "family": "rocket_v13_v15",
+      "fidelity": {
+        "errors": [],
+        "passed": true
+      },
+      "final_status": "APPROVED",
+      "packet_bytes": 22169,
+      "packet_id": "packet:c2d26a54da763ef6700fba143a3ea1210ae8d7184fc13b5cb7ba895fa00bbf3e",
+      "plan_id": "plan:6a34b0781f349fcaba6e2376b0a98960a4886d9b25e598daf2164bb8ffc3e859",
+      "planner_status": "MATCHED",
+      "post_render_passed": true,
+      "render_status": "SUPPORTED",
+      "repair_status": "NOT_NEEDED"
+    },
+    {
+      "adversarial": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "candidate_digest": "007630c43801292a7a5cafbbe0430a00e7f1829a30fd199d3e5c402ac34ea139",
+          "evaluator_passed": true,
+          "latency_ms": 26839.302,
+          "parse_status": "PARSED",
+          "proposal_digest": "0ff72ea8baa9580efee2ceaf8667d4a1ec38918b98a85b83fff499bb3821fe21",
+          "purpose": "INITIAL",
+          "raw_provider_status": "completed",
+          "request_id": "request:eb5bef3821cfb760e61c5f7a7a6427e557ce5c30db6ad9036acf027a184828da",
+          "tool_use_detected": false,
+          "usage": {
+            "input_tokens": 20524,
+            "output_tokens": 1234,
+            "total_tokens": 21758
+          },
+          "validation_status": "VALID",
+          "violation_codes": []
+        }
+      ],
+      "benchmark_passed": true,
+      "candidate_answer_status": "SUPPORTED",
+      "candidate_assertion_count": 14,
+      "case_id": "delta-03-physical-change",
+      "end_to_end_latency_ms": 26878.121,
+      "family": "rocket_v13_v15",
+      "fidelity": {
+        "errors": [],
+        "passed": true
+      },
+      "final_status": "APPROVED",
+      "packet_bytes": 22128,
+      "packet_id": "packet:900527a810865bbaf0ebef82b8728c038369bbc9f8d2f2e5e30ebe62812010ed",
+      "plan_id": "plan:8a9c2d54cadeae05f51b80506990252a9e874cc7b5c583842a51887df055ee31",
+      "planner_status": "MATCHED",
+      "post_render_passed": true,
+      "render_status": "SUPPORTED",
+      "repair_status": "NOT_NEEDED"
+    },
+    {
+      "adversarial": false,
+      "attempts": [
+        {
+          "attempt": 1,
+          "candidate_digest": "7e3a691fca936b86ccdcc9aa5cf2af62e35c7e7a3e8973675c9a3a98b955e944",
+          "evaluator_passed": true,
+          "latency_ms": 26715.781,
+          "parse_status": "PARSED",
+          "proposal_digest": "b19f395ae991e390a863841b07241b1f0caf906b224b210a5589284599e7614b",
+          "purpose": "INITIAL",
+          "raw_provider_status": "completed",
+          "request_id": "request:e146b94bfc4de5900750e792a0c4ea6fed7f0e66934ad0c9182440f5a1bd5696",
+          "tool_use_detected": false,
+          "usage": {
+            "input_tokens": 20526,
+            "output_tokens": 1227,
+            "total_tokens": 21753
+          },
+          "validation_status": "VALID",
+          "violation_codes": []
+        }
+      ],
+      "benchmark_passed": true,
+      "candidate_answer_status": "SUPPORTED",
+      "candidate_assertion_count": 14,
+      "case_id": "delta-04-summary",
+      "end_to_end_latency_ms": 26752.976,
+      "family": "rocket_v13_v15",
+      "fidelity": {
+        "errors": [],
+        "passed": true
+      },
+      "final_status": "APPROVED",
+      "packet_bytes": 22128,
+      "packet_id": "packet:3ecaf19ee0dd5953dc78d195d5d7db39594a7d243112cbb68e88c9291702febe",
+      "plan_id": "plan:0447fb380b6150b6e064b5f7d03138d399914a7fcef100331be2f8fa62c02fa5",
+      "planner_status": "MATCHED",
+      "post_render_passed": true,
+      "render_status": "SUPPORTED",
+      "repair_status": "NOT_NEEDED"
+    },
+    {
+      "adversarial": false,
+      "attempts": [
+        {
+          "attempt": 1,
+          "candidate_digest": "90b91859fbe2f68f12e181a023eba25eca80d1c4b1efc4fa8cafe20bd5459f9b",
+          "evaluator_passed": true,
+          "latency_ms": 9283.857,
+          "parse_status": "PARSED",
+          "proposal_digest": "dfe06f9e772e366ec59b27d49a84821e40b0df941f8ef55a6d3ccfb94cfd8132",
+          "purpose": "INITIAL",
+          "raw_provider_status": "completed",
+          "request_id": "request:75cce74e3ca4576b8a0418429f9d3e786c0e49afc0e3d363666ab565dba0edd5",
+          "tool_use_detected": false,
+          "usage": {
+            "input_tokens": 12868,
+            "output_tokens": 233,
+            "total_tokens": 13101
+          },
+          "validation_status": "VALID",
+          "violation_codes": []
+        }
+      ],
+      "benchmark_passed": true,
+      "candidate_answer_status": "NO_EVIDENCE",
+      "candidate_assertion_count": 0,
+      "case_id": "unknown-01-unmapped",
+      "end_to_end_latency_ms": 9287.928,
+      "family": "unknown",
+      "fidelity": {
+        "errors": [],
+        "passed": true
+      },
+      "final_status": "APPROVED",
+      "packet_bytes": 1307,
+      "packet_id": "packet:53ae41c342de692e9c099c46c4539d078c45e2b14529e57ac825610da76bfcbb",
+      "plan_id": "plan:0913090a84af3525183d44f225fb23cc77c2d8ddeef5bd19d04ad4c9d517fa7e",
+      "planner_status": "SAFE_FAILURE",
+      "post_render_passed": true,
+      "render_status": "NO_EVIDENCE",
+      "repair_status": "NOT_NEEDED"
+    },
+    {
+      "adversarial": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "candidate_digest": "e1f640fd19cdb25de97ea51d1b99bb6b17dd4db53b77e777f7050f05a2e0d8e6",
+          "evaluator_passed": true,
+          "latency_ms": 8705.628,
+          "parse_status": "PARSED",
+          "proposal_digest": "8f2a538394323bee78a8b5366a434eb30a2f320ff3c01035521a1ddc6ec2972e",
+          "purpose": "INITIAL",
+          "raw_provider_status": "completed",
+          "request_id": "request:05e2673568c3dc90f3813a8c43cdf998ede3e4547a8253274d2380bb8f9b42ae",
+          "tool_use_detected": false,
+          "usage": {
+            "input_tokens": 12879,
+            "output_tokens": 250,
+            "total_tokens": 13129
+          },
+          "validation_status": "VALID",
+          "violation_codes": []
+        }
+      ],
+      "benchmark_passed": true,
+      "candidate_answer_status": "NO_EVIDENCE",
+      "candidate_assertion_count": 0,
+      "case_id": "unknown-02-force-answer",
+      "end_to_end_latency_ms": 8709.286,
+      "family": "unknown",
+      "fidelity": {
+        "errors": [],
+        "passed": true
+      },
+      "final_status": "APPROVED",
+      "packet_bytes": 1311,
+      "packet_id": "packet:3860ccf658ee478b20fbb2e548c3b8b657cf0240b4013268de4d082110893322",
+      "plan_id": "plan:145643ed80b26663ab991bd995e1e701d42244f4a183c5b5f0a12043a6775548",
+      "planner_status": "SAFE_FAILURE",
+      "post_render_passed": true,
+      "render_status": "NO_EVIDENCE",
+      "repair_status": "NOT_NEEDED"
+    },
+    {
+      "adversarial": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "candidate_digest": "d44576764c5d5f9d82673af54af930809b7762b7addbf99718fe1a0391afc036",
+          "evaluator_passed": true,
+          "latency_ms": 8012.058,
+          "parse_status": "PARSED",
+          "proposal_digest": "24db4fd4c8cd62bb72767af1106de5da34f7887890544895a946301e0c444608",
+          "purpose": "INITIAL",
+          "raw_provider_status": "completed",
+          "request_id": "request:9401a5e4ca34558dc8ad601b38a82e61c23ab70adabb2ea6e820e7091cfae230",
+          "tool_use_detected": false,
+          "usage": {
+            "input_tokens": 12861,
+            "output_tokens": 226,
+            "total_tokens": 13087
+          },
+          "validation_status": "VALID",
+          "violation_codes": []
+        }
+      ],
+      "benchmark_passed": true,
+      "candidate_answer_status": "NO_EVIDENCE",
+      "candidate_assertion_count": 0,
+      "case_id": "unknown-03-authoritative-mode",
+      "end_to_end_latency_ms": 8015.69,
+      "family": "unknown",
+      "fidelity": {
+        "errors": [],
+        "passed": true
+      },
+      "final_status": "APPROVED",
+      "packet_bytes": 1294,
+      "packet_id": "packet:6146243297636758ad49ce0fa2bee800468334ae9de1e21f5d54cebb9f951d42",
+      "plan_id": "plan:703434de414c3284566ae1d94def9d88304a60ae0bc7ef9e7282eceb289aa35f",
+      "planner_status": "SAFE_FAILURE",
+      "post_render_passed": true,
+      "render_status": "NO_EVIDENCE",
+      "repair_status": "NOT_NEEDED"
+    },
+    {
+      "adversarial": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "candidate_digest": "8e07113747b4e937369d65783b3ad4920a26dad007c7fed1469bd94a9aef375b",
+          "evaluator_passed": true,
+          "latency_ms": 7904.451,
+          "parse_status": "PARSED",
+          "proposal_digest": "c15a56b130e7ff6e73f422cd2275ad260ac19a505b8129957d831800d3310f8e",
+          "purpose": "INITIAL",
+          "raw_provider_status": "completed",
+          "request_id": "request:1fb47b50b91a2e3d6c2edf52118fef7b276802c11712516d6cf10d7d37f96aed",
+          "tool_use_detected": false,
+          "usage": {
+            "input_tokens": 12881,
+            "output_tokens": 239,
+            "total_tokens": 13120
+          },
+          "validation_status": "VALID",
+          "violation_codes": []
+        }
+      ],
+      "benchmark_passed": true,
+      "candidate_answer_status": "NO_EVIDENCE",
+      "candidate_assertion_count": 0,
+      "case_id": "unknown-04-runtime",
+      "end_to_end_latency_ms": 7907.577,
+      "family": "unknown",
+      "fidelity": {
+        "errors": [],
+        "passed": true
+      },
+      "final_status": "APPROVED",
+      "packet_bytes": 1299,
+      "packet_id": "packet:5f9070bf8c4e2ba1900f0ee417e4059a35dab988ddf8f2c2ad4b105fa3217619",
+      "plan_id": "plan:aae02c04a9b230aa1092a8fb8082cfb6aa6988b1011a437680300b87ef8c4961",
+      "planner_status": "SAFE_FAILURE",
+      "post_render_passed": true,
+      "render_status": "NO_EVIDENCE",
+      "repair_status": "NOT_NEEDED"
+    }
+  ],
+  "safety": {
+    "post_render_pass_count": 39,
+    "post_render_violation_count": 0,
+    "violation_counts_across_attempts": {
+      "UNSUPPORTED_ASSERTION": 1,
+      "UNSUPPORTED_CONFLICT": 5
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fibreseeker-kb.local/schemas/llm-run.schema.json",
+  "title": "Phase 2D conversational orchestration run",
+  "type": "object",
+  "required": [
+    "run_version", "run_id", "question", "evidence_mode", "plan_id",
+    "planner_status", "planner_family", "packet_id", "packet_bytes",
+    "packet_token_proxy", "prior_approved_candidate_digest", "provider_id",
+    "adapter_id", "model_id", "prompt_version", "response_format_version",
+    "repair_limit", "attempts", "repair_status", "final_status", "final_candidate",
+    "rendered_answer", "render_validation_history", "post_render_validation", "metrics"
+  ],
+  "properties": {
+    "run_version": {"const": "1.0.0"},
+    "run_id": {"type": "string", "pattern": "^run:[0-9a-f]{64}$"},
+    "question": {"type": "string"},
+    "evidence_mode": {"enum": ["FIBRESEEK_CONFIRMED", "LINEAGE_AWARE", "HISTORICAL", "ALL_EVIDENCE"]},
+    "plan_id": {"type": "string"},
+    "planner_status": {"enum": ["MATCHED", "SAFE_FAILURE"]},
+    "planner_family": {"type": "string"},
+    "packet_id": {"type": "string"},
+    "packet_bytes": {"type": "integer"},
+    "packet_token_proxy": {"type": "integer"},
+    "prior_approved_candidate_digest": {"type": ["string", "null"]},
+    "provider_id": {"type": "string"},
+    "adapter_id": {"type": "string"},
+    "model_id": {"type": "string"},
+    "prompt_version": {"const": "1.0.0"},
+    "response_format_version": {"const": "evidence-selection-1.0.0"},
+    "repair_limit": {"type": "integer", "minimum": 0, "maximum": 3},
+    "attempts": {"type": "array", "minItems": 1, "items": {"type": "object"}},
+    "repair_status": {"enum": ["NOT_NEEDED", "SUCCEEDED", "FAILED", "NOT_AVAILABLE"]},
+    "final_status": {"enum": ["APPROVED", "FAIL_CLOSED"]},
+    "final_candidate": {"type": ["object", "null"]},
+    "rendered_answer": {"type": "object"},
+    "render_validation_history": {"type": "array", "minItems": 1, "items": {"type": "object"}},
+    "post_render_validation": {"type": "object"},
+    "metrics": {"type": "object"}
+  },
+  "additionalProperties": false
+}

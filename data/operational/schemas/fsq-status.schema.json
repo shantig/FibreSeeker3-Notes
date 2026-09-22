@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.fibreseeker-kb/fsq-status.schema.json",
+  "title": "Phase 2F-B FSQ status overlay",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "question_id",
+    "phase2fa_status",
+    "phase2fb_status",
+    "direct_evidence_ids",
+    "determination",
+    "residual_unknowns",
+    "next_resolution_class",
+    "offline_runtime_performed"
+  ],
+  "properties": {
+    "question_id": {"type": "string", "pattern": "^FSQ-[0-9]{3}$"},
+    "phase2fa_status": {"const": "OPEN"},
+    "phase2fb_status": {"enum": ["OPEN", "PARTIALLY_RESOLVED", "RESOLVED"]},
+    "direct_evidence_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^FSD-[0-9]{4}$"}
+    },
+    "determination": {"type": "string", "minLength": 1},
+    "residual_unknowns": {"type": "string", "minLength": 1},
+    "next_resolution_class": {
+      "enum": ["NONE", "STATIC_FIRST_PARTY", "VENDOR_CONFIRMATION", "OFFLINE_RUNTIME_TEST", "PHYSICAL_EXPERIMENT"]
+    },
+    "offline_runtime_performed": {"const": false}
+  }
+}

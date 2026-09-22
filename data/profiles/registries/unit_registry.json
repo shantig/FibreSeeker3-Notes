@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0.0",
+  "units": [
+    {"field_name": "LinearDensity", "software": "Aura", "unit": "tex", "status": "known", "classification": "FACT", "source_ids": ["AP-107"], "manufacturer_guidance": "legacy_anisoprint_only", "notes": "Aura defines tex as g/km."},
+    {"field_name": "LinearDensity", "software": "Rocket", "unit": "tex", "status": "inferred", "classification": "INFERENCE", "source_ids": ["AP-107", "AP-105", "FS-121", "FS-125"], "manufacturer_guidance": "unresolved_for_fibreseek", "notes": "Exact composite UUID, field, and value continuity; no Rocket unit label recovered."},
+    {"field_name": "ExtrusionSpeedF", "software": "Aura", "unit": "mm/s", "status": "known", "classification": "FACT", "source_ids": ["AP-107"], "manufacturer_guidance": "legacy_anisoprint_only", "notes": "Aura labels fiber extrusion speed in mm/sec."},
+    {"field_name": "ExtrusionSpeedF", "software": "Rocket", "unit": "mm/s", "status": "inferred", "classification": "INFERENCE", "source_ids": ["AP-107", "AP-105", "FS-121", "FS-125"], "manufacturer_guidance": "unresolved_for_fibreseek", "notes": "Exact composite UUID, field, and value continuity; no Rocket unit label recovered."},
+    {"field_name": "FiberSpoolLength", "software": "Aura", "unit": null, "status": "unknown", "classification": "OPEN_QUESTION", "source_ids": ["AP-103", "AP-104", "AP-105"], "manufacturer_guidance": "unresolved", "notes": "No first-party unit label recovered."},
+    {"field_name": "FiberSpoolLength", "software": "Rocket", "unit": null, "status": "unknown", "classification": "OPEN_QUESTION", "source_ids": ["FS-121", "FS-125"], "manufacturer_guidance": "unresolved", "notes": "No first-party unit label recovered."},
+    {"field_name": "CutDistance", "software": "Aura", "unit": "mm", "status": "known", "classification": "FACT", "source_ids": ["AP-107"], "manufacturer_guidance": "legacy_anisoprint_only", "notes": "Aura defines cutter-to-nozzle-outlet distance."},
+    {"field_name": "CutDistance", "software": "Rocket", "unit": "mm", "status": "known", "classification": "FACT", "source_ids": ["FS-121"], "manufacturer_guidance": "fibreseek_software_fact", "notes": "Rocket UI labels the manufacturer-only cut-distance field in mm; value precedence remains unresolved."},
+    {"field_name": "FiberRestartLength", "software": "Aura", "unit": "mm", "status": "known", "classification": "FACT", "source_ids": ["AP-107"], "manufacturer_guidance": "legacy_anisoprint_only", "notes": "Aura defines restart extrusion length."},
+    {"field_name": "FiberRestartLength", "software": "Rocket", "unit": "mm", "status": "known", "classification": "FACT", "source_ids": ["FS-121"], "manufacturer_guidance": "fibreseek_software_fact", "notes": "Rocket package UI describes restart length in the cutter settings context."},
+    {"field_name": "FiberMinRadius", "software": "Rocket", "unit": "mm", "status": "known", "classification": "FACT", "source_ids": ["FS-121"], "manufacturer_guidance": "fibreseek_software_fact", "notes": "Rocket UI labels minimum arc radius in mm; it is not proven as an absolute hardware limit."},
+    {"field_name": "FiberTensionFeedrate", "software": "Rocket", "unit": "%", "status": "known", "classification": "FACT", "source_ids": ["FS-121"], "manufacturer_guidance": "fibreseek_software_fact", "notes": "Rocket UI defines percentage of presumed path length."},
+    {"field_name": "AreaSizeX", "software": "Aura", "unit": "mm", "status": "known", "classification": "FACT", "source_ids": ["AP-107"], "manufacturer_guidance": "legacy_anisoprint_only"},
+    {"field_name": "AreaSizeY", "software": "Aura", "unit": "mm", "status": "known", "classification": "FACT", "source_ids": ["AP-107"], "manufacturer_guidance": "legacy_anisoprint_only"},
+    {"field_name": "AreaSizeZ", "software": "Aura", "unit": "mm", "status": "known", "classification": "FACT", "source_ids": ["AP-107"], "manufacturer_guidance": "legacy_anisoprint_only"},
+    {"field_name": "TravelSpeedXY", "software": "Aura", "unit": "mm/s", "status": "known", "classification": "FACT", "source_ids": ["AP-107"], "manufacturer_guidance": "legacy_anisoprint_only"},
+    {"field_name": "TravelSpeedZ", "software": "Aura", "unit": "mm/s", "status": "known", "classification": "FACT", "source_ids": ["AP-107"], "manufacturer_guidance": "legacy_anisoprint_only"},
+    {"field_name": "TravelSpeedXY", "software": "Rocket", "unit": "mm/s", "status": "known", "classification": "FACT", "source_ids": ["FS-121"], "manufacturer_guidance": "fibreseek_software_fact"},
+    {"field_name": "TravelSpeedZ", "software": "Rocket", "unit": "mm/s", "status": "known", "classification": "FACT", "source_ids": ["FS-121"], "manufacturer_guidance": "fibreseek_software_fact"}
+  ]
+}

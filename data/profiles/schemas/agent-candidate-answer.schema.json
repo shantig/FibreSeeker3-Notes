@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fibreseeker-kb.local/schemas/agent-candidate-answer.schema.json",
+  "title": "FibreSeeker-KB candidate structured agent answer",
+  "type": "object",
+  "required": [
+    "candidate_version", "plan_id", "packet_id", "evidence_mode", "answer_status",
+    "assertions", "conflicts", "open_question_ids", "conclusions",
+    "operating_recommendation"
+  ],
+  "properties": {
+    "candidate_version": {"const": "1.0.0"},
+    "plan_id": {"type": "string"},
+    "packet_id": {"type": "string"},
+    "evidence_mode": {"enum": ["FIBRESEEK_CONFIRMED", "LINEAGE_AWARE", "HISTORICAL", "ALL_EVIDENCE"]},
+    "answer_status": {"enum": ["SUPPORTED", "CONFLICTING", "UNRESOLVED", "NO_EVIDENCE"]},
+    "assertions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "assertion_id", "evidence_id", "subject", "predicate", "value", "unit",
+          "classification", "evidence_scope", "provenance_class", "source_ids",
+          "canonical_refs", "manufacturer_guidance", "claim_role"
+        ],
+        "properties": {
+          "assertion_id": {"type": "string"},
+          "evidence_id": {"type": "string"},
+          "subject": {"type": "string"},
+          "predicate": {"type": "string"},
+          "value": {},
+          "unit": {"type": ["string", "null"]},
+          "classification": {"enum": ["FACT", "INFERENCE", "OPEN_QUESTION", "EXPERIMENTAL"]},
+          "evidence_scope": {"enum": ["FIBRESEEK_FIRST_PARTY", "HISTORICAL_ANISOPRINT", "LINEAGE_INFERENCE", "UNRESOLVED", "EXPERIMENTAL"]},
+          "provenance_class": {"type": ["string", "null"]},
+          "source_ids": {"type": "array", "items": {"type": "string"}},
+          "canonical_refs": {"type": "array", "items": {"type": "object"}},
+          "manufacturer_guidance": {"type": ["string", "null"]},
+          "claim_role": {"enum": ["EVIDENCE_REPORT", "FIBRESEEK_GUIDANCE", "OPERATING_RECOMMENDATION", "PHYSICAL_EQUIVALENCE", "RUNTIME_EQUIVALENCE", "UNKNOWN_RESOLUTION"]}
+        },
+        "additionalProperties": false
+      }
+    },
+    "conflicts": {"type": "array", "items": {"type": "object"}},
+    "open_question_ids": {"type": "array", "items": {"type": "string"}},
+    "conclusions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["conclusion_type", "assertion_ids", "text"],
+        "properties": {
+          "conclusion_type": {"enum": ["EVIDENCE_SUMMARY", "OPERATING_RECOMMENDATION", "FIBRESEEK_GUIDANCE", "PHYSICAL_EQUIVALENCE", "RUNTIME_EQUIVALENCE", "UNKNOWN_RESOLUTION"]},
+          "assertion_ids": {"type": "array", "items": {"type": "string"}},
+          "text": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "operating_recommendation": {"type": ["object", "null"]}
+  },
+  "additionalProperties": false
+}

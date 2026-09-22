@@ -1,0 +1,77 @@
+{
+  "cases": [
+    {
+      "case_id": "2fb-minimum-fiber-entities",
+      "expected_status": "PARTIALLY_RESOLVED",
+      "fsq_id": "FSQ-001",
+      "must_include_evidence": "FSD-0001"
+    },
+    {
+      "case_id": "2fb-hole-clearance-not-inferred",
+      "expected_status": "PARTIALLY_RESOLVED",
+      "fsq_id": "FSQ-003",
+      "must_include_evidence": "FSD-0003"
+    },
+    {
+      "case_id": "2fb-xy-no-acceptance-promotion",
+      "expected_status": "PARTIALLY_RESOLVED",
+      "fsq_id": "FSQ-005",
+      "must_include_evidence": "FSD-0005"
+    },
+    {
+      "case_id": "2fb-nozzle-gcode-search-miss-open",
+      "expected_status": "OPEN",
+      "fsq_id": "FSQ-006",
+      "must_include_evidence": "FSD-0006"
+    },
+    {
+      "case_id": "2fb-macrolayer-model",
+      "expected_status": "RESOLVED",
+      "fsq_id": "FSQ-008",
+      "must_include_evidence": "FSD-0008"
+    },
+    {
+      "case_id": "2fb-independent-layer-model",
+      "expected_status": "RESOLVED",
+      "fsq_id": "FSQ-009",
+      "must_include_evidence": "FSD-0009"
+    },
+    {
+      "case_id": "2fb-nondivisible-runtime-needed",
+      "expected_status": "PARTIALLY_RESOLVED",
+      "fsq_id": "FSQ-010",
+      "must_include_evidence": "FSD-0009"
+    },
+    {
+      "case_id": "2fb-cut-distance-conflict",
+      "expected_status": "PARTIALLY_RESOLVED",
+      "fsq_id": "FSQ-012",
+      "must_include_evidence": "FSD-0011"
+    },
+    {
+      "case_id": "2fb-no-runtime-command-promotion",
+      "expected_status": "PARTIALLY_RESOLVED",
+      "fsq_id": "FSQ-015",
+      "must_include_evidence": "FSD-0012"
+    },
+    {
+      "case_id": "2fb-compression-remains-open",
+      "expected_status": "OPEN",
+      "fsq_id": "FSQ-016",
+      "must_include_evidence": "FSD-0014"
+    },
+    {
+      "case_id": "2fb-support-cadence",
+      "expected_status": "PARTIALLY_RESOLVED",
+      "fsq_id": "FSQ-021",
+      "must_include_evidence": "FSD-0019"
+    },
+    {
+      "case_id": "2fb-mask-overlap-not-overstated",
+      "expected_status": "PARTIALLY_RESOLVED",
+      "fsq_id": "FSQ-022",
+      "must_include_evidence": "FSD-0020"
+    }
+  ],
+  "schema_version": "1.0.0"
+}

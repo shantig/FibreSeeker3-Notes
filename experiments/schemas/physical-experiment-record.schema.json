@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.fibreseeker-kb/physical-experiment-record.schema.json",
+  "title": "FibreSeeker KB physical experiment record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "record_id",
+    "experiment_id",
+    "experiment_date",
+    "machine",
+    "domain",
+    "classification",
+    "evidence_basis",
+    "sequence",
+    "chronology_precision",
+    "claim",
+    "reported_value_text",
+    "source_ids",
+    "source_references",
+    "limitations",
+    "confidence",
+    "status"
+  ],
+  "properties": {
+    "record_id": {"type": "string", "pattern": "^LXE-[0-9]{4}$"},
+    "experiment_id": {"const": "LOOM-2026-09-07"},
+    "experiment_date": {"const": "2026-09-07"},
+    "machine": {"const": "Loom"},
+    "domain": {
+      "enum": [
+        "evidence_inventory",
+        "thermal_chamber",
+        "door_gap_sealing",
+        "bed_nozzle_thermal",
+        "power",
+        "physical_inspection",
+        "operations",
+        "session_boundary"
+      ]
+    },
+    "classification": {
+      "enum": [
+        "CONFIRMED",
+        "USER-OBSERVED",
+        "STRONGLY INFERRED",
+        "UNKNOWN / EVIDENCE MISSING"
+      ]
+    },
+    "evidence_basis": {
+      "enum": [
+        "REPOSITORY_ARTIFACT",
+        "OWNER_RETROSPECTIVE",
+        "DERIVED_INTERPRETATION",
+        "MISSING_PRIMARY_ARTIFACT",
+        "CROSS_SESSION_ARTIFACT",
+        "NAS_PRIMARY_ARTIFACT"
+      ]
+    },
+    "sequence": {"type": "integer", "minimum": 1},
+    "chronology_precision": {
+      "enum": ["REPORTED_SEQUENCE", "RELATIVE_ONLY", "UNKNOWN"]
+    },
+    "claim": {"type": "string", "minLength": 1},
+    "reported_value_text": {"type": ["string", "null"]},
+    "source_ids": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^[A-Z]{2}-[0-9]{3,}$"}
+    },
+    "source_references": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["source_id", "locator"],
+        "properties": {
+          "source_id": {"type": "string", "pattern": "^[A-Z]{2}-[0-9]{3,}$"},
+          "locator": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "limitations": {"type": "string", "minLength": 1},
+    "confidence": {"enum": ["HIGH", "MEDIUM", "LOW", "NOT_ASSESSED"]},
+    "status": {"enum": ["PRESERVED", "EVIDENCE_GAP"]}
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "schema_version": "1.0.0",
+  "corpora": [
+    {
+      "name": "aura-docs",
+      "source_id": "AP-114",
+      "repository_url": "https://github.com/anisoprint/aura-docs",
+      "indexed_ref": "detached",
+      "commit_sha": "3fa58f9590b581a3df3da6cd4f1c4ba919599bc0",
+      "commit_date": "2022-04-06T15:42:51+03:00",
+      "license": "CC-BY-4.0",
+      "inspection_mode": "STATIC_ONLY",
+      "indexed_files": [
+        {
+          "path": "LICENSE",
+          "byte_size": 18658,
+          "sha256": "f5b745ef98087f531e719ee8ca6a96809444573ecc7173c6fa68eaad39b3cc3f"
+        },
+        {
+          "path": "docs/aura/macrolayers/index.md",
+          "byte_size": 2543,
+          "sha256": "830885b68b4bfdbb8b3cb51b3b66c18af6feaafadfc8f8e33e4fe0c7491785fd"
+        },
+        {
+          "path": "docs/aura/entities/index.md",
+          "byte_size": 4242,
+          "sha256": "60725facd7e0f0a9952f71f4c595d82342ae926393375715ec3ec3705dfc3b11"
+        },
+        {
+          "path": "docs/aura/supports/index.md",
+          "byte_size": 6084,
+          "sha256": "6d34c735e04407f43166f5f2e7a29633f8897ade076c36a0f26b239fd54783c5"
+        },
+        {
+          "path": "docs/aura/layuprule/index.md",
+          "byte_size": 1687,
+          "sha256": "4c14b97aad4edb966cd38c2097f69392b3fafb00936b30d991b4d24face50499"
+        },
+        {
+          "path": "docs/aura/premium/masks/index.md",
+          "byte_size": 3697,
+          "sha256": "27b05bc1b71b1f9e0c202ab34a06ce8c091220e038092c1559e13b29f45e5d94"
+        },
+        {
+          "path": "docs/aura/premium/cli/index.md",
+          "byte_size": 3677,
+          "sha256": "221f76e7268fcd01dfcf9b652a2cb25960dc23a1295d0ffe2e7d29959a98df5c"
+        },
+        {
+          "path": "package.json",
+          "byte_size": 293,
+          "sha256": "146f230821e1e2d87b0cf379f7cc660ff6b8358d7ab0d79d63f8a0879c534d96"
+        }
+      ]
+    },
+    {
+      "name": "MKA-firmware",
+      "source_id": "AP-115",
+      "repository_url": "https://github.com/anisoprint/MKA-firmware",
+      "indexed_ref": "detached",
+      "commit_sha": "6e02973b1b8f325040cc3dbf66ac545ffc5c06b3",
+      "commit_date": "2022-04-01T14:47:30+03:00",
+      "license": "GPL-3.0-or-later",
+      "inspection_mode": "STATIC_ONLY",
+      "indexed_files": [
+        {
+          "path": "LICENSE",
+          "byte_size": 35149,
+          "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+        },
+        {
+          "path": "GCodes.md",
+          "byte_size": 10296,
+          "sha256": "2ecacd47ca6eb6308dacdd484c48bc0f2dfa5f9b89ae74f7fe82d0405e91c0a5"
+        },
+        {
+          "path": "src/core/commands/gcode/composer/m1001_m1002.h",
+          "byte_size": 1383,
+          "sha256": "af0d32fcf134cac0a9e9225cea6406a098f53a983b7c5d225a03ec3fd8e0a972"
+        },
+        {
+          "path": "src/core/commands/gcode/composer/m1010_m1011.h",
+          "byte_size": 1350,
+          "sha256": "a7bf4d5e65ec0921e59bc27c78b1ccf8d9f79cd846f5009b9d1e289d450e617c"
+        },
+        {
+          "path": "src/core/commands/gcode/composer/m704.h",
+          "byte_size": 2356,
+          "sha256": "a9dc33f504e8d7ef778c8abe55ca65eb3cdbb95d8e712f74a2aaf59b1c91f3b3"
+        },
+        {
+          "path": "src/core/tools/tools.cpp",
+          "byte_size": 27655,
+          "sha256": "a22834dc7bf11b9d10dc5b08126d889b7130420b9305f549316201c70180265b"
+        },
+        {
+          "path": "src/lcd/nextion_hmi/PrintPause.cpp",
+          "byte_size": 9026,
+          "sha256": "7487b380affc6577b4397181ed8240b5d31586d63d03af662eacdefc1f5396c0"
+        },
+        {
+          "path": "config/COMPOSER_A4_I/Configuration_Core.h",
+          "byte_size": 39608,
+          "sha256": "62e222f7fdd058ac6fb7bb3d1220c64fb1ab480a9385f4bfc8db8bbe749d0f15"
+        }
+      ]
+    }
+  ]
+}

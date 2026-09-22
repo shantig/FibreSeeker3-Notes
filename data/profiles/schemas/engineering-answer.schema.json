@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fibreseeker-kb.local/schemas/engineering-answer.schema.json",
+  "title": "FibreSeeker-KB structured engineering answer",
+  "type": "object",
+  "required": ["answer_version", "question", "view_mode", "answer_status", "assertions", "conflicts", "open_questions", "operating_recommendation", "warnings"],
+  "properties": {
+    "answer_version": {"const": "1.0.0"},
+    "question": {"type": "object"},
+    "view_mode": {"enum": ["FIBRESEEK_CONFIRMED", "LINEAGE_AWARE", "HISTORICAL", "ALL_EVIDENCE"]},
+    "answer_status": {"enum": ["SUPPORTED", "CONFLICTING", "UNRESOLVED", "NO_EVIDENCE"]},
+    "assertions": {"type": "array", "items": {"type": "object", "required": ["assertion_id", "subject", "predicate", "value", "classification", "evidence_scope", "source_ids"], "properties": {"assertion_id": {"type": "string"}, "subject": {"type": "string"}, "predicate": {"type": "string"}, "value": {}, "unit": {"type": ["string", "null"]}, "classification": {"enum": ["FACT", "INFERENCE", "OPEN_QUESTION", "EXPERIMENTAL"]}, "evidence_scope": {"enum": ["FIBRESEEK_FIRST_PARTY", "HISTORICAL_ANISOPRINT", "LINEAGE_INFERENCE", "UNRESOLVED", "EXPERIMENTAL"]}, "provenance_class": {"type": ["string", "null"]}, "source_ids": {"type": "array", "items": {"type": "string"}}, "manufacturer_guidance": {"type": ["string", "null"]}, "canonical_refs": {"type": "array", "items": {"type": "object"}}, "notes": {"type": "array", "items": {"type": "string"}}}, "additionalProperties": false}},
+    "conflicts": {"type": "array", "items": {"type": "object"}},
+    "open_questions": {"type": "array", "items": {"type": "object"}},
+    "operating_recommendation": {"const": null},
+    "warnings": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,84 @@
+[
+  {
+    "acquired_utc": [
+      "2026-08-17T13:28:32Z"
+    ],
+    "branch": "stable",
+    "input_format": "sqlite",
+    "input_path": "derived/extracted/AP-103/resources/Anisoprint.ausettings",
+    "input_sha256": "a091111486077229a9a010dfa48a78287d2b110da00c65eb3e3413a5ff1db8aa",
+    "provenance_class": "ANISOPRINT_OFFICIAL",
+    "software": "Aura",
+    "source_ids": [
+      "AP-103"
+    ],
+    "source_version_id": "aura-2.5.8",
+    "version": "2.5.8"
+  },
+  {
+    "acquired_utc": [
+      "2026-08-17T13:28:51Z"
+    ],
+    "branch": "seeker-main",
+    "input_format": "sqlite",
+    "input_path": "derived/extracted/AP-104/resources/Anisoprint.ausettings",
+    "input_sha256": "ace2bbbee4cfce90220e36b7f2a27775a9095e636249b73f1b64b851aaf8423c",
+    "provenance_class": "ANISOPRINT_OFFICIAL",
+    "software": "Aura",
+    "source_ids": [
+      "AP-104"
+    ],
+    "source_version_id": "aura-2.6.2",
+    "version": "2.6.2"
+  },
+  {
+    "acquired_utc": [
+      "2026-08-17T13:29:37Z"
+    ],
+    "branch": "sk3-preview",
+    "input_format": "sqlite",
+    "input_path": "derived/extracted/AP-105/resources/Anisoprint.ausettings",
+    "input_sha256": "a93e310dd8cbae9071dfc596737ed00e1d04284fde593b817cee0cf2c5fe6e18",
+    "provenance_class": "ANISOPRINT_OFFICIAL",
+    "software": "Aura",
+    "source_ids": [
+      "AP-105"
+    ],
+    "source_version_id": "aura-2.6.1-sk3",
+    "version": "2.6.1"
+  },
+  {
+    "acquired_utc": [
+      "2026-08-14T14:33:42Z",
+      "2026-08-14T14:34:05Z"
+    ],
+    "branch": "bundled",
+    "input_format": "json_directory",
+    "input_path": "derived/extracted/FS-121/rocket-1.3.2/windows/resources/Templates/Presets",
+    "input_sha256": "523377409b38a240dd23fb2ac0307e8691e5cb16b1d17833bc9d1cac2db8eccb",
+    "provenance_class": "FIBRESEEK_OFFICIAL",
+    "software": "Rocket",
+    "source_ids": [
+      "FS-121",
+      "FS-122"
+    ],
+    "source_version_id": "rocket-v13",
+    "version": "preset-v13"
+  },
+  {
+    "acquired_utc": [
+      "2026-08-14T17:51:29Z"
+    ],
+    "branch": "public",
+    "input_format": "json_directory",
+    "input_path": "derived/extracted/FS-125/preset-v15/Templates/Presets",
+    "input_sha256": "5cc2c1c0ec65dd83a6cbb50cd0d401213dfaf6c7b9835708dea52a3927573c5e",
+    "provenance_class": "FIBRESEEK_OFFICIAL",
+    "software": "Rocket",
+    "source_ids": [
+      "FS-125"
+    ],
+    "source_version_id": "rocket-v15",
+    "version": "preset-v15"
+  }
+]

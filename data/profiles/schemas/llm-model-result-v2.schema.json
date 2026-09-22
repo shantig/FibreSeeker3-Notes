@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fibreseeker-kb.local/schemas/llm-model-result-v2.schema.json",
+  "title": "Phase 2E normalized provider model result with usage detail",
+  "type": "object",
+  "required": ["result_version", "provider_id", "adapter_id", "model_id", "request_id", "provider_response_id", "context_packet_id", "prompt_version", "response_format_version", "attempt", "latency_ms", "usage", "raw_provider_status", "parse_status", "validation_status", "structured_output", "error_type", "error_message", "tool_use_detected"],
+  "properties": {
+    "result_version": {"const": "2.0.0"},
+    "provider_id": {"type": "string"},
+    "adapter_id": {"type": "string"},
+    "model_id": {"type": "string"},
+    "request_id": {"type": "string"},
+    "provider_response_id": {"type": ["string", "null"]},
+    "context_packet_id": {"type": "string"},
+    "prompt_version": {"type": "string"},
+    "response_format_version": {"type": "string"},
+    "attempt": {"type": "integer", "minimum": 1},
+    "latency_ms": {"type": "number", "minimum": 0},
+    "usage": {
+      "type": "object",
+      "required": ["input_tokens", "cached_input_tokens", "output_tokens", "reasoning_tokens", "total_tokens"],
+      "properties": {
+        "input_tokens": {"type": ["integer", "null"]},
+        "cached_input_tokens": {"type": ["integer", "null"]},
+        "output_tokens": {"type": ["integer", "null"]},
+        "reasoning_tokens": {"type": ["integer", "null"]},
+        "total_tokens": {"type": ["integer", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "raw_provider_status": {"type": "string"},
+    "parse_status": {"enum": ["PARSED", "FAILED", "NOT_ATTEMPTED"]},
+    "validation_status": {"enum": ["PENDING", "VALID", "FAILED", "NOT_ATTEMPTED"]},
+    "structured_output": {"type": ["object", "null"]},
+    "error_type": {"type": ["string", "null"]},
+    "error_message": {"type": ["string", "null"]},
+    "tool_use_detected": {"type": "boolean"}
+  },
+  "additionalProperties": false
+}

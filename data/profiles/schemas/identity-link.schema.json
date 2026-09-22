@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fibreseeker-kb.local/schemas/identity-link.schema.json",
+  "title": "FibreSeeker-KB cross-version identity link",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "link_id",
+    "from_source_version",
+    "to_source_version",
+    "entity_type",
+    "canonical_entity_id",
+    "relationship",
+    "evidence_classification",
+    "source_ids"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "link_id": {"type": "string", "pattern": "^identity-link:[0-9a-f]{64}$"},
+    "from_source_version": {"type": "string"},
+    "to_source_version": {"type": "string"},
+    "entity_type": {"type": "string"},
+    "canonical_entity_id": {"type": "string", "pattern": "^uuid:"},
+    "from_entity_record_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "to_entity_record_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "relationship": {"const": "exact_uuid"},
+    "evidence_classification": {"const": "FACT"},
+    "source_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "notes": {"type": "string"}
+  },
+  "additionalProperties": false
+}

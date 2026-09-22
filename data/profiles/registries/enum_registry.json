@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0.0",
+  "enums": [
+    {"field_name": "InfillFType", "software": "Aura", "value": 0, "label": "solid", "status": "known", "classification": "FACT", "source_ids": ["AP-110"], "notes": "Official Aura CLI mapping."},
+    {"field_name": "InfillFType", "software": "Aura", "value": 1, "label": "rhombic", "status": "known", "classification": "FACT", "source_ids": ["AP-110"], "notes": "Official Aura CLI mapping CELLULAR_RHOMBIC."},
+    {"field_name": "InfillFType", "software": "Aura", "value": 2, "label": "isogrid", "status": "known", "classification": "FACT", "source_ids": ["AP-110"], "notes": "Official Aura CLI mapping CELLULAR_ISOGRID."},
+    {"field_name": "InfillFType", "software": "Aura", "value": 3, "label": "anisogrid", "status": "known", "classification": "FACT", "source_ids": ["AP-110"], "notes": "Official Aura CLI mapping CELLULAR_ANISOGRID."},
+    {"field_name": "InfillFType", "software": "Rocket", "value": 0, "label": "solid", "status": "inferred", "classification": "INFERENCE", "source_ids": ["AP-110", "AP-105", "FS-121", "FS-125"], "notes": "Stable field/schema lineage; Rocket presets use value 0."},
+    {"field_name": "InfillFType", "software": "Rocket", "value": 2, "label": "isogrid", "status": "inferred", "classification": "INFERENCE", "source_ids": ["AP-110", "AP-105", "FS-121", "FS-125"], "notes": "Stable profile UUID, field, value, and isogrid parameter family."},
+    {"field_name": "InfillFType", "software": "Rocket", "value": null, "label": "tetragrid", "status": "unknown", "classification": "OPEN_QUESTION", "source_ids": ["AP-106", "FS-121"], "notes": "Aura introduced Tetragrid and Rocket retains its parameter family, but no numeric mapping is supported."},
+    {"field_name": "SlotType", "software": "Aura", "value": 0, "label": "plastic", "status": "known", "classification": "FACT", "source_ids": ["AP-106", "AP-103", "AP-104", "AP-105"], "notes": "Official role description corroborated by stored extruder relationships."},
+    {"field_name": "SlotType", "software": "Aura", "value": 1, "label": "composite", "status": "known", "classification": "FACT", "source_ids": ["AP-106", "AP-103", "AP-104", "AP-105"], "notes": "Official role description corroborated by stored extruder relationships."},
+    {"field_name": "SlotType", "software": "Rocket", "value": 0, "label": "plastic", "status": "inferred", "classification": "INFERENCE", "source_ids": ["AP-106", "AP-104", "AP-105", "FS-121"], "notes": "Exact slot/extruder UUID continuity."},
+    {"field_name": "SlotType", "software": "Rocket", "value": 1, "label": "composite", "status": "inferred", "classification": "INFERENCE", "source_ids": ["AP-106", "AP-104", "AP-105", "FS-121"], "notes": "Exact slot/extruder UUID continuity."},
+    {"field_name": "SlotType", "software": "Aura", "value": null, "label": "universal", "status": "unknown", "classification": "OPEN_QUESTION", "source_ids": ["AP-106"], "notes": "Universal slots are documented, but their numeric mapping was not recovered."},
+    {"field_name": "PostprocessorType", "software": "Aura/Rocket", "value": 3, "label": null, "status": "unknown", "classification": "OPEN_QUESTION", "source_ids": ["AP-104", "AP-105", "FS-121", "FS-125"], "notes": "Value continuity is observed; semantic label is unsupported."},
+    {"field_name": "Edition", "software": "Aura/Rocket", "value": null, "label": null, "status": "unknown", "classification": "OPEN_QUESTION", "source_ids": ["AP-103", "AP-104", "AP-105", "FS-121", "FS-125"], "notes": "Numeric profile/material edition semantics were not resolved."},
+    {"field_name": "ProfileStatus", "software": "Aura/Rocket", "value": null, "label": null, "status": "unknown", "classification": "OPEN_QUESTION", "source_ids": ["AP-103", "AP-104", "AP-105", "FS-121", "FS-125"], "notes": "No sufficiently supported numeric profile-status mapping was recovered."}
+  ]
+}

@@ -1,0 +1,142 @@
+solid loom_coupon_40x40x2_chamfer
+  facet normal 0 0 -1
+    outer loop
+      vertex -2.8000 2.8000 0.0000
+      vertex 20.0000 -20.0000 0.0000
+      vertex -20.0000 -20.0000 0.0000
+    endloop
+  endfacet
+  facet normal 0 0 1
+    outer loop
+      vertex -2.8000 2.8000 2.0000
+      vertex -20.0000 -20.0000 2.0000
+      vertex 20.0000 -20.0000 2.0000
+    endloop
+  endfacet
+  facet normal 0 -1 0
+    outer loop
+      vertex -20.0000 -20.0000 0.0000
+      vertex 20.0000 -20.0000 0.0000
+      vertex 20.0000 -20.0000 2.0000
+    endloop
+  endfacet
+  facet normal 0 -1 0
+    outer loop
+      vertex -20.0000 -20.0000 0.0000
+      vertex 20.0000 -20.0000 2.0000
+      vertex -20.0000 -20.0000 2.0000
+    endloop
+  endfacet
+  facet normal 0 0 -1
+    outer loop
+      vertex -2.8000 2.8000 0.0000
+      vertex 20.0000 20.0000 0.0000
+      vertex 20.0000 -20.0000 0.0000
+    endloop
+  endfacet
+  facet normal 0 0 1
+    outer loop
+      vertex -2.8000 2.8000 2.0000
+      vertex 20.0000 -20.0000 2.0000
+      vertex 20.0000 20.0000 2.0000
+    endloop
+  endfacet
+  facet normal 1 -0 0
+    outer loop
+      vertex 20.0000 -20.0000 0.0000
+      vertex 20.0000 20.0000 0.0000
+      vertex 20.0000 20.0000 2.0000
+    endloop
+  endfacet
+  facet normal 1 -0 0
+    outer loop
+      vertex 20.0000 -20.0000 0.0000
+      vertex 20.0000 20.0000 2.0000
+      vertex 20.0000 -20.0000 2.0000
+    endloop
+  endfacet
+  facet normal 0 0 -1
+    outer loop
+      vertex -2.8000 2.8000 0.0000
+      vertex -14.0000 20.0000 0.0000
+      vertex 20.0000 20.0000 0.0000
+    endloop
+  endfacet
+  facet normal 0 0 1
+    outer loop
+      vertex -2.8000 2.8000 2.0000
+      vertex 20.0000 20.0000 2.0000
+      vertex -14.0000 20.0000 2.0000
+    endloop
+  endfacet
+  facet normal 0 1 0
+    outer loop
+      vertex 20.0000 20.0000 0.0000
+      vertex -14.0000 20.0000 0.0000
+      vertex -14.0000 20.0000 2.0000
+    endloop
+  endfacet
+  facet normal 0 1 0
+    outer loop
+      vertex 20.0000 20.0000 0.0000
+      vertex -14.0000 20.0000 2.0000
+      vertex 20.0000 20.0000 2.0000
+    endloop
+  endfacet
+  facet normal 0 0 -1
+    outer loop
+      vertex -2.8000 2.8000 0.0000
+      vertex -20.0000 14.0000 0.0000
+      vertex -14.0000 20.0000 0.0000
+    endloop
+  endfacet
+  facet normal 0 0 1
+    outer loop
+      vertex -2.8000 2.8000 2.0000
+      vertex -14.0000 20.0000 2.0000
+      vertex -20.0000 14.0000 2.0000
+    endloop
+  endfacet
+  facet normal -0.707107 0.707107 0
+    outer loop
+      vertex -14.0000 20.0000 0.0000
+      vertex -20.0000 14.0000 0.0000
+      vertex -20.0000 14.0000 2.0000
+    endloop
+  endfacet
+  facet normal -0.707107 0.707107 0
+    outer loop
+      vertex -14.0000 20.0000 0.0000
+      vertex -20.0000 14.0000 2.0000
+      vertex -14.0000 20.0000 2.0000
+    endloop
+  endfacet
+  facet normal 0 0 -1
+    outer loop
+      vertex -2.8000 2.8000 0.0000
+      vertex -20.0000 -20.0000 0.0000
+      vertex -20.0000 14.0000 0.0000
+    endloop
+  endfacet
+  facet normal 0 0 1
+    outer loop
+      vertex -2.8000 2.8000 2.0000
+      vertex -20.0000 14.0000 2.0000
+      vertex -20.0000 -20.0000 2.0000
+    endloop
+  endfacet
+  facet normal -1 -0 0
+    outer loop
+      vertex -20.0000 14.0000 0.0000
+      vertex -20.0000 -20.0000 0.0000
+      vertex -20.0000 -20.0000 2.0000
+    endloop
+  endfacet
+  facet normal -1 -0 0
+    outer loop
+      vertex -20.0000 14.0000 0.0000
+      vertex -20.0000 -20.0000 2.0000
+      vertex -20.0000 14.0000 2.0000
+    endloop
+  endfacet
+endsolid loom_coupon_40x40x2_chamfer

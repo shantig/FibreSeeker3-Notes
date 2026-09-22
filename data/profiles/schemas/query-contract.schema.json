@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fibreseeker-kb.local/schemas/query-contract.schema.json",
+  "title": "FibreSeeker-KB evidence-safe query response",
+  "type": "object",
+  "required": ["contract_version", "query", "view_mode", "result_count", "results", "warnings"],
+  "properties": {
+    "contract_version": {"const": "1.0.0"},
+    "query": {"type": "object", "required": ["operation"], "properties": {"operation": {"type": "string"}}, "additionalProperties": true},
+    "view_mode": {"enum": ["FIBRESEEK_CONFIRMED", "LINEAGE_AWARE", "HISTORICAL", "ALL_EVIDENCE"]},
+    "result_count": {"type": "integer", "minimum": 0},
+    "results": {"type": "array", "items": {"$ref": "#/$defs/result"}},
+    "warnings": {"type": "array", "items": {"type": "string"}},
+    "index": {"type": "object", "properties": {"schema_version": {"type": "string"}, "input_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}, "additionalProperties": false}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "classification": {"enum": ["FACT", "INFERENCE", "OPEN_QUESTION", "EXPERIMENTAL"]},
+    "result": {
+      "type": "object",
+      "required": ["kind", "classification", "evidence_scope", "source_ids", "payload"],
+      "properties": {
+        "kind": {"type": "string"},
+        "classification": {"$ref": "#/$defs/classification"},
+        "evidence_scope": {"enum": ["FIBRESEEK_FIRST_PARTY", "HISTORICAL_ANISOPRINT", "LINEAGE_INFERENCE", "UNRESOLVED", "EXPERIMENTAL"]},
+        "provenance_class": {"type": ["string", "null"]},
+        "source_ids": {"type": "array", "items": {"type": "string"}},
+        "manufacturer_guidance": {"type": ["string", "null"]},
+        "canonical_ref": {"type": ["object", "null"], "properties": {"path": {"type": "string"}, "record_id": {"type": "string"}, "record_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}, "required": ["path", "record_id", "record_sha256"], "additionalProperties": false},
+        "payload": {"type": "object"}
+      },
+      "additionalProperties": false
+    }
+  }
+}

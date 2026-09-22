@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.fibreseeker-kb/direct-evidence.schema.json",
+  "title": "Phase 2F-B direct FibreSeek/Rocket evidence",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "evidence_id",
+    "domain",
+    "fsq_ids",
+    "evidence_class",
+    "source_ids",
+    "source_locations",
+    "observation",
+    "interpretation",
+    "scope",
+    "guidance_status",
+    "status_effect",
+    "confidence",
+    "limitations",
+    "baseline_commit"
+  ],
+  "properties": {
+    "evidence_id": {"type": "string", "pattern": "^FSD-[0-9]{4}$"},
+    "domain": {"type": "string", "minLength": 1},
+    "fsq_ids": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^FSQ-[0-9]{3}$"}
+    },
+    "evidence_class": {
+      "enum": [
+        "FIBRESEEK_FIRST_PARTY",
+        "ROCKET_STATIC_OBSERVATION",
+        "ROCKET_OFFLINE_RUNTIME",
+        "OWNER_EXPERIMENT",
+        "VENDOR_CONFIRMATION"
+      ]
+    },
+    "source_ids": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^FS-[0-9]{3}$"}
+    },
+    "source_locations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["source_id", "artifact", "locator"],
+        "properties": {
+          "source_id": {"type": "string", "pattern": "^FS-[0-9]{3}$"},
+          "artifact": {"type": "string", "minLength": 1},
+          "locator": {"type": "string", "minLength": 1},
+          "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        }
+      }
+    },
+    "observation": {"type": "string", "minLength": 1},
+    "interpretation": {"type": "string", "minLength": 1},
+    "scope": {"type": "string", "minLength": 1},
+    "guidance_status": {
+      "enum": [
+        "MANUFACTURER_GUIDANCE",
+        "STATIC_SOFTWARE_SEMANTIC",
+        "STATIC_CODE_INDICATOR",
+        "BOUNDED_SEARCH_ABSENCE",
+        "OFFLINE_RUNTIME_OBSERVATION"
+      ]
+    },
+    "status_effect": {"enum": ["RESOLVES", "SUPPORTS_PARTIAL", "NO_RESOLUTION", "CONFLICT"]},
+    "confidence": {"enum": ["HIGH", "MEDIUM", "LOW"]},
+    "limitations": {"type": "string", "minLength": 1},
+    "baseline_commit": {"const": "d49899368227979c9ea743ed09fff9b4bba06c88"}
+  }
+}
